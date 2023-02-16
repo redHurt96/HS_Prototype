@@ -7,6 +7,8 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
 {
     public class CraftBehavior : MonoBehaviour
     {
+        public event Action Updated;
+        
         public List<Recipe> Recipes = new();
         
         [SerializeField] private Inventory _inventory;
@@ -22,14 +24,8 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
 
             foreach (Item ingredient in recipe.Ingredients) 
                 _inventory.Remove(ingredient);
-        }
-    }
-
-    public class CraftWindow : MonoBehaviour
-    {
-        private void OnEnable()
-        {
             
+            Updated?.Invoke();
         }
     }
 }
