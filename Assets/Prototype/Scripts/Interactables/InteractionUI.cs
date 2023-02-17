@@ -10,12 +10,13 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
 
         private void Update()
         {
-            Item item = _interactionService.ObservedItem;
-            
-            _itemDescription.gameObject.SetActive(item != null);
-            
-            if (item != null) 
+            _itemDescription.gameObject.SetActive(_interactionService.IsObserveItem);
+
+            if (_interactionService.IsObserveItem)
+            {
+                Item item = _interactionService.ObservedItem;
                 _itemDescription.text = $"{item.Name} ({item.Count}) - Pickup (E)";
+            }
         }
     }
 }

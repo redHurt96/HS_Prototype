@@ -36,10 +36,7 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
             }
 
             if (GetKeyDown(KeyCode.E) && ObservedBuilding != null)
-            {
                 _forgeWindow.Show(ObservedBuilding);
-                Destroy(ObservedBuilding.gameObject);
-            }
         }
     }
 }

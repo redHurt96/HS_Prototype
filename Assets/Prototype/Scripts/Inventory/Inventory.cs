@@ -13,9 +13,14 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
         {
             if (_items.Exists(x => x.Name == item.Name))
             {
-                _items
-                    .Find(x => x.Name == item.Name)
-                    .Count += item.Count;
+                Item targetItem = _items.Find(x => x.Name == item.Name);
+                int targetIndex = _items.IndexOf(targetItem);
+
+                _items[targetIndex] = new Item()
+                {
+                    Name = item.Name,
+                    Count = targetItem.Count + item.Count,
+                };
             }
             else
             {

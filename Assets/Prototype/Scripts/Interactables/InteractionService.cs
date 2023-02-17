@@ -7,7 +7,8 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
 {
     public class InteractionService : MonoBehaviour
     {
-        public Item ObservedItem => _observedItemView?.Item;
+        public bool IsObserveItem => _observedItemView != null;
+        public Item ObservedItem => _observedItemView.Item;
 
         [SerializeField] private Inventory _inventory;
         [SerializeField] private float _lenght = 20;
@@ -34,7 +35,7 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
                 _observedItemView = null;
             }
             
-            if (GetKeyDown(KeyCode.E) && _observedItemView != null)
+            if (GetKeyDown(KeyCode.E) && IsObserveItem)
             {
                 _inventory.Add(ObservedItem);
                 Destroy(_observedItemView.gameObject);
