@@ -22,7 +22,7 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
         {
             var building = Instantiate(
                 recipe.Target,
-                transform.position + transform.forward + Vector3.up,
+                transform.position + transform.forward,
                 Quaternion.identity);
 
             foreach (Item ingredient in recipe.Materials)

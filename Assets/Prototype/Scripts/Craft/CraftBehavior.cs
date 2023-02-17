@@ -11,7 +11,10 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
         
         public List<Recipe> Recipes = new();
         
-        [SerializeField] private Inventory _inventory;
+        private Inventory _inventory;
+
+        private void Start() =>
+            _inventory = GameObject.FindObjectOfType<Inventory>();
 
         public bool CanCraft(Recipe recipe) => 
             recipe

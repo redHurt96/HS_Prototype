@@ -19,7 +19,8 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
 
         internal void Setup(Building target)
         {
-            throw new NotImplementedException();
+            _image.sprite = GetBuildingIcon(target);
+            _count.gameObject.SetActive(false);
         }
     }
 }
