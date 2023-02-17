@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,11 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
         {
             _image.sprite = GetItemIcon(item);
             _count.text = item.Count.ToString();
+        }
+
+        internal void Setup(Building target)
+        {
+            throw new NotImplementedException();
         }
     }
 }
