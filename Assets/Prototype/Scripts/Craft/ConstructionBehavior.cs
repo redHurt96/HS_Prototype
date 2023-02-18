@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ThirdPersonCharacterTemplate.Scripts.Interactables;
 using UnityEngine;
+using static UnityEngine.GameObject;
+using static UnityEngine.Quaternion;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Craft
 {
     public class ConstructionBehavior : MonoBehaviour
     {
@@ -12,6 +15,11 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
         public List<ConstructionDesign> Designs = new();
 
         [SerializeField] private Inventory _inventory;
+        
+        private Transform _buildingsParent;
+
+        private void Awake() => 
+            _buildingsParent = FindGameObjectWithTag("BuildingsParent").transform;
 
         public bool CanBuild(ConstructionDesign design) =>
             design
@@ -20,10 +28,11 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
 
         public void Build(ConstructionDesign recipe)
         {
-            var building = Instantiate(
+            Instantiate(
                 recipe.Target,
                 transform.position + transform.forward,
-                Quaternion.identity);
+                identity,
+                _buildingsParent);
 
             foreach (Item ingredient in recipe.Materials)
                 _inventory.Remove(ingredient);

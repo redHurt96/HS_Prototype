@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Prototype.Scripts.Craft;
 using UnityEngine;
 
 namespace ThirdPersonCharacterTemplate.Scripts.Interactables

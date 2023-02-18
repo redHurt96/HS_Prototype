@@ -1,13 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using ThirdPersonCharacterTemplate.Scripts.Interactables;
 using UnityEngine;
+using static UnityEngine.GameObject;
+using static UnityEngine.Object;
+using static UnityEngine.Resources;
 
-public static class ItemsFactory
+namespace Prototype.Scripts.Items
 {
-    public static void Create(string itemName, Vector3 position)
+    public static class ItemsFactory
     {
-        ItemView resource = Resources.Load<ItemView>($"Items/{itemName}");
-        Object.Instantiate(resource, position, Quaternion.identity);
+        private static Transform _parent;
+
+        public static ItemView Create(string itemName, Vector3 position)
+        {
+            _parent ??= FindGameObjectWithTag("ItemsParent").transform;
+        
+            ItemView resource = Load<ItemView>($"Items/{itemName}");
+            return Instantiate(resource, position, Quaternion.identity, _parent);
+        }
     }
 }
