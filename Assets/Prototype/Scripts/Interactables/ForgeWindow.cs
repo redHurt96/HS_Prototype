@@ -1,39 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
+using Prototype.Scripts.Craft;
 using UnityEngine;
 
 namespace ThirdPersonCharacterTemplate.Scripts.Interactables
 {
     internal class ForgeWindow : MonoBehaviour
     {
-        [SerializeField] private RecipeUIView _recipeUIView;
+        [SerializeField] private ForgeRecipeUIView _recipeUIView;
         [SerializeField] private Transform _recipesAnchor;
+        [SerializeField] private Transform _queueAnchor;
 
-        private CraftBehavior _craftBehavior;
+        private Forge _forge;
 
-        private readonly List<RecipeUIView> _recipesViews = new();
+        private readonly List<ForgeRecipeUIView> _recipesViews = new();
 
         internal void Show(Forge forge)
         {
-            _craftBehavior = forge.CraftBehavior;
+            _forge = forge;
             gameObject.SetActive(true);
-            _craftBehavior.Updated += UpdateRecipesViews;
+            _forge.Updated += UpdateRecipesViews;
         }
 
         internal void Hide()
         {
             gameObject.SetActive(false);
 
-            if (_craftBehavior != null)
-                _craftBehavior.Updated -= UpdateRecipesViews;
+            if (_forge != null)
+                _forge.Updated -= UpdateRecipesViews;
         }
 
         private void OnEnable()
         {
-            foreach (Recipe recipe in _craftBehavior.Recipes)
+            foreach (ForgeRecipe recipe in _forge.Recipes)
             {
-                RecipeUIView recipeUIView = Instantiate(_recipeUIView, _recipesAnchor);
-                recipeUIView.Setup(recipe, _craftBehavior);
+                ForgeRecipeUIView recipeUIView = Instantiate(_recipeUIView, _recipesAnchor);
+                recipeUIView.Setup(recipe, _forge);
 
                 _recipesViews.Add(recipeUIView);
             }
@@ -41,7 +43,7 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
 
         private void OnDisable()
         {
-            foreach (RecipeUIView uiView in _recipesViews)
+            foreach (ForgeRecipeUIView uiView in _recipesViews)
                 Destroy(uiView.gameObject);
 
             _recipesViews.Clear();
@@ -49,7 +51,7 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
 
         private void UpdateRecipesViews()
         {
-            foreach (RecipeUIView view in _recipesViews)
+            foreach (ForgeRecipeUIView view in _recipesViews)
                 view.PerformUpdate();
         }
     }
