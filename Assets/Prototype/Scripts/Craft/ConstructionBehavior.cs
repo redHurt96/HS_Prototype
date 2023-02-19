@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ThirdPersonCharacterTemplate.Scripts.Interactables;
+using Prototype.Scripts.Interactables;
+using Prototype.Scripts.InventoryBehavior;
 using UnityEngine;
 using static UnityEngine.GameObject;
 using static UnityEngine.Quaternion;

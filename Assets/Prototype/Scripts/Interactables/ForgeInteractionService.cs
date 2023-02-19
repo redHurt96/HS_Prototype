@@ -1,15 +1,19 @@
-﻿using UnityEngine;
+﻿using Prototype.Scripts.Craft;
+using UnityEngine;
 using static UnityEngine.Camera;
 using static UnityEngine.Input;
+using static UnityEngine.KeyCode;
+using static UnityEngine.LayerMask;
 using static UnityEngine.Physics;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Interactables
 {
     public class ForgeInteractionService : MonoBehaviour
     {
         public Forge ObservedBuilding;
 
         [SerializeField] private ForgeWindow _forgeWindow;
+        [SerializeField] private InventoryBehavior.Inventory _playerInventory;
         [SerializeField] private float _lenght = 20;
 
         private Camera _camera;
@@ -22,7 +26,7 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
             if (Raycast(_camera.transform.position,
                     _camera.transform.forward,
                     out RaycastHit hit, _lenght,
-                    LayerMask.GetMask("Interactable"))
+                    GetMask("Interactable"))
                 && hit.transform.TryGetComponent(out Forge forge))
             {
                 ObservedBuilding = forge;
@@ -35,8 +39,8 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
                     _forgeWindow.Hide();
             }
 
-            if (GetKeyDown(KeyCode.E) && ObservedBuilding != null)
-                _forgeWindow.Show(ObservedBuilding);
+            if (GetKeyDown(E) && ObservedBuilding != null)
+                _forgeWindow.Show(ObservedBuilding, _playerInventory);
         }
     }
 }

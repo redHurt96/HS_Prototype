@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Framework.UI
 {
     public class InputAvailabilitySystem : MonoBehaviour
     {

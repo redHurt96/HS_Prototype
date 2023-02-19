@@ -1,6 +1,6 @@
 using System;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Interactables
 {
     [Serializable]
     public struct Item

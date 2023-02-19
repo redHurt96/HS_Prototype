@@ -1,9 +1,8 @@
-using System;
+using Prototype.Scripts.Craft;
 using UnityEngine;
-using static UnityEditor.Progress;
 using static UnityEngine.Resources;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Interactables
 {
     public static class ResourcesService
     {

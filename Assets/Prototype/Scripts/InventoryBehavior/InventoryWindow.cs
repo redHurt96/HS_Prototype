@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Prototype.Scripts.Interactables;
 using UnityEngine;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.InventoryBehavior
 {
     public class InventoryWindow : MonoBehaviour
     {
@@ -12,6 +13,9 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
         [SerializeField] private Transform _anchor;
         
         private readonly List<ItemUIView> _views = new();
+
+        public void SetInventory(Inventory inventory) => 
+            _inventory = inventory;
 
         private void OnEnable()
         {

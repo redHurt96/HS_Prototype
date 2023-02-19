@@ -1,35 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Prototype.Scripts.Interactables;
+using Prototype.Scripts.InventoryBehavior;
 using UnityEngine;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Craft
 {
     public class Forge : MonoBehaviour
     {
-        public event Action Updated;
+        public IReadOnlyList<ForgeRecipe> Recipes => _recipes;
+        public IReadOnlyCollection<CraftProcess> EnqueuedRecipes => _itemsToCraft;
+        public IReadOnlyList<Item> CraftedItems => _outputInventory.Items;
+        public bool HasItemsToCraft => _itemsToCraft.Count > 0;
+        public Inventory OutputInventory => _outputInventory;
 
-        internal IReadOnlyList<ForgeRecipe> Recipes => _recipes;
+        public bool HasFuel;
 
-        [SerializeField] private CraftBehavior _craftBehavior;
+        [SerializeField] private Inventory _inputInventory;
+        [SerializeField] private Inventory _outputInventory;
         [SerializeField] private ForgeRecipe[] _recipes;
 
-        private void Start() =>
-            _craftBehavior.Updated += PerformUpdate;
+        private readonly Queue<CraftProcess> _itemsToCraft;
 
-        private void OnDestroy() =>
-            _craftBehavior.Updated -= PerformUpdate;
-
-        private void PerformUpdate() =>
-            Updated?.Invoke();
-
-        internal void Craft(ForgeRecipe recipe)
+        internal void EnqueueRecipe(ForgeRecipe recipe, Inventory fromPlayerInventory)
         {
-            throw new NotImplementedException();
+            fromPlayerInventory.Remove(recipe.Recipe.Ingredients);
+            _inputInventory.Add(recipe.Recipe.Ingredients);
+
+            _itemsToCraft.Enqueue(new(recipe.Recipe.Item, recipe.ClickCount));
         }
 
-        internal bool CanCraft(ForgeRecipe recipe)
+        internal bool CanCraft(ForgeRecipe recipe, Inventory fromPlayerInventory) => 
+            fromPlayerInventory.Contains(recipe.Recipe.Ingredients);
+
+        internal void PerformCraft()
         {
-            throw new NotImplementedException();
+            if (!HasItemsToCraft)
+                return;
+            
+            if (!HasFuel)
+                return;
+
+            CraftProcess current = _itemsToCraft.Peek();
+            
+            current.ClickCount--;
+
+            if (current.ClickCount is 0)
+            {
+                _outputInventory.Add(current.Target);
+                _itemsToCraft.Dequeue();
+            }
         }
     }
 }

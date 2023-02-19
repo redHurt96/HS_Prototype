@@ -1,6 +1,7 @@
+using ThirdPersonCharacterTemplate.InputSystem;
 using UnityEngine;
 
-namespace StarterAssets
+namespace ThirdPersonCharacterTemplate.Mobile.Scripts.CanvasInputs
 {
     public class UICanvasControllerInput : MonoBehaviour
     {

@@ -1,11 +1,11 @@
-using System;
-using System.Collections;
+using Prototype.Scripts.Craft;
+using Prototype.Scripts.Interactables;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static ThirdPersonCharacterTemplate.Scripts.Interactables.ResourcesService;
+using static Prototype.Scripts.Interactables.ResourcesService;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.InventoryBehavior
 {
     internal class ItemUIView : MonoBehaviour
     {

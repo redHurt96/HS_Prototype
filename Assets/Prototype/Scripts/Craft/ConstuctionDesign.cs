@@ -1,6 +1,7 @@
 ﻿using System;
+using Prototype.Scripts.Interactables;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Craft
 {
     [Serializable]
     public class ConstructionDesign

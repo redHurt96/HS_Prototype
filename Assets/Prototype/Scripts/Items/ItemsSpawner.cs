@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using ThirdPersonCharacterTemplate.Scripts.Interactables;
+using Prototype.Scripts.Interactables;
 using UnityEngine;
 using static Prototype.Scripts.Items.ItemsFactory;
 using static UnityEngine.Application;

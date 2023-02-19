@@ -1,4 +1,4 @@
-using ThirdPersonCharacterTemplate.Scripts.Interactables;
+using Prototype.Scripts.Interactables;
 using UnityEngine;
 using static UnityEngine.GameObject;
 using static UnityEngine.Object;

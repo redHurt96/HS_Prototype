@@ -1,9 +1,9 @@
-using System;
-using Prototype.Scripts.Craft;
+using Prototype.Scripts.Interactables;
+using Prototype.Scripts.InventoryBehavior;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Craft
 {
     internal class RecipeUIView : MonoBehaviour
     {

@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using static UnityEngine.Input;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Framework.UI
 {
     public class WindowToggleBehavior : MonoBehaviour
     {

@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Prototype.Scripts.Interactables;
 using UnityEngine;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Craft
 {
     public class CraftBehavior : MonoBehaviour
     {
@@ -11,10 +12,10 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
         
         public List<Recipe> Recipes = new();
         
-        private Inventory _inventory;
+        private InventoryBehavior.Inventory _inventory;
 
         private void Start() =>
-            _inventory = GameObject.FindObjectOfType<Inventory>();
+            _inventory = GameObject.FindObjectOfType<InventoryBehavior.Inventory>();
 
         public bool CanCraft(Recipe recipe) => 
             recipe

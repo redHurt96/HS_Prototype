@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
+using Prototype.Scripts.Interactables;
 using UnityEngine;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.InventoryBehavior
 {
     public class Inventory : MonoBehaviour
     {
@@ -47,5 +49,20 @@ namespace ThirdPersonCharacterTemplate.Scripts.Interactables
             if (target.Count == 0)
                 _items.Remove(target);
         }
+
+        public void Add(List<Item> recipeIngredients)
+        {
+            foreach (Item item in recipeIngredients) 
+                Add(item);
+        }
+
+        public void Remove(List<Item> recipeIngredients)
+        {
+            foreach (Item item in recipeIngredients) 
+                Remove(item);
+        }
+
+        public bool Contains(List<Item> recipeIngredients) => 
+            recipeIngredients.All(Contains);
     }
 }

@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Prototype.Scripts.Interactables;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Craft
 {
     [Serializable]
     public struct Recipe

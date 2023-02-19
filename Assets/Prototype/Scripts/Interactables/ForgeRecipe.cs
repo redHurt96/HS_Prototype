@@ -1,11 +1,12 @@
 ﻿using System;
+using Prototype.Scripts.Craft;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Interactables
 {
     [Serializable]
-    internal struct ForgeRecipe
+    public struct ForgeRecipe
     {
         public Recipe Recipe;
-        public float Time;
+        public int ClickCount;
     }
 }

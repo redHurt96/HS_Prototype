@@ -3,14 +3,14 @@ using static UnityEngine.Camera;
 using static UnityEngine.Input;
 using static UnityEngine.Physics;
 
-namespace ThirdPersonCharacterTemplate.Scripts.Interactables
+namespace Prototype.Scripts.Interactables
 {
     public class InteractionService : MonoBehaviour
     {
         public bool IsObserveItem => _observedItemView != null;
         public Item ObservedItem => _observedItemView.Item;
 
-        [SerializeField] private Inventory _inventory;
+        [SerializeField] private InventoryBehavior.Inventory _inventory;
         [SerializeField] private float _lenght = 20;
 
         private ItemView _observedItemView;
