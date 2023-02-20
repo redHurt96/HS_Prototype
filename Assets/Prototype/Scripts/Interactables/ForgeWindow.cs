@@ -32,15 +32,6 @@ namespace Prototype.Scripts.Interactables
             gameObject.SetActive(true);
         }
 
-        private void AddToPlayer(Item item)
-        {
-            _forge.OutputInventory.Remove(item);
-            _playerInventory.Add(item);
-            
-            _forge.OutputInventory.InvokeUpdate();
-            _playerInventory.InvokeUpdate();
-        }
-
         internal void Hide() => 
             gameObject.SetActive(false);
 
@@ -78,6 +69,15 @@ namespace Prototype.Scripts.Interactables
                 return;
             
             _forge.PutFuel(item, _playerInventory);
+        }
+
+        private void AddToPlayer(Item item)
+        {
+            _forge.OutputInventory.Remove(item);
+            _playerInventory.Add(item);
+            
+            _forge.OutputInventory.InvokeUpdate();
+            _playerInventory.InvokeUpdate();
         }
     }
 }

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Prototype.Scripts.Craft;
 using Prototype.Scripts.InventoryBehavior;
 using UnityEngine;

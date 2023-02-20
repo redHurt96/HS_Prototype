@@ -9,7 +9,6 @@ namespace Prototype.Scripts.InventoryBehavior
     internal class FuelUIView : MonoBehaviour
     {
         [SerializeField] private Image _image;
-        [SerializeField] private TextMeshProUGUI _count;
         [SerializeField] private TextMeshProUGUI _clicksCount;
         
         private Fuel _fuel;
@@ -22,10 +21,7 @@ namespace Prototype.Scripts.InventoryBehavior
             PerformUpdate();
         }
 
-        public void PerformUpdate()
-        {
-            _count.text = _fuel.Item.Count.ToString();
+        private void PerformUpdate() => 
             _clicksCount.text = _fuel.ForgeClickCount.ToString();
-        }
     }
 }

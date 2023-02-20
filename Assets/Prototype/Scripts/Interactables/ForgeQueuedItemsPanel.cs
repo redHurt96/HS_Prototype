@@ -28,7 +28,7 @@ namespace Prototype.Scripts.Interactables
             foreach (Transform view in _viewsAnchor) 
                 Destroy(view.gameObject);
             
-            _forge.ItemsQueueUpdated += PerformUpdate;
+            _forge.ItemsQueueUpdated -= PerformUpdate;
         }
 
         private void PerformUpdate()
