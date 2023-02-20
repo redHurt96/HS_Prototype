@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prototype.Scripts.Interactables;
@@ -8,7 +9,7 @@ namespace Prototype.Scripts.InventoryBehavior
     public class Inventory : MonoBehaviour
     {
         public IReadOnlyList<Item> Items => _items;
-        
+
         [SerializeField] private List<Item> _items = new();
 
         public void Add(Item item)

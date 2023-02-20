@@ -1,4 +1,5 @@
 using System.Linq;
+using ThirdPersonCharacterTemplate.Scripts;
 using UnityEngine;
 
 namespace Prototype.Scripts.Framework.UI
@@ -6,15 +7,18 @@ namespace Prototype.Scripts.Framework.UI
     public class InputAvailabilitySystem : MonoBehaviour
     {
         [SerializeField] private AllWindowsReferences _windows;
+        [SerializeField] private ThirdPersonController _thirdPersonController;
         
         private void Update()
         {
-            bool isUiShown = _windows.Windows.Any(x => x.activeSelf);
+            bool isAnyWindowsShown = _windows.Windows.Any(x => x.activeSelf);
 
-            Cursor.visible = isUiShown;
-            Cursor.lockState = isUiShown
+            Cursor.visible = isAnyWindowsShown;
+            Cursor.lockState = isAnyWindowsShown
                 ? CursorLockMode.None
                 : CursorLockMode.Locked;
+
+            _thirdPersonController.LockCameraPosition = isAnyWindowsShown;
         }
     }
 }

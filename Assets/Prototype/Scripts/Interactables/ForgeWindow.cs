@@ -2,6 +2,7 @@
 using Prototype.Scripts.Craft;
 using Prototype.Scripts.InventoryBehavior;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Prototype.Scripts.Interactables
 {
@@ -10,11 +11,13 @@ namespace Prototype.Scripts.Interactables
         [SerializeField] private ForgeRecipeUIView _recipeUIView;
         [SerializeField] private ForgeQueuedItemUIView _forgeQueuedItemUIView;
 
-        [SerializeField] private InventoryWindow _craftedItemsInventoryWindow;
-        [SerializeField] private InventoryWindow _playerInventoryWindow;
+        [SerializeField] private TradeInventoryWindow _craftedItemsInventoryWindow;
+        [SerializeField] private TradeInventoryWindow _playerInventoryWindow;
         
         [SerializeField] private Transform _recipesAnchor;
         [SerializeField] private Transform _queueAnchor;
+
+        [SerializeField] private Button _craft;
 
         private Forge _forge;
         private Inventory _playerInventory;
@@ -27,8 +30,8 @@ namespace Prototype.Scripts.Interactables
             _playerInventory = playerInventory;
             _forge = forge;
             
-            _playerInventoryWindow.SetInventory(playerInventory);
-            _craftedItemsInventoryWindow.SetInventory(forge.OutputInventory);
+            _playerInventoryWindow.SetInventory(playerInventory, PutFuel);
+            _craftedItemsInventoryWindow.SetInventory(forge.OutputInventory, playerInventory.Add);
             
             gameObject.SetActive(true);
         }
@@ -38,6 +41,8 @@ namespace Prototype.Scripts.Interactables
 
         private void OnEnable()
         {
+            _craft.onClick.AddListener(_forge.PerformCraft);
+            
             foreach (ForgeRecipe recipe in _forge.Recipes)
             {
                 ForgeRecipeUIView recipeUIView = Instantiate(_recipeUIView, _recipesAnchor);
@@ -57,6 +62,8 @@ namespace Prototype.Scripts.Interactables
 
         private void OnDisable()
         {
+            _craft.onClick.RemoveListener(_forge.PerformCraft);
+            
             foreach (ForgeRecipeUIView uiView in _recipesViews)
                 Destroy(uiView.gameObject);
             _recipesViews.Clear();
@@ -64,6 +71,14 @@ namespace Prototype.Scripts.Interactables
             foreach (ForgeQueuedItemUIView uiView in _enqueuedItemsViews)
                 Destroy(uiView.gameObject);
             _enqueuedItemsViews.Clear();
+        }
+
+        private void PutFuel(Item item)
+        {
+            if (!item.IsFuel)
+                return;
+            
+            _forge.PutFuel(item, _playerInventory);
         }
 
         private void UpdateRecipesViews()

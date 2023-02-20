@@ -10,7 +10,9 @@ namespace Prototype.Scripts.Interactables
 {
     public class ForgeInteractionService : MonoBehaviour
     {
-        public Forge ObservedBuilding;
+        public bool IsObserve => ObservedForge != null;
+        
+        [HideInInspector] public Forge ObservedForge;
 
         [SerializeField] private ForgeWindow _forgeWindow;
         [SerializeField] private InventoryBehavior.Inventory _playerInventory;
@@ -29,18 +31,18 @@ namespace Prototype.Scripts.Interactables
                     GetMask("Interactable"))
                 && hit.transform.TryGetComponent(out Forge forge))
             {
-                ObservedBuilding = forge;
+                ObservedForge = forge;
             }
             else
             {
-                ObservedBuilding = null;
+                ObservedForge = null;
 
                 if (_forgeWindow.gameObject.activeSelf)
                     _forgeWindow.Hide();
             }
 
-            if (GetKeyDown(E) && ObservedBuilding != null)
-                _forgeWindow.Show(ObservedBuilding, _playerInventory);
+            if (GetKeyDown(E) && ObservedForge != null)
+                _forgeWindow.Show(ObservedForge, _playerInventory);
         }
     }
 }
