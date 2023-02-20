@@ -9,15 +9,15 @@ namespace Prototype.Scripts.Interactables
     internal class ForgeRecipeUIView : MonoBehaviour
     {
         [SerializeField] private ItemUIView _targetItemView;
-        [SerializeField] private TextMeshProUGUI _forgeTime;
+        [SerializeField] private TextMeshProUGUI _clicksCount;
         [SerializeField] private Transform _ingredientsAnchor;
         [SerializeField] private Button _craft;
 
         private ForgeRecipe _recipe;
         private Forge _forge;
-        private InventoryBehavior.Inventory _playerInventory;
+        private Inventory _playerInventory;
 
-        internal void Setup(ForgeRecipe recipe, Forge forge, InventoryBehavior.Inventory playerInventory)
+        internal void Setup(ForgeRecipe recipe, Forge forge, Inventory playerInventory)
         {
             _playerInventory = playerInventory;
             _recipe = recipe;
@@ -26,6 +26,7 @@ namespace Prototype.Scripts.Interactables
             _targetItemView.Setup(recipe.Recipe.Item);
             _craft.onClick.AddListener(() => _forge.EnqueueRecipe(recipe, playerInventory));
             _craft.interactable = _forge.CanCraft(recipe, playerInventory);
+            _clicksCount.text = recipe.ClickCount.ToString();
 
             foreach (Item ingredient in recipe.Recipe.Ingredients)
             {

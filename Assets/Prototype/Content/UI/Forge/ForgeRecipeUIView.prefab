@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 79337130}
   - component: {fileID: 79337129}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ClicksCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetItemView: {fileID: 8360043174413095603}
-  _forgeTime: {fileID: 79337129}
+  _clicksCount: {fileID: 79337129}
   _ingredientsAnchor: {fileID: 5420484878255941154}
   _craft: {fileID: 8483663931531161312}
 --- !u!1 &4562323118978271685

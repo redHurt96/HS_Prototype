@@ -26,6 +26,26 @@ namespace Prototype.Scripts.InventoryBehavior
 
         private void OnEnable()
         {
+            _origin.Updated += PerformUpdate;
+
+            Setup();
+        }
+
+        private void OnDisable()
+        {
+            _origin.Updated -= PerformUpdate;
+
+            Clear();
+        }
+
+        private void PerformUpdate()
+        {
+            Clear();
+            Setup();
+        }
+
+        private void Setup()
+        {
             foreach (Item item in _origin.Items)
             {
                 ItemUIView view = Instantiate(_prefab, _anchor);
@@ -35,11 +55,11 @@ namespace Prototype.Scripts.InventoryBehavior
             }
         }
 
-        private void OnDisable()
+        private void Clear()
         {
-            foreach (ItemUIView view in _views) 
+            foreach (ItemUIView view in _views)
                 Destroy(view.gameObject);
-            
+
             _views.Clear();
         }
     }

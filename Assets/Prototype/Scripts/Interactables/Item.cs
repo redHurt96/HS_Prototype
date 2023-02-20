@@ -14,5 +14,13 @@ namespace Prototype.Scripts.Interactables
         
         [Header("For fuel")]
         public int ForgeClickCountFromSingleItem;
+
+        public static Item CreateFrom(Item target, int targetCount) =>
+            new()
+            {
+                Name = target.Name,
+                Count = targetCount,
+                ForgeClickCountFromSingleItem = target.ForgeClickCountFromSingleItem,
+            };
     }
 }

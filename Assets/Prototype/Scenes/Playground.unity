@@ -187,12 +187,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _recipeUIView: {fileID: -6158610248088329978, guid: 14b25a7fbd384d44cac71a9ef3f7e06c,
     type: 3}
-  _forgeQueuedItemUIView: {fileID: 7227046140570221474, guid: fe47c7b5e55b64f72b8640f0dc22b811,
-    type: 3}
   _craftedItemsInventoryWindow: {fileID: 1697262236}
   _playerInventoryWindow: {fileID: 568729257}
+  _fuelsPanel: {fileID: 36198154}
+  _queuedItemsPanel: {fileID: 1078222136}
   _recipesAnchor: {fileID: 2079806724}
-  _queueAnchor: {fileID: 1078222131}
   _craft: {fileID: 1085234796}
 --- !u!114 &7030311
 MonoBehaviour:
@@ -275,6 +274,7 @@ GameObject:
   - component: {fileID: 36198152}
   - component: {fileID: 36198151}
   - component: {fileID: 36198150}
+  - component: {fileID: 36198154}
   m_Layer: 5
   m_Name: FuelQueue
   m_TagString: Untagged
@@ -379,6 +379,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36198148}
   m_CullTransparentMesh: 1
+--- !u!114 &36198154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36198148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b344433ab974398906a9eebc0083678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fuelUIView: {fileID: 5551909429198863548, guid: 158b07d5b8b2213488c2f75e97a62837,
+    type: 3}
+  _viewsAnchor: {fileID: 36198149}
 --- !u!4 &69401608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8718778828885884488, guid: e5f4daf24146ee040b5a2d7a73b30aa0,
@@ -901,16 +916,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 582428191}
     m_Modifications:
-    - target: {fileID: 195534484234052149, guid: a1ac643cc8d7f411aa1c156d1828d543,
-        type: 3}
-      propertyPath: _inputInventory
-      value: 
-      objectReference: {fileID: 1812070218}
-    - target: {fileID: 195534484234052149, guid: a1ac643cc8d7f411aa1c156d1828d543,
-        type: 3}
-      propertyPath: _outputInventory
-      value: 
-      objectReference: {fileID: 1812070217}
     - target: {fileID: 4809832149388810199, guid: a1ac643cc8d7f411aa1c156d1828d543,
         type: 3}
       propertyPath: m_Name
@@ -2776,8 +2781,9 @@ GameObject:
   - component: {fileID: 1078222134}
   - component: {fileID: 1078222133}
   - component: {fileID: 1078222132}
+  - component: {fileID: 1078222136}
   m_Layer: 5
-  m_Name: Queue
+  m_Name: CraftProcessesQueue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2880,6 +2886,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078222130}
   m_CullTransparentMesh: 1
+--- !u!114 &1078222136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1078222130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e015c78d1b354d009609e78157454060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _forgeQueuedItemUIView: {fileID: 7227046140570221474, guid: fe47c7b5e55b64f72b8640f0dc22b811,
+    type: 3}
+  _viewsAnchor: {fileID: 1078222131}
 --- !u!1 &1085234794
 GameObject:
   m_ObjectHideFlags: 0
@@ -4501,7 +4522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventory: {fileID: 1762682267}
-  _lenght: 20
+  _lenght: 7
 --- !u!114 &1762682267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4583,7 +4604,7 @@ MonoBehaviour:
   ObservedForge: {fileID: 0}
   _forgeWindow: {fileID: 7030309}
   _playerInventory: {fileID: 1762682267}
-  _lenght: 20
+  _lenght: 7
 --- !u!114 &1762682288 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544,
@@ -4667,38 +4688,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4893329156728583748}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1812070212 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4809832149388810199, guid: a1ac643cc8d7f411aa1c156d1828d543,
-    type: 3}
-  m_PrefabInstance: {fileID: 315219150}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1812070217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812070212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c78f5b25503418a879d9c7d9d4b90be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _items: []
---- !u!114 &1812070218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812070212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c78f5b25503418a879d9c7d9d4b90be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _items: []
 --- !u!4 &1833534955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8642225304373351647, guid: 50a0925b0c22af146a2d15615f815a1c,

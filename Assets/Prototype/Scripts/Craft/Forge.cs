@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Prototype.Scripts.Interactables;
 using Prototype.Scripts.InventoryBehavior;
 using UnityEngine;
@@ -7,14 +8,16 @@ namespace Prototype.Scripts.Craft
 {
     public class Forge : MonoBehaviour
     {
+        public event Action FuelUpdated;
+        public event Action ItemsQueueUpdated;
+        
         public IReadOnlyList<ForgeRecipe> Recipes => _recipes;
         public IReadOnlyCollection<CraftProcess> EnqueuedRecipes => _itemsToCraft;
-        public IReadOnlyList<Item> CraftedItems => _outputInventory.Items;
+        public IReadOnlyCollection<Fuel> FuelQueue => _fuelQueue;
         public bool HasItemsToCraft => _itemsToCraft.Count > 0;
         public Inventory OutputInventory => _outputInventory;
         public bool HasFuel => _fuelQueue.Count > 0;
 
-        [SerializeField] private Inventory _inputInventory;
         [SerializeField] private Inventory _outputInventory;
         [SerializeField] private ForgeRecipe[] _recipes;
 
@@ -24,8 +27,10 @@ namespace Prototype.Scripts.Craft
         internal void EnqueueRecipe(ForgeRecipe recipe, Inventory fromPlayerInventory)
         {
             fromPlayerInventory.Remove(recipe.Recipe.Ingredients);
-            _inputInventory.Add(recipe.Recipe.Ingredients);
             _itemsToCraft.Enqueue(new(recipe.Recipe.Item, recipe.ClickCount));
+
+            fromPlayerInventory.InvokeUpdate();
+            ItemsQueueUpdated?.Invoke();
         }
 
         internal bool CanCraft(ForgeRecipe recipe, Inventory fromPlayerInventory) => 
@@ -47,6 +52,8 @@ namespace Prototype.Scripts.Craft
             {
                 _outputInventory.Add(current.Target);
                 _itemsToCraft.Dequeue();
+                
+                _outputInventory.InvokeUpdate();
             }
 
             Fuel fuel = _fuelQueue.Peek();
@@ -55,6 +62,9 @@ namespace Prototype.Scripts.Craft
 
             if (fuel.ForgeClickCount == 0)
                 _fuelQueue.Dequeue();
+            
+            ItemsQueueUpdated?.Invoke();
+            FuelUpdated?.Invoke();
         }
 
         internal void PutFuel(Item fuelItem, Inventory fromPlayerInventory)
@@ -66,12 +76,15 @@ namespace Prototype.Scripts.Craft
             _fuelQueue.Enqueue(new()
             {
                 Item = fuelItem,
-                ForgeClickCount = fuelItem.Count * fuelItem.TotalForgeClicks,
+                ForgeClickCount = fuelItem.TotalForgeClicks,
             });
+            
+            FuelUpdated?.Invoke();
+            fromPlayerInventory.InvokeUpdate();
         }
     }
 
-    internal class Fuel
+    public class Fuel
     {
         internal Item Item;
         internal int ForgeClickCount;
