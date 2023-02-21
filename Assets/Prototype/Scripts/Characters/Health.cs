@@ -6,9 +6,13 @@ namespace Prototype.Scripts.Character
     public class Health : MonoBehaviour
     {
         public event Action OnDead;
+
+        public float Max => _max;
+        public float Current => _current;
         
         [SerializeField] private float _max;
-        [SerializeField] private float _current;
+        
+        private float _current;
 
         private void Start() => 
             Reset();
