@@ -13,7 +13,8 @@ namespace Prototype.Scripts.Character
         [SerializeField] private float _max;
         [SerializeField] private float _hungerDelay;
         [SerializeField] private float _hungerAmount;
-        
+        [SerializeField] private float _hungerHealthDamage;
+
         private float _current;
 
         private IEnumerator Start()
@@ -24,8 +25,10 @@ namespace Prototype.Scripts.Character
             {
                 yield return new WaitForSeconds(_hungerDelay);
 
+                _current = Mathf.Max(0f, _current - _hungerAmount);
+
                 if (Mathf.Approximately(_current, 0f)) 
-                    _health.TakeDamage(_hungerAmount);
+                    _health.TakeDamage(_hungerHealthDamage);
             }
         }
 
