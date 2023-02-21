@@ -17,7 +17,6 @@ namespace Prototype.Scripts.Character
         private void OnDestroy() => 
             _health.OnDead -= Respawn;
 
-        [ContextMenu("Respawn")]
         private void Respawn() =>
             StartCoroutine(RespawnRoutine());
 
