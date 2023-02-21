@@ -1,8 +1,7 @@
-using Prototype.Scripts.Craft;
 using Prototype.Scripts.InventoryBehavior;
 using UnityEngine;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Forge
 {
     internal class FuelsPanel : MonoBehaviour
     {

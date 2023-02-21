@@ -1407,12 +1407,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483208567}
   m_CullTransparentMesh: 1
---- !u!1 &516707850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4416926081852918481, guid: 64dce48905ffd9b4293e595fa6941544,
-    type: 3}
-  m_PrefabInstance: {fileID: 1762682258}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &530870745
 GameObject:
   m_ObjectHideFlags: 0
@@ -4766,6 +4760,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1762682284, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: _forgeWindow
+      value: 
+      objectReference: {fileID: 7030309}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544,
         type: 3}
       propertyPath: m_RootOrder
@@ -4828,109 +4826,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
---- !u!114 &1762682266
+--- !u!114 &1762682266 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1762682266, guid: 64dce48905ffd9b4293e595fa6941544,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516707850}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bedbd9567084757b3e117f11e04cc4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventory: {fileID: 1762682267}
-  _lenght: 7
---- !u!114 &1762682267
+--- !u!114 &1762682267 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1762682267, guid: 64dce48905ffd9b4293e595fa6941544,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516707850}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c78f5b25503418a879d9c7d9d4b90be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items:
-  - Name: wood
-    Count: 30
-    ForgeClickCountFromSingleItem: 3
-  - Name: stone
-    Count: 30
-    ForgeClickCountFromSingleItem: 0
-  - Name: iron
-    Count: 30
-    ForgeClickCountFromSingleItem: 0
---- !u!114 &1762682268
+--- !u!114 &1762682268 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1762682268, guid: 64dce48905ffd9b4293e595fa6941544,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516707850}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e38396439e1c44ee83b68aa195600510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Recipes:
-  - Item:
-      Name: wooden planks
-      Count: 1
-      ForgeClickCountFromSingleItem: 0
-    Ingredients:
-    - Name: wood
-      Count: 2
-      ForgeClickCountFromSingleItem: 0
---- !u!114 &1762682276
+--- !u!114 &1762682276 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1762682276, guid: 64dce48905ffd9b4293e595fa6941544,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516707850}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4fc9bf2156dc142988bcaf1ab8589e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Designs:
-  - Target: {fileID: 2198024907203358200, guid: a1ac643cc8d7f411aa1c156d1828d543,
-      type: 3}
-    Materials:
-    - Name: wooden planks
-      Count: 2
-      ForgeClickCountFromSingleItem: 0
-    - Name: stone
-      Count: 5
-      ForgeClickCountFromSingleItem: 0
-  _inventory: {fileID: 1762682267}
---- !u!114 &1762682284
+--- !u!114 &1762682284 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1762682284, guid: 64dce48905ffd9b4293e595fa6941544,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516707850}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f12ee59d5744460eb5899505921f537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedForge: {fileID: 0}
-  _forgeWindow: {fileID: 7030309}
-  _playerInventory: {fileID: 1762682267}
-  _lenght: 7
 --- !u!114 &1762682288 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544,
     type: 3}
   m_PrefabInstance: {fileID: 1762682258}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516707850}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}

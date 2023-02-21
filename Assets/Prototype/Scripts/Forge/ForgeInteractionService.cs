@@ -1,12 +1,11 @@
-﻿using Prototype.Scripts.Craft;
-using UnityEngine;
+﻿using UnityEngine;
 using static UnityEngine.Camera;
 using static UnityEngine.Input;
 using static UnityEngine.KeyCode;
 using static UnityEngine.LayerMask;
 using static UnityEngine.Physics;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Forge
 {
     public class ForgeInteractionService : MonoBehaviour
     {

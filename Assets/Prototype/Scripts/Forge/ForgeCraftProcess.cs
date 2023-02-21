@@ -1,14 +1,14 @@
-﻿using Prototype.Scripts.Interactables;
+﻿using Prototype.Scripts.Items;
 
-namespace Prototype.Scripts.InventoryBehavior
+namespace Prototype.Scripts.Forge
 {
-    public class CraftProcess
+    public class ForgeCraftProcess
     {
         public int ClickCount;
         
         public readonly Item Target;
 
-        public CraftProcess(Item target, int clickCount)
+        public ForgeCraftProcess(Item target, int clickCount)
         {
             Target = target;
             ClickCount = clickCount;

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Forge
 {
     public class ForgeInteractionUI : MonoBehaviour
     {

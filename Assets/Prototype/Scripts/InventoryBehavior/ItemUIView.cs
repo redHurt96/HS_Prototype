@@ -1,6 +1,7 @@
 using System;
 using Prototype.Scripts.Craft;
 using Prototype.Scripts.Interactables;
+using Prototype.Scripts.Items;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

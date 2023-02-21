@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Prototype.Scripts.Interactables;
 using Prototype.Scripts.InventoryBehavior;
+using Prototype.Scripts.Items;
 using UnityEngine;
 
-namespace Prototype.Scripts.Craft
+namespace Prototype.Scripts.Forge
 {
     public class Forge : MonoBehaviour
     {
@@ -12,7 +12,7 @@ namespace Prototype.Scripts.Craft
         public event Action ItemsQueueUpdated;
         
         public IReadOnlyList<ForgeRecipe> Recipes => _recipes;
-        public IReadOnlyCollection<CraftProcess> EnqueuedRecipes => _itemsToCraft;
+        public IReadOnlyCollection<ForgeCraftProcess> EnqueuedRecipes => _itemsToCraft;
         public IReadOnlyCollection<Fuel> FuelQueue => _fuelQueue;
         public bool HasItemsToCraft => _itemsToCraft.Count > 0;
         public Inventory OutputInventory => _outputInventory;
@@ -21,7 +21,7 @@ namespace Prototype.Scripts.Craft
         [SerializeField] private Inventory _outputInventory;
         [SerializeField] private ForgeRecipe[] _recipes;
 
-        private readonly Queue<CraftProcess> _itemsToCraft = new();
+        private readonly Queue<ForgeCraftProcess> _itemsToCraft = new();
         private readonly Queue<Fuel> _fuelQueue = new();
 
         internal void EnqueueRecipe(ForgeRecipe recipe, Inventory fromPlayerInventory)
@@ -44,7 +44,7 @@ namespace Prototype.Scripts.Craft
             if (!HasFuel)
                 return;
 
-            CraftProcess current = _itemsToCraft.Peek();
+            ForgeCraftProcess current = _itemsToCraft.Peek();
             
             current.ClickCount--;
 

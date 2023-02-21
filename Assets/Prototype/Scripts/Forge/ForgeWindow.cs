@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Prototype.Scripts.Craft;
 using Prototype.Scripts.InventoryBehavior;
+using Prototype.Scripts.Items;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Forge
 {
     internal class ForgeWindow : MonoBehaviour
     {

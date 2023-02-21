@@ -1,4 +1,5 @@
 using Prototype.Scripts.Craft;
+using Prototype.Scripts.Items;
 using UnityEngine;
 using static UnityEngine.Resources;
 

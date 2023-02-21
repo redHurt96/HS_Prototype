@@ -1,8 +1,6 @@
-using Prototype.Scripts.Craft;
-using Prototype.Scripts.InventoryBehavior;
 using UnityEngine;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Forge
 {
     internal class ForgeQueuedItemsPanel : MonoBehaviour
     {
@@ -16,7 +14,7 @@ namespace Prototype.Scripts.Interactables
             _forge = forge;
             _forge.ItemsQueueUpdated += PerformUpdate;
 
-            foreach (CraftProcess process in forge.EnqueuedRecipes)
+            foreach (ForgeCraftProcess process in forge.EnqueuedRecipes)
             {
                 ForgeQueuedItemUIView view = Instantiate(_forgeQueuedItemUIView, _viewsAnchor);
                 view.Setup(process);

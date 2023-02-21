@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Prototype.Scripts.Craft;
 using UnityEngine;
 
-namespace Prototype.Scripts.Craft
+namespace Prototype.Scripts.Construction
 {
     public class ConstructionWindow : MonoBehaviour
     {

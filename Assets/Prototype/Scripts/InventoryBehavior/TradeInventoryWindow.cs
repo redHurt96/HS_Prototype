@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Prototype.Scripts.Interactables;
+using Prototype.Scripts.Items;
 using UnityEngine;
 
 namespace Prototype.Scripts.InventoryBehavior
@@ -11,12 +11,12 @@ namespace Prototype.Scripts.InventoryBehavior
         
         [Space]
         [SerializeField] private Transform _anchor;
-        
-        private readonly List<ItemUIView> _views = new();
-        
+
         private Inventory _origin;
         private Inventory _target;
         private Action<Item> _moveAction;
+        
+        private readonly List<ItemUIView> _views = new();
 
         public void SetInventory(Inventory origin, Action<Item> moveAction)
         {

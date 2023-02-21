@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Items
 {
     public class ItemView : MonoBehaviour
     {

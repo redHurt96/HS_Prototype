@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Items
 {
     [Serializable]
     public struct Item

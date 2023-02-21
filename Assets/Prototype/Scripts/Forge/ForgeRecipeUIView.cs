@@ -1,10 +1,10 @@
-﻿using Prototype.Scripts.Craft;
-using Prototype.Scripts.InventoryBehavior;
+﻿using Prototype.Scripts.InventoryBehavior;
+using Prototype.Scripts.Items;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Forge
 {
     internal class ForgeRecipeUIView : MonoBehaviour
     {

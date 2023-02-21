@@ -1,29 +1,28 @@
-using Prototype.Scripts.InventoryBehavior;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static Prototype.Scripts.Interactables.ResourcesService;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Forge
 {
     internal class ForgeQueuedItemUIView : MonoBehaviour
     {
         [SerializeField] private Image _image;
         [SerializeField] private TextMeshProUGUI _count;
         
-        private CraftProcess _craftProcess;
+        private ForgeCraftProcess _forgeCraftProcess;
 
-        public void Setup(CraftProcess craftProcess)
+        public void Setup(ForgeCraftProcess forgeCraftProcess)
         {
-            _craftProcess = craftProcess;
+            _forgeCraftProcess = forgeCraftProcess;
 
             PerformUpdate();
         }
 
         public void PerformUpdate()
         {
-            _image.sprite = GetItemIcon(_craftProcess.Target);
-            _count.text = _craftProcess.ClickCount.ToString();
+            _image.sprite = GetItemIcon(_forgeCraftProcess.Target);
+            _count.text = _forgeCraftProcess.ClickCount.ToString();
         }
     }
 }

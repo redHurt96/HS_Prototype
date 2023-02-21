@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prototype.Scripts.Interactables;
+using Prototype.Scripts.Items;
 using UnityEngine;
-using static Prototype.Scripts.Interactables.Item;
+using static Prototype.Scripts.Items.Item;
 
 namespace Prototype.Scripts.InventoryBehavior
 {

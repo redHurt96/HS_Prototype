@@ -1,7 +1,7 @@
 ﻿using System;
 using Prototype.Scripts.Craft;
 
-namespace Prototype.Scripts.Interactables
+namespace Prototype.Scripts.Forge
 {
     [Serializable]
     public struct ForgeRecipe

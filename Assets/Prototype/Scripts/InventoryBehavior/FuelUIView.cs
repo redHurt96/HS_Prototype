@@ -1,4 +1,5 @@
 using Prototype.Scripts.Craft;
+using Prototype.Scripts.Forge;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
