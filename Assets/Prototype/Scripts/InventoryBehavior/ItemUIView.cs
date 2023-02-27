@@ -21,10 +21,10 @@ namespace Prototype.Scripts.InventoryBehavior
             _button.onClick
                 .AddListener(() => _onClick?.Invoke());
 
-        public void Setup(Item item)
+        public void Setup(ItemCell cell)
         {
-            _image.sprite = GetItemIcon(item);
-            _count.text = item.Count.ToString();
+            _image.sprite = GetItemIcon(cell.ItemName);
+            _count.text = cell.Count.ToString();
         }
 
         internal void Setup(Building target)

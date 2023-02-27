@@ -9,7 +9,7 @@ namespace Prototype.Scripts.Interactables
     public class InteractionService : MonoBehaviour
     {
         public bool IsObserveItem => _observedItemView != null;
-        public Item ObservedItem => _observedItemView.Item;
+        public ItemCell ObservedItemCell => _observedItemView.ItemCell;
 
         [SerializeField] private InventoryBehavior.Inventory _inventory;
         [SerializeField] private float _lenght = 20;
@@ -38,7 +38,7 @@ namespace Prototype.Scripts.Interactables
             
             if (GetKeyDown(KeyCode.E) && IsObserveItem)
             {
-                _inventory.Add(ObservedItem);
+                _inventory.Add(ObservedItemCell);
                 Destroy(_observedItemView.gameObject);
             }
         }

@@ -15,8 +15,8 @@ namespace Prototype.Scripts.Interactables
 
             if (_interactionService.IsObserveItem)
             {
-                Item item = _interactionService.ObservedItem;
-                _itemDescription.text = $"{item.Name} ({item.Count}) - Pickup (E)";
+                ItemCell cell = _interactionService.ObservedItemCell;
+                _itemDescription.text = $"{cell.ItemName} ({cell.Count}) - Pickup (E)";
             }
         }
     }

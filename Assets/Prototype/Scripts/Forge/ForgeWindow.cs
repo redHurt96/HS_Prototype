@@ -3,6 +3,7 @@ using Prototype.Scripts.InventoryBehavior;
 using Prototype.Scripts.Items;
 using UnityEngine;
 using UnityEngine.UI;
+using static Prototype.Scripts.Items.ItemsStorage;
 
 namespace Prototype.Scripts.Forge
 {
@@ -63,18 +64,20 @@ namespace Prototype.Scripts.Forge
             _recipesViews.Clear();
         }
 
-        private void PutFuel(Item item)
+        private void PutFuel(ItemCell cell)
         {
+            Item item = Get(cell.ItemName);
+            
             if (!item.IsFuel)
                 return;
             
-            _forge.PutFuel(item, _playerInventory);
+            _forge.PutFuel(cell, _playerInventory);
         }
 
-        private void AddToPlayer(Item item)
+        private void AddToPlayer(ItemCell cell)
         {
-            _forge.OutputInventory.Remove(item);
-            _playerInventory.Add(item);
+            _forge.OutputInventory.Remove(cell);
+            _playerInventory.Add(cell);
             
             _forge.OutputInventory.InvokeUpdate();
             _playerInventory.InvokeUpdate();

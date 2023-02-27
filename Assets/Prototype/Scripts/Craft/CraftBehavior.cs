@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prototype.Scripts.Interactables;
+using Prototype.Scripts.InventoryBehavior;
 using Prototype.Scripts.Items;
 using UnityEngine;
 
@@ -13,10 +14,7 @@ namespace Prototype.Scripts.Craft
         
         public List<Recipe> Recipes = new();
         
-        private InventoryBehavior.Inventory _inventory;
-
-        private void Start() =>
-            _inventory = GameObject.FindObjectOfType<InventoryBehavior.Inventory>();
+        [SerializeField] private Inventory _inventory;
 
         public bool CanCraft(Recipe recipe) => 
             recipe
@@ -27,7 +25,7 @@ namespace Prototype.Scripts.Craft
         {
             _inventory.Add(recipe.Item);
 
-            foreach (Item ingredient in recipe.Ingredients) 
+            foreach (ItemCell ingredient in recipe.Ingredients) 
                 _inventory.Remove(ingredient);
             
             Updated?.Invoke();

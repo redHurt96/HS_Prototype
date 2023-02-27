@@ -8,7 +8,7 @@ namespace Prototype.Scripts.Craft
     [Serializable]
     public struct Recipe
     {
-        public Item Item;
-        public List<Item> Ingredients;
+        public ItemCell Item;
+        public List<ItemCell> Ingredients;
     }
 }

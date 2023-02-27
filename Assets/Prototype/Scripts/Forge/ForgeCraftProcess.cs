@@ -6,9 +6,9 @@ namespace Prototype.Scripts.Forge
     {
         public int ClickCount;
         
-        public readonly Item Target;
+        public readonly ItemCell Target;
 
-        public ForgeCraftProcess(Item target, int clickCount)
+        public ForgeCraftProcess(ItemCell target, int clickCount)
         {
             Target = target;
             ClickCount = clickCount;

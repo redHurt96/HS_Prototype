@@ -17,7 +17,7 @@ namespace Prototype.Scripts.InventoryBehavior
         public void Setup(Fuel fuel)
         {
             _fuel = fuel;
-            _image.sprite = GetItemIcon(fuel.Item);
+            _image.sprite = GetItemIcon(fuel.ItemCell.ItemName);
             
             PerformUpdate();
         }

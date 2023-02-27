@@ -8,6 +8,6 @@ namespace Prototype.Scripts.Construction
     public class ConstructionDesign
     {
         public Building Target;
-        public Item[] Materials;
+        public ItemCell[] Materials;
     }
 }

@@ -14,11 +14,11 @@ namespace Prototype.Scripts.InventoryBehavior
 
         private Inventory _origin;
         private Inventory _target;
-        private Action<Item> _moveAction;
+        private Action<ItemCell> _moveAction;
         
         private readonly List<ItemUIView> _views = new();
 
-        public void SetInventory(Inventory origin, Action<Item> moveAction)
+        public void SetInventory(Inventory origin, Action<ItemCell> moveAction)
         {
             _moveAction = moveAction;
             _origin = origin;
@@ -46,7 +46,7 @@ namespace Prototype.Scripts.InventoryBehavior
 
         private void Setup()
         {
-            foreach (Item item in _origin.Items)
+            foreach (ItemCell item in _origin.Items)
             {
                 ItemUIView view = Instantiate(_prefab, _anchor);
                 view.Setup(item);

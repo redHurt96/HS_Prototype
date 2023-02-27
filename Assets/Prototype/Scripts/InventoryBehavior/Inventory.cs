@@ -1,69 +1,79 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Prototype.Scripts.Interactables;
 using Prototype.Scripts.Items;
 using UnityEngine;
-using static Prototype.Scripts.Items.Item;
 
 namespace Prototype.Scripts.InventoryBehavior
 {
     public class Inventory : MonoBehaviour
     {
         public event Action Updated;
-        public IReadOnlyList<Item> Items => _items;
+        public IReadOnlyList<ItemCell> Items => _items;
 
-        [SerializeField] private List<Item> _items = new();
+        [SerializeField] private List<ItemCell> _items = new();
 
-        public void Add(Item item)
+        public void Add(ItemCell cell)
         {
-            if (_items.Exists(x => x.Name == item.Name))
+            if (_items.Exists(x => x.ItemName == cell.ItemName))
             {
-                Item targetItem = _items.Find(x => x.Name == item.Name);
-                int targetIndex = _items.IndexOf(targetItem);
+                ItemCell targetCell = _items.Find(x => x.ItemName == cell.ItemName);
+                int targetIndex = _items.IndexOf(targetCell);
 
-                _items[targetIndex] = CreateFrom(targetItem, targetItem.Count + item.Count);
+                _items[targetIndex] = new()
+                {
+                    ItemName = targetCell.ItemName,
+                    Count = targetCell.Count + cell.Count,
+                };
             }
             else
             {
-                _items.Add(item);
+                _items.Add(cell);
             }
         }
 
-        public bool Contains(Item item) => 
+        public bool Contains(ItemCell itemCell) => Contains(itemCell.ItemName, itemCell.Count);
+        
+        public bool Contains(string itemName, int count) => 
             _items
-                .Exists(x => x.Name == item.Name && x.Count >= item.Count);
+                .Exists(x => x.ItemName == itemName && x.Count >= count);
 
-        public void Remove(Item item)
+        public void Remove(ItemCell cell) => Remove(cell.ItemName, cell.Count);
+        
+        public void Remove(string itemName, int count)
         {
-            if (!Contains(item))
+            if (!Contains(itemName, count))
                 throw new($"Try to remove item which don't contains in inventory!");
 
-            Item target = _items.Find(x => x.Name == item.Name);
+            ItemCell target = _items.Find(x => x.ItemName == itemName);
             int index = _items.IndexOf(target);
             
-            if (target.Count < item.Count)
+            if (target.Count < count)
                 throw new($"Try to remove item which count is bigger than in inventory!");
 
-            _items[index] = CreateFrom(target, target.Count - item.Count);
+            _items[index] = new()
+            {
+                ItemName = itemName,
+                Count = target.Count - count,
+            };
 
             if (_items[index].Count == 0)
                 _items.RemoveAt(index);
         }
 
-        public void Add(List<Item> recipeIngredients)
+        public void Add(List<ItemCell> recipeIngredients)
         {
-            foreach (Item item in recipeIngredients) 
+            foreach (ItemCell item in recipeIngredients) 
                 Add(item);
         }
 
-        public void Remove(List<Item> recipeIngredients)
+        public void Remove(List<ItemCell> recipeIngredients)
         {
-            foreach (Item item in recipeIngredients) 
+            foreach (ItemCell item in recipeIngredients) 
                 Remove(item);
         }
 
-        public bool Contains(List<Item> recipeIngredients) => 
+        public bool Contains(List<ItemCell> recipeIngredients) => 
             recipeIngredients.All(Contains);
 
         public void InvokeUpdate() =>

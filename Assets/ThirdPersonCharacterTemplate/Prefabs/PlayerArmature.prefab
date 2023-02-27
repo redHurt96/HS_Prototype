@@ -1044,6 +1044,7 @@ GameObject:
   - component: {fileID: 1762682284}
   - component: {fileID: 1762682290}
   - component: {fileID: 1762682289}
+  - component: {fileID: 1858014639}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1313,15 +1314,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _items:
-  - Name: wood
-    Count: 30
-    ForgeClickCountFromSingleItem: 3
-  - Name: stone
-    Count: 30
-    ForgeClickCountFromSingleItem: 0
-  - Name: iron
-    Count: 30
-    ForgeClickCountFromSingleItem: 0
+  - ItemName: food
+    Count: 5
+  - ItemName: wood
+    Count: 10
+  - ItemName: stone
+    Count: 10
+  - ItemName: iron
+    Count: 10
 --- !u!114 &1762682268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,13 +1336,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Recipes:
   - Item:
-      Name: wooden planks
+      ItemName: wooden planks
       Count: 1
-      ForgeClickCountFromSingleItem: 0
     Ingredients:
-    - Name: wood
+    - ItemName: wood
       Count: 2
-      ForgeClickCountFromSingleItem: 0
+  _inventory: {fileID: 1762682267}
 --- !u!114 &1762682276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1359,12 +1358,10 @@ MonoBehaviour:
   - Target: {fileID: 2198024907203358200, guid: a1ac643cc8d7f411aa1c156d1828d543,
       type: 3}
     Materials:
-    - Name: wooden planks
+    - ItemName: wooden planks
       Count: 2
-      ForgeClickCountFromSingleItem: 0
-    - Name: stone
+    - ItemName: stone
       Count: 5
-      ForgeClickCountFromSingleItem: 0
   _inventory: {fileID: 1762682267}
 --- !u!114 &1762682284
 MonoBehaviour:
@@ -1395,7 +1392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _max: 100
-  _current: 100
 --- !u!114 &1762682289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1408,7 +1404,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3904e55db59a46a49c334b119d82b639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _controller: {fileID: 4416926081852918490}
   _health: {fileID: 1762682290}
+  _hunger: {fileID: 1858014639}
+--- !u!114 &1858014639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98f604c71e24d9a84aefb10616b637a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 1762682290}
+  _max: 100
+  _hungerDelay: 2
+  _hungerAmount: 2
+  _hungerHealthDamage: 5
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0

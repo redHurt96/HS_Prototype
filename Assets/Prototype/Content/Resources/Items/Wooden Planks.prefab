@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbde093a06c1b784a95a3f5b1c314913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item:
-    Name: wooden planks
+  ItemCell:
+    ItemName: wooden planks
     Count: 1
 --- !u!1001 &5913320376690008442
 PrefabInstance:

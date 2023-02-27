@@ -67,26 +67,22 @@ namespace Prototype.Scripts.Forge
             FuelUpdated?.Invoke();
         }
 
-        internal void PutFuel(Item fuelItem, Inventory fromPlayerInventory)
+        internal void PutFuel(ItemCell fuelItem, Inventory fromPlayerInventory)
         {
-            if (!fuelItem.IsFuel)
+            Item item = ItemsStorage.Get(fuelItem.ItemName);
+            
+            if (!item.IsFuel)
                 return;
             
             fromPlayerInventory.Remove(fuelItem);
             _fuelQueue.Enqueue(new()
             {
-                Item = fuelItem,
-                ForgeClickCount = fuelItem.TotalForgeClicks,
+                ItemCell = fuelItem,
+                ForgeClickCount = fuelItem.Count * item.ForgeClickCount,
             });
             
             FuelUpdated?.Invoke();
             fromPlayerInventory.InvokeUpdate();
         }
-    }
-
-    public class Fuel
-    {
-        internal Item Item;
-        internal int ForgeClickCount;
     }
 }

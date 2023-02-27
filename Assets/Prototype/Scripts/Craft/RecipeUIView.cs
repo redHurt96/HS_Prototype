@@ -28,7 +28,7 @@ namespace Prototype.Scripts.Craft
             _craft.onClick.AddListener(() => craftBehavior.Craft(recipe));
             _craft.interactable = craftBehavior.CanCraft(recipe);
 
-            foreach (Item ingredient in recipe.Ingredients)
+            foreach (ItemCell ingredient in recipe.Ingredients)
             {
                 ItemUIView itemView = Instantiate(_targetItemView, _ingredientsAnchor);
                 itemView.Setup(ingredient);
@@ -52,7 +52,7 @@ namespace Prototype.Scripts.Craft
             _craft.onClick.AddListener(() => constructionBehavior.Build(design));
             _craft.interactable = constructionBehavior.CanBuild(design);
 
-            foreach (Item material in design.Materials)
+            foreach (ItemCell material in design.Materials)
             {
                 ItemUIView itemView = Instantiate(_targetItemView, _ingredientsAnchor);
                 itemView.Setup(material);

@@ -142,13 +142,11 @@ MonoBehaviour:
   _recipes:
   - Recipe:
       Item:
-        Name: iron ingot
+        ItemName: iron ingot
         Count: 1
-        ForgeClickCountFromSingleItem: 0
       Ingredients:
-      - Name: iron
+      - ItemName: iron
         Count: 2
-        ForgeClickCountFromSingleItem: 0
     ClickCount: 3
 --- !u!114 &2198024907203358200
 MonoBehaviour:

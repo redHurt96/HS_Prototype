@@ -35,7 +35,7 @@ namespace Prototype.Scripts.Construction
                 identity,
                 _buildingsParent);
 
-            foreach (Item ingredient in recipe.Materials)
+            foreach (ItemCell ingredient in recipe.Materials)
                 _inventory.Remove(ingredient);
 
             Updated?.Invoke();

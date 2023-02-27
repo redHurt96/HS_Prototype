@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Prototype.Scripts.Character;
 using Prototype.Scripts.Items;
 using UnityEngine;
+using static Prototype.Scripts.Items.ItemsStorage;
 
 namespace Prototype.Scripts.InventoryBehavior
 {
@@ -18,16 +19,15 @@ namespace Prototype.Scripts.InventoryBehavior
         
         private readonly List<ItemUIView> _views = new();
 
-        public void SetInventory(Inventory inventory) => 
-            _inventory = inventory;
-
         private void OnEnable()
         {
-            foreach (Item item in _inventory.Items)
+            foreach (ItemCell cell in _inventory.Items)
             {
                 ItemUIView view = Instantiate(_prefab, _anchor);
-                view.Setup(item);
+                view.Setup(cell);
                 _views.Add(view);
+
+                Item item = Get(cell.ItemName);
 
                 if (item.IsFood) 
                     view.OnClick(() => Feed(item));
@@ -37,7 +37,8 @@ namespace Prototype.Scripts.InventoryBehavior
         private void Feed(Item item)
         {
             _hunger.Feed(item.NutritionalValue);
-            _inventory.Remove(Item.CreateFrom(item, 1));
+            
+            _inventory.Remove(item.Name, 1);
             _inventory.InvokeUpdate();
         }
 

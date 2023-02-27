@@ -19,9 +19,9 @@ namespace Prototype.Scripts.Forge
             PerformUpdate();
         }
 
-        public void PerformUpdate()
+        private void PerformUpdate()
         {
-            _image.sprite = GetItemIcon(_forgeCraftProcess.Target);
+            _image.sprite = GetItemIcon(_forgeCraftProcess.Target.ItemName);
             _count.text = _forgeCraftProcess.ClickCount.ToString();
         }
     }
