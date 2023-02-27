@@ -1045,6 +1045,9 @@ GameObject:
   - component: {fileID: 1762682290}
   - component: {fileID: 1762682289}
   - component: {fileID: 1858014639}
+  - component: {fileID: 1858014647}
+  - component: {fileID: 6536150259018828372}
+  - component: {fileID: 69543373682349762}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1313,15 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c78f5b25503418a879d9c7d9d4b90be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items:
-  - ItemName: food
-    Count: 5
-  - ItemName: wood
-    Count: 10
-  - ItemName: stone
-    Count: 10
-  - ItemName: iron
-    Count: 10
+  _cells: []
 --- !u!114 &1762682268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,9 +1333,11 @@ MonoBehaviour:
   - Item:
       ItemName: wooden planks
       Count: 1
+      ExpirationTime: 0
     Ingredients:
     - ItemName: wood
       Count: 2
+      ExpirationTime: 0
   _inventory: {fileID: 1762682267}
 --- !u!114 &1762682276
 MonoBehaviour:
@@ -1360,8 +1357,10 @@ MonoBehaviour:
     Materials:
     - ItemName: wooden planks
       Count: 2
+      ExpirationTime: 0
     - ItemName: stone
       Count: 5
+      ExpirationTime: 0
   _inventory: {fileID: 1762682267}
 --- !u!114 &1762682284
 MonoBehaviour:
@@ -1424,6 +1423,47 @@ MonoBehaviour:
   _hungerDelay: 2
   _hungerAmount: 2
   _hungerHealthDamage: 5
+--- !u!114 &1858014647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e66fa758bdc24f11a8a0d608f3603186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inventory: {fileID: 1762682267}
+--- !u!114 &6536150259018828372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d6021d926f4386aaf922e6c8a00a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _huntedBots: []
+--- !u!114 &69543373682349762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8a526f0e0b4e26ae745b2293e722c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedBot: {fileID: 0}
+  _botHuntingBehavior: {fileID: 6536150259018828372}
+  _lenght: 8
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0

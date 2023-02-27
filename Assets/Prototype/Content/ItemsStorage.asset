@@ -36,4 +36,4 @@ MonoBehaviour:
   - Name: food
     ForgeClickCount: 0
     NutritionalValue: 20
-    ExpirationTimeSeconds: 0
+    ExpirationTimeSeconds: 3600
