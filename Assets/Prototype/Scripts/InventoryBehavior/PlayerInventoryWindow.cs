@@ -21,17 +21,16 @@ namespace Prototype.Scripts.InventoryBehavior
 
         private void OnEnable()
         {
-            foreach (ItemCell cell in _inventory.Items)
-            {
-                ItemUIView view = Instantiate(_prefab, _anchor);
-                view.Setup(cell);
-                _views.Add(view);
+            _inventory.Updated += PerformUpdate;
 
-                Item item = Get(cell.ItemName);
+            Setup();
+        }
 
-                if (item.IsFood) 
-                    view.OnClick(() => Feed(item));
-            }
+        private void OnDisable()
+        {
+            _inventory.Updated += PerformUpdate;
+
+            Dispose();
         }
 
         private void Feed(Item item)
@@ -42,11 +41,32 @@ namespace Prototype.Scripts.InventoryBehavior
             _inventory.InvokeUpdate();
         }
 
-        private void OnDisable()
+        private void PerformUpdate()
         {
-            foreach (ItemUIView view in _views) 
+            Dispose();
+            Setup();
+        }
+
+        private void Setup()
+        {
+            foreach (ItemCell cell in _inventory.Cells)
+            {
+                ItemUIView view = Instantiate(_prefab, _anchor);
+                view.Setup(cell);
+                _views.Add(view);
+
+                Item item = Get(cell.ItemName);
+
+                if (item.IsFood)
+                    view.OnClick(() => Feed(item));
+            }
+        }
+
+        private void Dispose()
+        {
+            foreach (ItemUIView view in _views)
                 Destroy(view.gameObject);
-            
+
             _views.Clear();
         }
     }

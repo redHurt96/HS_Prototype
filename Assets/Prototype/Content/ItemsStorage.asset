@@ -14,32 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - Name: wood
-    Count: 1
-    ForgeClickCountFromSingleItem: 3
+    ForgeClickCount: 3
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
   - Name: stone
-    Count: 1
-    ForgeClickCountFromSingleItem: 0
+    ForgeClickCount: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
   - Name: iron
-    Count: 1
-    ForgeClickCountFromSingleItem: 0
+    ForgeClickCount: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
   - Name: wooden planks
-    Count: 1
-    ForgeClickCountFromSingleItem: 0
+    ForgeClickCount: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
   - Name: iron ingot
-    Count: 1
-    ForgeClickCountFromSingleItem: 0
+    ForgeClickCount: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
   - Name: food
-    Count: 1
-    ForgeClickCountFromSingleItem: 0
+    ForgeClickCount: 0
     NutritionalValue: 20
     ExpirationTimeSeconds: 0

@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.Application;
+using static UnityEngine.Mathf;
 
 namespace Prototype.Scripts.Character
 {
@@ -21,13 +23,13 @@ namespace Prototype.Scripts.Character
         {
             Reset();
 
-            while (Application.isPlaying)
+            while (isPlaying)
             {
                 yield return new WaitForSeconds(_hungerDelay);
 
-                _current = Mathf.Max(0f, _current - _hungerAmount);
+                _current = Max(0f, _current - _hungerAmount);
 
-                if (Mathf.Approximately(_current, 0f)) 
+                if (Approximately(_current, 0f)) 
                     _health.TakeDamage(_hungerHealthDamage);
             }
         }
@@ -35,9 +37,7 @@ namespace Prototype.Scripts.Character
         public void Reset() => 
             _current = _max;
 
-        public void Feed(float amount)
-        {
-            _current = Mathf.Min(0f, _current + amount);
-        }
+        public void Feed(float amount) => 
+            _current = Min(Max, _current + amount);
     }
 }

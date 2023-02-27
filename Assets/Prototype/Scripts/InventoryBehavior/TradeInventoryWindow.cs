@@ -46,7 +46,7 @@ namespace Prototype.Scripts.InventoryBehavior
 
         private void Setup()
         {
-            foreach (ItemCell item in _origin.Items)
+            foreach (ItemCell item in _origin.Cells)
             {
                 ItemUIView view = Instantiate(_prefab, _anchor);
                 view.Setup(item);
