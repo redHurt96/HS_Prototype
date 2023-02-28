@@ -1,4 +1,6 @@
 using System.Collections;
+using Prototype.Scripts.Attributes;
+using Prototype.Scripts.Character;
 using UnityEngine;
 using static UnityEngine.Application;
 
@@ -12,8 +14,7 @@ namespace Prototype.Scripts.Forge
         [SerializeField] private float _clickDelay;
         [SerializeField] private Forge _forge;
         
-        [Header("Set through gameplay")]
-        [SerializeField] private GameObject _bot;
+        [SerializeField, ReadOnly] private GameObject _bot;
 
         private IEnumerator Start()
         {
@@ -33,5 +34,16 @@ namespace Prototype.Scripts.Forge
             _bot = bot;
             _bot.transform.position = _botPlace.position + Vector3.up * .9f;
         }
+    }
+
+    public class BotFeedBehavior : MonoBehaviour
+    {
+        [SerializeField] private Hunger _hunger;
+        [SerializeField] private float _feedThreshold;
+    }
+
+    public class BotEmployeeAssignment : MonoBehaviour
+    {
+        
     }
 }
