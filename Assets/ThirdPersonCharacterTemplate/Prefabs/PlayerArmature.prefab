@@ -1361,6 +1361,14 @@ MonoBehaviour:
     - ItemName: stone
       Count: 5
       ExpirationTime: 0
+  - Target: {fileID: 970259170419576710, guid: 275aaa12b6d6c8949926986ad0690c2a, type: 3}
+    Materials:
+    - ItemName: wooden planks
+      Count: 10
+      ExpirationTime: 0
+    - ItemName: stone
+      Count: 2
+      ExpirationTime: 0
   _inventory: {fileID: 1762682267}
 --- !u!114 &1762682284
 MonoBehaviour:
@@ -1392,6 +1400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _max: 100
+  _current: 0
 --- !u!114 &1762682289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1424,6 +1433,7 @@ MonoBehaviour:
   _hungerDelay: 2
   _hungerAmount: 1
   _hungerHealthDamage: 5
+  _current: 0
 --- !u!114 &1858014647
 MonoBehaviour:
   m_ObjectHideFlags: 0

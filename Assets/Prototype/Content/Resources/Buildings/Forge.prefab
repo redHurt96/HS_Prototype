@@ -142,8 +142,24 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 4, z: 4}
-  m_Center: {x: 3.76, y: 0.18, z: 0}
+  m_Size: {x: 4, y: 6.8183227, z: 6.154194}
+  m_Center: {x: 3.7599998, y: 1.5891635, z: 1.0770986}
+--- !u!114 &335078750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809832149388810199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10acbd16eff42e4a67435148f634672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _botPlace: {fileID: 1145655341}
+  _clickDelay: 2
+  _forge: {fileID: 195534484234052149}
+  _bot: {fileID: 0}
 --- !u!114 &1812070217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,22 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: forge
---- !u!114 &335078750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4809832149388810199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d10acbd16eff42e4a67435148f634672, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _botPlace: {fileID: 1145655341}
-  _clickDelay: 2
-  _forge: {fileID: 195534484234052149}
-  _bot: {fileID: 0}
 --- !u!4 &5328924355544124781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66d2b97c76209429ea802e89f482f76e,
