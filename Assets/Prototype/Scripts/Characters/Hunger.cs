@@ -1,4 +1,5 @@
 using System.Collections;
+using Prototype.Scripts.Attributes;
 using UnityEngine;
 using static UnityEngine.Application;
 using static UnityEngine.Mathf;
@@ -17,7 +18,7 @@ namespace Prototype.Scripts.Character
         [SerializeField] private float _hungerAmount;
         [SerializeField] private float _hungerHealthDamage;
 
-        private float _current;
+        [SerializeField, ReadOnly] private float _current;
 
         private IEnumerator Start()
         {

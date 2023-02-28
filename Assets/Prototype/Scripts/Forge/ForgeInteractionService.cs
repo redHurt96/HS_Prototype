@@ -15,6 +15,7 @@ namespace Prototype.Scripts.Forge
 
         [SerializeField] private ForgeWindow _forgeWindow;
         [SerializeField] private InventoryBehavior.Inventory _playerInventory;
+        [SerializeField] private BotHuntingBehavior _botHuntingBehavior;
         [SerializeField] private float _lenght = 20;
 
         private Camera _camera;
@@ -42,6 +43,15 @@ namespace Prototype.Scripts.Forge
 
             if (GetKeyDown(E) && ObservedForge != null)
                 _forgeWindow.Show(ObservedForge, _playerInventory);
+
+            if (GetKeyDown(G)
+                && ObservedForge != null
+                && ObservedForge.TryGetComponent(out ForgeBotPlace place)
+                && place.IsEmpty
+                && _botHuntingBehavior.HasAny)
+            {
+                place.SetBot(_botHuntingBehavior.Get());
+            }
         }
     }
 }

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1145655340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1145655341}
+  m_Layer: 6
+  m_Name: BotPlace
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1145655341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145655340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.79, y: 0, z: -4.09}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5328924355544124781}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5656130851816073862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,7 +116,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 66d2b97c76209429ea802e89f482f76e,
         type: 3}
       propertyPath: m_Name
-      value: Forge and bellow Variant
+      value: Forge
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 66d2b97c76209429ea802e89f482f76e,
         type: 3}
@@ -125,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c78f5b25503418a879d9c7d9d4b90be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items: []
+  _cells: []
 --- !u!114 &195534484234052149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,9 +175,11 @@ MonoBehaviour:
       Item:
         ItemName: iron ingot
         Count: 1
+        ExpirationTime: 0
       Ingredients:
       - ItemName: iron
         Count: 2
+        ExpirationTime: 0
     ClickCount: 3
 --- !u!114 &2198024907203358200
 MonoBehaviour:
@@ -161,3 +194,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: forge
+--- !u!114 &335078750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809832149388810199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10acbd16eff42e4a67435148f634672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _botPlace: {fileID: 1145655341}
+  _clickDelay: 2
+  _forge: {fileID: 195534484234052149}
+  _bot: {fileID: 0}
+--- !u!4 &5328924355544124781 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66d2b97c76209429ea802e89f482f76e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5656130851816073862}
+  m_PrefabAsset: {fileID: 0}

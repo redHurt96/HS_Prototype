@@ -1377,6 +1377,7 @@ MonoBehaviour:
   ObservedForge: {fileID: 0}
   _forgeWindow: {fileID: 0}
   _playerInventory: {fileID: 1762682267}
+  _botHuntingBehavior: {fileID: 6536150259018828372}
   _lenght: 7
 --- !u!114 &1762682290
 MonoBehaviour:
@@ -1421,7 +1422,7 @@ MonoBehaviour:
   _health: {fileID: 1762682290}
   _max: 100
   _hungerDelay: 2
-  _hungerAmount: 2
+  _hungerAmount: 1
   _hungerHealthDamage: 5
 --- !u!114 &1858014647
 MonoBehaviour:

@@ -38,10 +38,7 @@ namespace Prototype.Scripts.Forge
 
         internal void PerformCraft()
         {
-            if (!HasItemsToCraft)
-                return;
-            
-            if (!HasFuel)
+            if (!CanCraft()) 
                 return;
 
             ForgeCraftProcess current = _itemsToCraft.Peek();
@@ -66,6 +63,9 @@ namespace Prototype.Scripts.Forge
             ItemsQueueUpdated?.Invoke();
             FuelUpdated?.Invoke();
         }
+
+        internal bool CanCraft() => 
+            HasItemsToCraft && HasFuel;
 
         internal void PutFuel(ItemCell fuelItem, Inventory fromPlayerInventory)
         {

@@ -1,4 +1,5 @@
 using System;
+using Prototype.Scripts.Attributes;
 using UnityEngine;
 
 namespace Prototype.Scripts.Character
@@ -12,7 +13,7 @@ namespace Prototype.Scripts.Character
         
         [SerializeField] private float _max;
         
-        private float _current;
+        [SerializeField, ReadOnly] private float _current;
 
         private void Start() => 
             Reset();

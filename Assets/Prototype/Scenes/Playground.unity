@@ -1002,7 +1002,7 @@ PrefabInstance:
     - target: {fileID: 4809832149388810199, guid: a1ac643cc8d7f411aa1c156d1828d543,
         type: 3}
       propertyPath: m_Name
-      value: Forge and bellow Variant
+      value: Forge
       objectReference: {fileID: 0}
     - target: {fileID: 5328924355544124781, guid: a1ac643cc8d7f411aa1c156d1828d543,
         type: 3}
@@ -2862,6 +2862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemDescription: {fileID: 1674885536}
   _interactionService: {fileID: 1762682284}
+  _botHuntingBehavior: {fileID: 1762682261}
 --- !u!1 &760312312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5994,6 +5995,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a8a526f0e0b4e26ae745b2293e722c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1762682261 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6536150259018828372, guid: 64dce48905ffd9b4293e595fa6941544,
+    type: 3}
+  m_PrefabInstance: {fileID: 1762682258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d6021d926f4386aaf922e6c8a00a9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1762682266 stripped
