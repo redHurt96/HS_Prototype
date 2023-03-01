@@ -46,8 +46,6 @@ namespace Prototype.Logic.Items
             ItemView itemView = Create(itemName, position);
 
             _items.Add(itemView);
-            
-            //Log($"[ItemsSpawner] spawn {itemName} at {position}");
         }
 
         private bool InCurrentLand(Vector3 position) =>
