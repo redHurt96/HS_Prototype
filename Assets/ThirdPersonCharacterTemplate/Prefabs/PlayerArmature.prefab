@@ -1037,18 +1037,19 @@ GameObject:
   - component: {fileID: 5885216827943657505}
   - component: {fileID: 135756642000475821}
   - component: {fileID: 4416926081852918493}
-  - component: {fileID: 1762682266}
   - component: {fileID: 1762682267}
   - component: {fileID: 1762682268}
   - component: {fileID: 1762682276}
-  - component: {fileID: 1762682284}
   - component: {fileID: 1762682290}
   - component: {fileID: 1762682289}
   - component: {fileID: 1858014639}
   - component: {fileID: 1858014647}
   - component: {fileID: 6536150259018828372}
-  - component: {fileID: 69543373682349762}
-  - component: {fileID: 1858014640}
+  - component: {fileID: 1858014641}
+  - component: {fileID: 1858014650}
+  - component: {fileID: 1858014651}
+  - component: {fileID: 1858014652}
+  - component: {fileID: 1858014653}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1291,20 +1292,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1762682266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4416926081852918481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bedbd9567084757b3e117f11e04cc4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inventory: {fileID: 1762682267}
-  _lenght: 7
 --- !u!114 &1762682267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,25 +1372,17 @@ MonoBehaviour:
     - ItemName: stone
       Count: 2
       ExpirationTime: 0
+  - Target: {fileID: 6182316884660647723, guid: 9d8246bb495ff8b4aaf2244fb16c624a,
+      type: 3}
+    Materials:
+    - ItemName: wooden planks
+      Count: 10
+      ExpirationTime: 0
+    - ItemName: stone
+      Count: 5
+      ExpirationTime: 0
   _village: {fileID: 0}
   _inventory: {fileID: 1762682267}
---- !u!114 &1762682284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4416926081852918481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f12ee59d5744460eb5899505921f537, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedForge: {fileID: 0}
-  _forgeWindow: {fileID: 0}
-  _playerInventory: {fileID: 1762682267}
-  _botHuntingBehavior: {fileID: 6536150259018828372}
-  _lenght: 7
 --- !u!114 &1762682290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1478,7 +1457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _huntedBots: []
   _village: {fileID: 0}
---- !u!114 &69543373682349762
+--- !u!114 &1858014641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1487,13 +1466,71 @@ MonoBehaviour:
   m_GameObject: {fileID: 4416926081852918481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a8a526f0e0b4e26ae745b2293e722c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 803151af27e1471aa4cec8c2d7f104df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObservedObject: {fileID: 0}
+  _lenght: 10
+--- !u!114 &1858014650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a30bb5bd814b35843f1ec882c5315f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionBehavior: {fileID: 1858014641}
+  _interactKey: 101
+  _hasAdditionalFunction: 0
+  _additionalKey: 103
+  ObservedItemCell:
+    ItemName: 
+    Count: 0
+    ExpirationTime: 0
+  _inventory: {fileID: 1762682267}
+--- !u!114 &1858014651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99c8c475b7d4d0591cce16f4b38face, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionBehavior: {fileID: 1858014641}
+  _interactKey: 101
+  _hasAdditionalFunction: 1
+  _additionalKey: 103
+  ObservedForge: {fileID: 0}
+  _forgeWindow: {fileID: 0}
+  _playerInventory: {fileID: 1762682267}
+  _botHuntingBehavior: {fileID: 6536150259018828372}
+--- !u!114 &1858014652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff931bb7206048c49649be28b3b29edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionBehavior: {fileID: 1858014641}
+  _interactKey: 101
+  _hasAdditionalFunction: 0
+  _additionalKey: 103
   ObservedBot: {fileID: 0}
   _botHuntingBehavior: {fileID: 6536150259018828372}
-  _lenght: 8
---- !u!114 &1858014640
+--- !u!114 &1858014653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1502,13 +1539,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4416926081852918481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca7857f24213047b08694a7f11445087, type: 3}
+  m_Script: {fileID: 11500000, guid: dfa7af858d704895b6aec54156c4df70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interactionBehavior: {fileID: 1858014641}
+  _interactKey: 101
+  _hasAdditionalFunction: 0
+  _additionalKey: 103
   ObservedStoreHouse: {fileID: 0}
   _storehouseWindow: {fileID: 0}
   _playerInventory: {fileID: 1762682267}
-  _lenght: 20
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0
