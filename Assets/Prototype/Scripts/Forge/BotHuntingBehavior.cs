@@ -16,11 +16,17 @@ namespace Prototype.Scripts.Forge
         }
 
         [SerializeField] private List<GameObject> _huntedBots = new();
+        [SerializeField] private Village _village;
 
         public void Hunt(GameObject bot)
         {
             if (!_huntedBots.Contains(bot))
+            {
                 _huntedBots.Add(bot);
+                bot
+                    .GetComponent<BotFeedBehavior>()
+                    .AssignVillage(_village);
+            }
         }
 
         public GameObject Get()

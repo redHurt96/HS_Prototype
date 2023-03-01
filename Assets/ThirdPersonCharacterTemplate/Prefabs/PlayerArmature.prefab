@@ -1048,6 +1048,7 @@ GameObject:
   - component: {fileID: 1858014647}
   - component: {fileID: 6536150259018828372}
   - component: {fileID: 69543373682349762}
+  - component: {fileID: 1858014640}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1316,7 +1317,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c78f5b25503418a879d9c7d9d4b90be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cells: []
+  _cells:
+  - ItemName: wood
+    Count: 20
+    ExpirationTime: 0
+  - ItemName: iron
+    Count: 20
+    ExpirationTime: 0
+  - ItemName: stone
+    Count: 20
+    ExpirationTime: 0
+  - ItemName: food
+    Count: 1
+    ExpirationTime: 3600
+  - ItemName: food
+    Count: 1
+    ExpirationTime: 3600
 --- !u!114 &1762682268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,6 +1385,7 @@ MonoBehaviour:
     - ItemName: stone
       Count: 2
       ExpirationTime: 0
+  _village: {fileID: 0}
   _inventory: {fileID: 1762682267}
 --- !u!114 &1762682284
 MonoBehaviour:
@@ -1460,6 +1477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _huntedBots: []
+  _village: {fileID: 0}
 --- !u!114 &69543373682349762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1475,6 +1493,22 @@ MonoBehaviour:
   ObservedBot: {fileID: 0}
   _botHuntingBehavior: {fileID: 6536150259018828372}
   _lenght: 8
+--- !u!114 &1858014640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7857f24213047b08694a7f11445087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedStoreHouse: {fileID: 0}
+  _storehouseWindow: {fileID: 0}
+  _playerInventory: {fileID: 1762682267}
+  _lenght: 20
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0

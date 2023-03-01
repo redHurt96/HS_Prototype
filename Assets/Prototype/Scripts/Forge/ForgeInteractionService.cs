@@ -46,7 +46,7 @@ namespace Prototype.Scripts.Forge
 
             if (GetKeyDown(G)
                 && ObservedForge != null
-                && ObservedForge.TryGetComponent(out ForgeBotPlace place)
+                && ObservedForge.TryGetComponent(out ProductionBuildingBotPlace place)
                 && place.IsEmpty
                 && _botHuntingBehavior.HasAny)
             {

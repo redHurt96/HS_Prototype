@@ -17,7 +17,7 @@ namespace Prototype.Scripts.Forge
             {
                 _itemDescription.text = $"Forge - Interact (E)";
 
-                ForgeBotPlace botPlace = _interactionService.ObservedForge.GetComponent<ForgeBotPlace>();
+                ProductionBuildingBotPlace botPlace = _interactionService.ObservedForge.GetComponent<ProductionBuildingBotPlace>();
 
                 if (botPlace.IsEmpty && _botHuntingBehavior.HasAny)
                     _itemDescription.text += "\n Assign bot (G)";

@@ -1,31 +1,33 @@
 using System.Collections;
 using Prototype.Scripts.Attributes;
-using Prototype.Scripts.Character;
 using UnityEngine;
 using static UnityEngine.Application;
 
 namespace Prototype.Scripts.Forge
 {
-    public class ForgeBotPlace : MonoBehaviour
+    public class ProductionBuildingBotPlace : MonoBehaviour
     {
         public bool IsEmpty => _bot == null;
         
         [SerializeField] private Transform _botPlace;
         [SerializeField] private float _clickDelay;
-        [SerializeField] private Forge _forge;
-        
+
         [SerializeField, ReadOnly] private GameObject _bot;
+
+        private IProductionBuilding _productionBuilding;
 
         private IEnumerator Start()
         {
+            _productionBuilding = GetComponent<IProductionBuilding>();
+            
             yield return new WaitUntil(() => _bot != null);
 
             while (isPlaying)
             {
                 yield return new WaitForSeconds(_clickDelay);
                 
-                if (_forge.CanCraft() && _bot != null)
-                    _forge.PerformCraft();
+                if (_productionBuilding.CanCraft() && _bot != null)
+                    _productionBuilding.PerformCraft();
             }
         }
 
@@ -34,16 +36,5 @@ namespace Prototype.Scripts.Forge
             _bot = bot;
             _bot.transform.position = _botPlace.position + Vector3.up * .9f;
         }
-    }
-
-    public class BotFeedBehavior : MonoBehaviour
-    {
-        [SerializeField] private Hunger _hunger;
-        [SerializeField] private float _feedThreshold;
-    }
-
-    public class BotEmployeeAssignment : MonoBehaviour
-    {
-        
     }
 }

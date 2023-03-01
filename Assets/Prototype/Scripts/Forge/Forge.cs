@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Prototype.Scripts.Forge
 {
-    public class Forge : MonoBehaviour
+    public class Forge : MonoBehaviour, IProductionBuilding
     {
         public event Action FuelUpdated;
         public event Action ItemsQueueUpdated;
@@ -36,7 +36,7 @@ namespace Prototype.Scripts.Forge
         internal bool CanCraft(ForgeRecipe recipe, Inventory fromPlayerInventory) => 
             fromPlayerInventory.Contains(recipe.Recipe.Ingredients);
 
-        internal void PerformCraft()
+        public void PerformCraft()
         {
             if (!CanCraft()) 
                 return;
@@ -64,7 +64,7 @@ namespace Prototype.Scripts.Forge
             FuelUpdated?.Invoke();
         }
 
-        internal bool CanCraft() => 
+        public bool CanCraft() => 
             HasItemsToCraft && HasFuel;
 
         internal void PutFuel(ItemCell fuelItem, Inventory fromPlayerInventory)

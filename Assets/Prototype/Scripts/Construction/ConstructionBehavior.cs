@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Prototype.Scripts.Craft;
+using Prototype.Scripts.Forge;
 using Prototype.Scripts.InventoryBehavior;
 using Prototype.Scripts.Items;
 using UnityEngine;
@@ -15,6 +17,7 @@ namespace Prototype.Scripts.Construction
 
         public List<ConstructionDesign> Designs = new();
 
+        [SerializeField] private Village _village;
         [SerializeField] private Inventory _inventory;
         
         private Transform _buildingsParent;
@@ -29,7 +32,7 @@ namespace Prototype.Scripts.Construction
 
         public void Build(ConstructionDesign recipe)
         {
-            Instantiate(
+            Building instance = Instantiate(
                 recipe.Target,
                 transform.position + transform.forward,
                 identity,
@@ -37,6 +40,9 @@ namespace Prototype.Scripts.Construction
 
             foreach (ItemCell ingredient in recipe.Materials)
                 _inventory.Remove(ingredient);
+
+            if (instance.Name is "storehouse" or "farm") 
+                _village.RegisterStorehouse(instance.GetComponent<Inventory>());
 
             Updated?.Invoke();
         }

@@ -14,7 +14,7 @@ namespace Prototype.Scripts.Items
         {
             _parent ??= FindGameObjectWithTag("ItemsParent").transform;
         
-            ItemView resource = Load<ItemView>($"Items/{itemName}");
+            ItemView resource = Load<ItemView>($"Prefabs/{itemName}");
             return Instantiate(resource, position, Quaternion.identity, _parent);
         }
     }
