@@ -8,6 +8,7 @@ TagManager:
   - ItemsParent
   - BuildingsParent
   - Bot
+  - IslandMesh
   layers:
   - Default
   - TransparentFX

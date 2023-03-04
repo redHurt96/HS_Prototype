@@ -1,55 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Prototype.Logic.Items.ItemsFactory;
+using static Prototype.Logic.Interactables.ResourcesService;
+using static Prototype.Logic.Items.IslandUtilities;
+using static Prototype.Logic.Items.LandSettings;
 using static UnityEngine.Application;
-using static UnityEngine.Physics;
+using static UnityEngine.Quaternion;
 using static UnityEngine.Random;
 
 namespace Prototype.Logic.Items
 {
     public class ItemsSpawner : MonoBehaviour
     {
-        [SerializeField] private string[] _itemsNames;
-        [SerializeField] private int _startItemsCount;
-        [SerializeField] private float _spawnTime;
+        [SerializeField] private ItemsSpawningSettings _settings;
         [SerializeField] private Transform _origin;
 
         private readonly List<ItemView> _items = new();
         
         private IEnumerator Start()
         {
-            for (int i = 0; i < _startItemsCount; i++) 
+            yield return null;
+            
+            for (int i = 0; i < _settings.StartItemsCount; i++) 
                 Spawn();
 
             while (isPlaying)
             {
-                yield return new WaitForSeconds(_spawnTime);
+                yield return new WaitForSeconds(_settings.SpawnTime);
 
                 _items.RemoveAll(x => x == null);
                 
-                if (_items.Count < _startItemsCount) 
+                if (_items.Count < _settings.StartItemsCount) 
                     Spawn();
             }
         }
 
         private void Spawn()
         {
-            string itemName = _itemsNames[Range(0, _itemsNames.Length)];
             Vector3 position;
+            float scale = IslandWidth / 2f;
+            Island island;
             
-            do
-            {
-                position = _origin.position + new Vector3Int(Range(-15, 15), 0, Range(-15, 15));
-            } while (!InCurrentLand(position));
+            do 
+                position = _origin.position + new Vector3Int((int)Range(-scale, scale), 0, (int)Range(-scale, scale));
+            while (!HasIslandBelowPoint(position, out island));
             
-            ItemView itemView = Create(itemName, position);
+            ItemView itemView = Instantiate(
+                GetItemPrefab(_settings.RandomItemName), 
+                position, identity, 
+                island.transform);
 
             _items.Add(itemView);
         }
 
-        private bool InCurrentLand(Vector3 position) =>
-            Raycast(position, Vector3.down, out RaycastHit hit)
-            && hit.transform.IsChildOf(transform);
     }
 }

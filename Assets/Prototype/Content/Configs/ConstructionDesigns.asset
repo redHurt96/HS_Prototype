@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8116b1d8d4064f8c91969e86d80c6a89, type: 3}
+  m_Name: ConstructionDesigns
+  m_EditorClassIdentifier: Assembly-CSharp:Prototype.Logic.Items:ConstructionDesignsStorage
+  _designs:
+  - Name: forge
+    Materials:
+    - ItemName: wooden planks
+      Count: 2
+      ExpirationTime: 0
+    - ItemName: stone
+      Count: 5
+      ExpirationTime: 0
+    _allowedBiome: 00000000
+  - Name: farm
+    Materials:
+    - ItemName: wooden planks
+      Count: 10
+      ExpirationTime: 0
+    - ItemName: stone
+      Count: 2
+      ExpirationTime: 0
+    _allowedBiome: 0000000002000000
+  - Name: storehouse
+    Materials:
+    - ItemName: wooden planks
+      Count: 10
+      ExpirationTime: 0
+    - ItemName: stone
+      Count: 5
+      ExpirationTime: 0
+    _allowedBiome: 00000000
+  - Name: fire factory
+    Materials:
+    - ItemName: wooden planks
+      Count: 10
+      ExpirationTime: 0
+    - ItemName: stone
+      Count: 5
+      ExpirationTime: 0
+    - ItemName: iron ingot
+      Count: 15
+      ExpirationTime: 0
+    _allowedBiome: 00000000

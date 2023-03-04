@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Prototype.Logic.Attributes;
 using Prototype.Logic.Forge;
 using UnityEngine;
+using static Prototype.Logic.Items.IslandUtilities;
+using static Prototype.Logic.Items.LandSettings;
 using static UnityEngine.Application;
 using static UnityEngine.Physics;
 using static UnityEngine.Quaternion;
@@ -11,40 +14,28 @@ namespace Prototype.Logic.Items
 {
     public class BotsSpawner : MonoBehaviour
     {
+        [SerializeField] private BotsSpawningSettings _settings;
         [SerializeField] private Transform _origin;
-        [SerializeField] private GameObject _prefab;
-        [SerializeField] private int _startItemsCount;
-        [SerializeField] private float _spawnTime;
 
-        private readonly List<GameObject> _bots = new();
+        [SerializeField, ReadOnly] private List<GameObject> _bots = new();
         
-        private IEnumerator Start()
+        private void Start()
         {
-            for (int i = 0; i < _startItemsCount; i++) 
+            for (int i = 0; i < _settings.StartItemsCount; i++) 
                 Spawn();
-
-            yield break;
-            
-            while (isPlaying)
-            {
-                yield return new WaitForSeconds(_spawnTime);
-
-                _bots.RemoveAll(x => x == null || x.GetComponent<BotFeedBehavior>().IsAssignedToVillage);
-                
-                if (_bots.Count < _startItemsCount) 
-                    Spawn();
-            }
         }
 
         private void Spawn()
         {
             Vector3 position;
+            float scale = IslandWidth / 2f;
+            Island island;
 
             do 
-                position = _origin.position + new Vector3(Range(-15, 15), .9f, Range(-15, 15));
-            while (!InCurrentLand(position));
+                position = _origin.position + new Vector3(Range(-scale, scale), .9f, Range(-scale, scale));
+            while (!HasIslandBelowPoint(position, out island));
             
-            GameObject bot = Instantiate(_prefab, position, identity);
+            GameObject bot = Instantiate(_settings.Prefab, position, identity, island.transform);
 
             _bots.Add(bot);
         }

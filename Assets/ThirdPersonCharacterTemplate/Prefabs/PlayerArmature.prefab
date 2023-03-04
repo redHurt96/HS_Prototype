@@ -1050,6 +1050,8 @@ GameObject:
   - component: {fileID: 1858014651}
   - component: {fileID: 1858014652}
   - component: {fileID: 1858014653}
+  - component: {fileID: 1858014654}
+  - component: {fileID: 1258592659153051848}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1306,13 +1308,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cells:
   - ItemName: wood
-    Count: 20
+    Count: 40
     ExpirationTime: 0
   - ItemName: iron
-    Count: 20
+    Count: 40
     ExpirationTime: 0
   - ItemName: stone
-    Count: 20
+    Count: 40
     ExpirationTime: 0
   - ItemName: food
     Count: 1
@@ -1320,6 +1322,12 @@ MonoBehaviour:
   - ItemName: food
     Count: 1
     ExpirationTime: 3600
+  - ItemName: iron ingot
+    Count: 100
+    ExpirationTime: 0
+  - ItemName: wooden planks
+    Count: 100
+    ExpirationTime: 0
 --- !u!114 &1762682268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,34 +1363,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Designs:
-  - Target: {fileID: 2198024907203358200, guid: a1ac643cc8d7f411aa1c156d1828d543,
-      type: 3}
-    Materials:
-    - ItemName: wooden planks
-      Count: 2
-      ExpirationTime: 0
-    - ItemName: stone
-      Count: 5
-      ExpirationTime: 0
-  - Target: {fileID: 970259170419576710, guid: 275aaa12b6d6c8949926986ad0690c2a, type: 3}
-    Materials:
-    - ItemName: wooden planks
-      Count: 10
-      ExpirationTime: 0
-    - ItemName: stone
-      Count: 2
-      ExpirationTime: 0
-  - Target: {fileID: 6182316884660647723, guid: 9d8246bb495ff8b4aaf2244fb16c624a,
-      type: 3}
-    Materials:
-    - ItemName: wooden planks
-      Count: 10
-      ExpirationTime: 0
-    - ItemName: stone
-      Count: 5
-      ExpirationTime: 0
+  - forge
+  - storehouse
+  - farm
+  - fire factory
   _village: {fileID: 0}
   _inventory: {fileID: 1762682267}
+  _playerCurrentBiome: {fileID: 1258592659153051848}
 --- !u!114 &1762682290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,6 +1536,39 @@ MonoBehaviour:
   ObservedStoreHouse: {fileID: 0}
   _storehouseWindow: {fileID: 0}
   _playerInventory: {fileID: 1762682267}
+--- !u!114 &1858014654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23cecb253f7429fbe1654244f95d7c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionBehavior: {fileID: 1858014641}
+  _interactKey: 101
+  _hasAdditionalFunction: 1
+  _additionalKey: 103
+  ObservedFarm: {fileID: 0}
+  _farmWindow: {fileID: 0}
+  _playerInventory: {fileID: 1762682267}
+  _botHuntingBehavior: {fileID: 6536150259018828372}
+--- !u!114 &1258592659153051848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc721646eab4af7a973feed94f9a8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: 0
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0

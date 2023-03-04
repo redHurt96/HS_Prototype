@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Prototype.Logic.Craft;
 using UnityEngine;
+using static Prototype.Logic.Items.ConstructionDesignsStorage;
 
 namespace Prototype.Logic.Construction
 {
@@ -20,11 +21,12 @@ namespace Prototype.Logic.Construction
 
         private void OnEnable()
         {
-            foreach (ConstructionDesign design in _constructionBehavior.Designs)
+            foreach (string designName in _constructionBehavior.Designs)
             {
+                ConstructionDesign design = Get(designName);
                 RecipeUIView recipeUIView = Instantiate(_recipeUIView, _recipesAnchor);
-                recipeUIView.Setup(design, _constructionBehavior);
 
+                recipeUIView.Setup(design, _constructionBehavior);
                 _recipesViews.Add(recipeUIView);
             }
         }

@@ -3,6 +3,7 @@ using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
 using UnityEngine.UI;
+using static Prototype.Logic.Interactables.ResourcesService;
 
 namespace Prototype.Logic.Craft
 {
@@ -14,7 +15,6 @@ namespace Prototype.Logic.Craft
         
         private CraftBehavior _craftBehavior;
         private Recipe _recipe;
-
         private ConstructionDesign _design;
         private ConstructionBehavior _constructionBehavior;
 
@@ -46,8 +46,9 @@ namespace Prototype.Logic.Craft
         {
             _design = design;
             _constructionBehavior = constructionBehavior;
+            Building building = GetBuildingPrefab(design.Name);
 
-            _targetItemView.Setup(design.Target);
+            _targetItemView.Setup(building);
             _craft.onClick.AddListener(() => constructionBehavior.Build(design));
             _craft.interactable = constructionBehavior.CanBuild(design);
 

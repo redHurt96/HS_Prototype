@@ -1,19 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Prototype.Logic.Items
 {
     public class Land : MonoBehaviour
     {
-        public Transform Origin;
-        public Transform[] Edges;
+        public IReadOnlyList<Island> Islands => _islands;
+        
+        [SerializeField] private List<Island> _islands = new();
 
-        [ContextMenu("Check")]
-        private void Check()
-        {
-            foreach (Transform edge in Edges)
-            {
-                Debug.Log(Vector3.Distance(edge.position, Origin.position), edge);
-            }
-        }
+        public void Add(Island island) => 
+            _islands.Add(island);
     }
 }
