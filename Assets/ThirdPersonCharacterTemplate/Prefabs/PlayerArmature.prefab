@@ -1362,11 +1362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fc9bf2156dc142988bcaf1ab8589e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Designs:
-  - forge
-  - storehouse
-  - farm
-  - fire forge
   _village: {fileID: 0}
   _inventory: {fileID: 1762682267}
   _playerCurrentBiome: {fileID: 1258592659153051848}
