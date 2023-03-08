@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _islandWidth: 40
   _islandSpawnDelay: 10
-  _originIsland: {fileID: 6483749050753237960, guid: 15f7d8d454d90c3458e9a07beb7a67cf,
+  _originIsland: {fileID: 827772255787730783, guid: a8f1e5af1e333e44abe2f49593b4b59f,
     type: 3}
   _prefabs:
   - Prefab: {fileID: 827772255787730783, guid: a8f1e5af1e333e44abe2f49593b4b59f, type: 3}
-    Enabled: 0
+    Enabled: 1
   - Prefab: {fileID: 827772255787730783, guid: 6c4ab4c2ad9e5174da2fe3a2091a439b, type: 3}
-    Enabled: 0
+    Enabled: 1
   - Prefab: {fileID: 827772255787730783, guid: 85fdb6c210d2a2d49b998a14f3404773, type: 3}
     Enabled: 1

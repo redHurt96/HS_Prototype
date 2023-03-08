@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Prototype.Logic.Craft;
 using Prototype.Logic.Forge;
-using Prototype.Logic.Interactables;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
+using static Prototype.Logic.Interactables.ResourcesService;
+using static Prototype.Logic.Items.IslandUtilities;
 using static UnityEngine.Quaternion;
 
 namespace Prototype.Logic.Construction
@@ -27,10 +27,10 @@ namespace Prototype.Logic.Construction
 
         public void Build(ConstructionDesign recipe)
         {
-            if (!IslandUtilities.HasIslandBelowPoint(transform.position + transform.forward, out Island island))
+            if (!HasIslandBelowPoint(transform.position + transform.forward, out Island island))
                 throw new($"Try to create building without ground below!");
 
-            Building resource = ResourcesService.GetBuildingPrefab(recipe.Name);
+            Building resource = GetBuildingPrefab(recipe.Name);
             
             Building instance = Instantiate(
                 resource,

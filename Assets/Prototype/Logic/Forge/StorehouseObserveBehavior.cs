@@ -1,4 +1,5 @@
 using System;
+using Prototype.Logic.Attributes;
 using Prototype.Logic.Craft;
 using Prototype.Logic.Extensions;
 using Prototype.Logic.Interactables;
@@ -11,7 +12,7 @@ namespace Prototype.Logic.Forge
     {
         public override bool IsObserve => ObservedStoreHouse != null;
 
-        [HideInInspector] public Inventory ObservedStoreHouse;
+        [ReadOnly] public Inventory ObservedStoreHouse;
 
         [SerializeField] private StorehouseWindow _storehouseWindow;
         [SerializeField] private Inventory _playerInventory;
