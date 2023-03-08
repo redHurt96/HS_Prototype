@@ -2,6 +2,7 @@ using System.Collections;
 using Prototype.Logic.Attributes;
 using UnityEngine;
 using static UnityEngine.Application;
+using static UnityEngine.Vector3;
 
 namespace Prototype.Logic.Forge
 {
@@ -34,7 +35,7 @@ namespace Prototype.Logic.Forge
         public void SetBot(GameObject bot)
         {
             _bot = bot;
-            _bot.transform.position = _botPlace.position + Vector3.up * .9f;
+            _bot.transform.position = _botPlace.position + up * .9f;
         }
     }
 }

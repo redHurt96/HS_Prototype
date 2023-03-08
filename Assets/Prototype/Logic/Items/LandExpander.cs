@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Prototype.Logic.Extensions;
+using Prototype.Logic.Forge;
 using UnityEngine;
+using static System.Guid;
+using static Prototype.Logic.Forge.WorldData;
 using static Prototype.Logic.Items.IslandUtilities;
 using static Prototype.Logic.Items.LandSettings;
 using static Unity.Mathematics.quaternion;
@@ -13,12 +16,19 @@ namespace Prototype.Logic.Items
 {
     public class LandExpander : MonoBehaviour
     {
+        public bool Loaded { get; private set; } = false;
+        
         [SerializeField] private Transform _islandsParent;
         [SerializeField] private Land _land;
 
         private IEnumerator Start()
         {
-            CreateOriginLand();
+            if (WorldDataHandler.Instance.HasData)
+                RestoreSavedIslands();
+            else
+                CreateOriginLand();
+
+            Loaded = true;
             
             while (isPlaying)
             {
@@ -29,9 +39,22 @@ namespace Prototype.Logic.Items
             }
         }
 
+        private void RestoreSavedIslands()
+        {
+            foreach (IslandData island in WorldDataHandler.Instance.Data.Islands)
+            {
+                Island newIsland = CreateIsland(Islands.First(x => x.StorageKey == island.StorageKey), island.Position);
+                newIsland.UniqueKey = island.UniqueKey;
+                _land.Add(newIsland);
+            }
+
+            UpdateNeighbours();
+        }
+
         private void CreateOriginLand()
         {
             Island newIsland = CreateIsland(OriginIsland, zero);
+            newIsland.UniqueKey = NewGuid().ToString();
             _land.Add(newIsland);
         }
 
@@ -41,7 +64,9 @@ namespace Prototype.Logic.Items
             Vector3 origin = islandToExpand.transform.position;
             float direction = islandToExpand.GetFreeDirection();
             Vector3 newLandPosition = GetIslandPoint(origin, direction);
+            
             Island newIsland = CreateIsland(Islands.GetRandom(), newLandPosition);
+            newIsland.UniqueKey = NewGuid().ToString();
             
             islandToExpand.AddNeighbour(newIsland, direction);
             newIsland.AddNeighbour(islandToExpand, GetOpposite(direction));

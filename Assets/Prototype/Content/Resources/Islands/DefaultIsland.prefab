@@ -77,6 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4760b71219684fd99ad382e1ec04ba4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UniqueKey: 
+  StorageKey: Default
   _neighbours: []
   _buildings: []
   _biome: 0

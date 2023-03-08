@@ -9,9 +9,12 @@ namespace Prototype.Logic.Items
 {
     public class Island : MonoBehaviour
     {
+        [ReadOnly] public string UniqueKey;
+        public string StorageKey;
         public Biome Biome => _biome;
         public bool HasFreeDirection => _freeDirections.Any();
         public IReadOnlyList<float> FreeDirections => _freeDirections;
+        public IEnumerable<Building> Buildings => _buildings;
 
         [SerializeField, ReadOnly] private List<Island> _neighbours = new();
         [SerializeField, ReadOnly] private List<Building> _buildings = new();

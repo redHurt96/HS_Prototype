@@ -1,14 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using Prototype.Logic.Attributes;
-using Prototype.Logic.Forge;
 using UnityEngine;
 using static Prototype.Logic.Items.IslandUtilities;
 using static Prototype.Logic.Items.LandSettings;
-using static UnityEngine.Application;
-using static UnityEngine.Physics;
 using static UnityEngine.Quaternion;
 using static UnityEngine.Random;
+using static UnityEngine.Resources;
 
 namespace Prototype.Logic.Items
 {
@@ -35,13 +32,9 @@ namespace Prototype.Logic.Items
                 position = _origin.position + new Vector3(Range(-scale, scale), .9f, Range(-scale, scale));
             while (!HasIslandBelowPoint(position, out island));
             
-            GameObject bot = Instantiate(_settings.Prefab, position, identity, island.transform);
+            GameObject bot = Instantiate((GameObject)Load("Bot"), position, identity, island.transform);
 
             _bots.Add(bot);
         }
-        
-        private bool InCurrentLand(Vector3 position) =>
-            Raycast(position, Vector3.down, out RaycastHit hit)
-            && hit.transform.IsChildOf(transform);
     }
 }

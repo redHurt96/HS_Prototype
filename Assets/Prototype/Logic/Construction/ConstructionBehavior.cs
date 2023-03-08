@@ -30,10 +30,8 @@ namespace Prototype.Logic.Construction
             if (!HasIslandBelowPoint(transform.position + transform.forward, out Island island))
                 throw new($"Try to create building without ground below!");
 
-            Building resource = GetBuildingPrefab(recipe.Name);
-            
             Building instance = Instantiate(
-                resource,
+                GetBuildingPrefab(recipe.Name),
                 transform.position + transform.forward,
                 identity,
                 island.transform);
@@ -41,9 +39,7 @@ namespace Prototype.Logic.Construction
             foreach (ItemCell ingredient in recipe.Materials)
                 _inventory.Remove(ingredient);
 
-            if (instance.Name is "storehouse" or "farm") 
-                _village.RegisterStorehouse(instance.GetComponent<Inventory>());
-            
+            _village.TryRegister(instance);
             island.AddBuilding(instance);
 
             Updated?.Invoke();

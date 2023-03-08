@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Prototype.Logic.Items;
 using UnityEngine;
+using static Prototype.Logic.Forge.WorldData;
 using static Prototype.Logic.Items.ItemCell;
 using static Prototype.Logic.Items.ItemsStorage;
 
@@ -102,5 +103,8 @@ namespace Prototype.Logic.InventoryBehavior
 
         public void UpdateTime(int itemPosition, int time) => 
             _cells[itemPosition] = CreateWithTime(_cells[itemPosition], time);
+
+        public void Set(InventoryData inventoryData) => 
+            _cells = inventoryData.Cells;
     }
 }

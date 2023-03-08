@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Prototype.Logic.Characters;
+using Prototype.Logic.Craft;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
@@ -30,7 +31,14 @@ namespace Prototype.Logic.Forge
             targetStorehouse.InvokeUpdate();
         }
 
-        public void RegisterStorehouse(Inventory inventory)
+        public void TryRegister(Building building)
+        {
+            if (building.Name is "storehouse" or "farm" or "ice storehouse"
+                && building.TryGetComponent(out Inventory inventory))
+                RegisterStorehouse(inventory);
+        }
+
+        private void RegisterStorehouse(Inventory inventory)
         {
             if (!_storehouses.Contains(inventory))
                 _storehouses.Add(inventory);
