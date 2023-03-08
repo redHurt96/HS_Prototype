@@ -7,7 +7,6 @@ using Prototype.Logic.Interactables;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
-using static UnityEngine.GameObject;
 using static UnityEngine.Quaternion;
 
 namespace Prototype.Logic.Construction
@@ -16,8 +15,6 @@ namespace Prototype.Logic.Construction
     {
         public event Action Updated;
 
-        public List<string> Designs = new();
-        
         [SerializeField] private Village _village;
         [SerializeField] private Inventory _inventory;
         [SerializeField] private CurrentBiomeIdentifier _playerCurrentBiome;

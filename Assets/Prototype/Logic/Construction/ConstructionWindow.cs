@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Prototype.Logic.Craft;
+using Prototype.Logic.Items;
 using UnityEngine;
 using static Prototype.Logic.Items.ConstructionDesignsStorage;
 
@@ -21,7 +22,7 @@ namespace Prototype.Logic.Construction
 
         private void OnEnable()
         {
-            foreach (string designName in _constructionBehavior.Designs)
+            foreach (string designName in AllDesigns)
             {
                 ConstructionDesign design = Get(designName);
                 RecipeUIView recipeUIView = Instantiate(_recipeUIView, _recipesAnchor);

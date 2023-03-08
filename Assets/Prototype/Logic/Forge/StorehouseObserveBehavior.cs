@@ -19,7 +19,7 @@ namespace Prototype.Logic.Forge
         protected override Func<GameObject, bool> IsObserveTarget { get; } = target =>
             target.HasComponent<Inventory>()
             && target.TryGetComponent(out Building building)
-            && building.Name.ToLower() == "storehouse";
+            && building.Name.ToLower().Contains("storehouse");
         
         protected override void SetupObservedObject(GameObject target) => 
             ObservedStoreHouse = target.GetComponent<Inventory>();

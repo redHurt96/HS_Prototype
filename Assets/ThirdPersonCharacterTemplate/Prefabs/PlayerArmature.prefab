@@ -1366,7 +1366,7 @@ MonoBehaviour:
   - forge
   - storehouse
   - farm
-  - fire factory
+  - fire forge
   _village: {fileID: 0}
   _inventory: {fileID: 1762682267}
   _playerCurrentBiome: {fileID: 1258592659153051848}

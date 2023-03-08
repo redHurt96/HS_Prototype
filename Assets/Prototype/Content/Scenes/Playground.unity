@@ -3214,13 +3214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _islandsParent: {fileID: 95747040}
-  _spawnLandDelay: 5
   _land: {fileID: 95747041}
-  _prefabs:
-  - {fileID: 827772255787730783, guid: 6c4ab4c2ad9e5174da2fe3a2091a439b, type: 3}
-  - {fileID: 827772255787730783, guid: 85fdb6c210d2a2d49b998a14f3404773, type: 3}
-  _originPrefab: {fileID: 6483749050753237960, guid: 15f7d8d454d90c3458e9a07beb7a67cf,
-    type: 3}
 --- !u!4 &775930386
 Transform:
   m_ObjectHideFlags: 0

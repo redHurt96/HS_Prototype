@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 380e7137bce44a5da9e5f1db3c2ee05e, type: 3}
   m_Name: LandSettings
   m_EditorClassIdentifier: 
-  _islandWidth: 32
-  _islandSpawnDelay: 120
+  _islandWidth: 40
+  _islandSpawnDelay: 10
   _originIsland: {fileID: 6483749050753237960, guid: 15f7d8d454d90c3458e9a07beb7a67cf,
     type: 3}
   _prefabs:
-  - {fileID: 827772255787730783, guid: 85fdb6c210d2a2d49b998a14f3404773, type: 3}
-  - {fileID: 827772255787730783, guid: 6c4ab4c2ad9e5174da2fe3a2091a439b, type: 3}
-  - {fileID: 827772255787730783, guid: a8f1e5af1e333e44abe2f49593b4b59f, type: 3}
+  - Prefab: {fileID: 827772255787730783, guid: a8f1e5af1e333e44abe2f49593b4b59f, type: 3}
+    Enabled: 0
+  - Prefab: {fileID: 827772255787730783, guid: 6c4ab4c2ad9e5174da2fe3a2091a439b, type: 3}
+    Enabled: 0
+  - Prefab: {fileID: 827772255787730783, guid: 85fdb6c210d2a2d49b998a14f3404773, type: 3}
+    Enabled: 1

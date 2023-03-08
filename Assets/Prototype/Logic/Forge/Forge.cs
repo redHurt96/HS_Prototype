@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
+using static Prototype.Logic.Items.ItemsStorage;
 
 namespace Prototype.Logic.Forge
 {
@@ -69,20 +70,26 @@ namespace Prototype.Logic.Forge
 
         internal void PutFuel(ItemCell fuelItem, Inventory fromPlayerInventory)
         {
-            Item item = ItemsStorage.Get(fuelItem.ItemName);
+            PutFuel(fuelItem);
+            
+            fromPlayerInventory.Remove(fuelItem);
+            fromPlayerInventory.InvokeUpdate();
+        }
+
+        public void PutFuel(ItemCell fuelItem)
+        {
+            Item item = Get(fuelItem.ItemName);
             
             if (!item.IsFuel)
                 return;
-            
-            fromPlayerInventory.Remove(fuelItem);
+
             _fuelQueue.Enqueue(new()
             {
                 ItemCell = fuelItem,
                 ForgeClickCount = fuelItem.Count * item.ForgeClickCount,
             });
-            
+
             FuelUpdated?.Invoke();
-            fromPlayerInventory.InvokeUpdate();
         }
     }
 }

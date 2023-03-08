@@ -30,7 +30,7 @@ MonoBehaviour:
     - ItemName: stone
       Count: 2
       ExpirationTime: 0
-    _allowedBiome: 0000000002000000
+    _allowedBiome: 00000000
   - Name: storehouse
     Materials:
     - ItemName: wooden planks
@@ -40,7 +40,7 @@ MonoBehaviour:
       Count: 5
       ExpirationTime: 0
     _allowedBiome: 00000000
-  - Name: fire factory
+  - Name: fire forge
     Materials:
     - ItemName: wooden planks
       Count: 10
@@ -51,4 +51,16 @@ MonoBehaviour:
     - ItemName: iron ingot
       Count: 15
       ExpirationTime: 0
-    _allowedBiome: 00000000
+    _allowedBiome: 01000000
+  - Name: ice storehouse
+    Materials:
+    - ItemName: wooden planks
+      Count: 10
+      ExpirationTime: 0
+    - ItemName: stone
+      Count: 5
+      ExpirationTime: 0
+    - ItemName: iron ingot
+      Count: 15
+      ExpirationTime: 0
+    _allowedBiome: 02000000
