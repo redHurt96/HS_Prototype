@@ -1,10 +1,12 @@
 using System;
 using Prototype.Logic.Attributes;
 using Prototype.Logic.Extensions;
+using Prototype.Logic.Framework.UI;
 using Prototype.Logic.Interactables;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Scripts.Forge;
 using UnityEngine;
+using static Prototype.Logic.Framework.UI.Window;
 
 namespace Prototype.Logic.Forge
 {
@@ -14,9 +16,9 @@ namespace Prototype.Logic.Forge
         
         [ReadOnly] public Farm ObservedFarm;
         
-        [SerializeField] private FarmWindow _farmWindow;
         [SerializeField] private Inventory _playerInventory;
         [SerializeField] private BotHuntingBehavior _botHuntingBehavior;
+        [SerializeField] private WindowsRouter _windowsRouter;
 
         protected override Func<GameObject, bool> IsObserveTarget { get; } = 
             target => target.HasComponent<Farm>();
@@ -28,12 +30,11 @@ namespace Prototype.Logic.Forge
         {
             ObservedFarm = null;
             
-            if (_farmWindow.gameObject.activeSelf)
-                _farmWindow.Hide();
+            _windowsRouter.Close(WindowName.Farm);
         }
 
         protected override void Interact(GameObject target) => 
-            _farmWindow.Show(ObservedFarm, _playerInventory);
+            _windowsRouter.Open(WindowName.Farm, ObservedFarm, _playerInventory);
 
         protected override void AdditionalInteract(GameObject target)
         {

@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427b6e895f33a425c9476e5a2c552f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 3
   _recipeUIView: {fileID: -6158610248088329978, guid: 14b25a7fbd384d44cac71a9ef3f7e06c,
     type: 3}
   _craftedItemsInventoryWindow: {fileID: 1697262236}
@@ -701,6 +702,8 @@ GameObject:
   - component: {fileID: 221530790}
   - component: {fileID: 221530792}
   - component: {fileID: 221530791}
+  - component: {fileID: 221530793}
+  - component: {fileID: 221530794}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -776,6 +779,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windows: {fileID: 221530791}
+--- !u!114 &221530793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221530788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f7367d843e43e38086453eb8c8fe01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _references: {fileID: 221530791}
+--- !u!114 &221530794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221530788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ac08fb6fa4ed3aa10df6d98b6b767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _windowsRouter: {fileID: 221530793}
+  _groups:
+  - Window: 0
+    KeyCode: 105
+  - Window: 1
+    KeyCode: 107
+  - Window: 2
+    KeyCode: 108
 --- !u!1 &295232560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,6 +2293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1143e38bf9f3242a2865b2fdcdbcb074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 2
   _constructionBehavior: {fileID: 1762682276}
   _recipeUIView: {fileID: 2420244642588477229, guid: e5b5e7d4db2391342881fc7aa868ee65,
     type: 3}
@@ -2313,6 +2350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d32f5d001c347db96ebfee777918dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 0
   _prefab: {fileID: 8858311623587529440, guid: d635818e92fbd364eb7aa767715a83c6, type: 3}
   _inventory: {fileID: 1762682267}
   _hunger: {fileID: 1858014639}
@@ -2803,6 +2841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6ebffa37a246f982cbe6049b946214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 4
   _storehouseWindow: {fileID: 1142385573}
   _farmButton: {fileID: 1026269922}
 --- !u!114 &768707790
@@ -2931,7 +2970,6 @@ GameObject:
   - component: {fileID: 777822367}
   - component: {fileID: 777822366}
   - component: {fileID: 777822365}
-  - component: {fileID: 777822364}
   m_Layer: 5
   m_Name: InventoryWindow
   m_TagString: Untagged
@@ -2960,20 +2998,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &777822364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 777822362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858a620a9d764ae5a808dba6ed34d2d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _window: {fileID: 657284075}
-  _keyCode: 105
 --- !u!114 &777822365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4438,6 +4462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093c709a029eb4b46a478229615919cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 5
   _storehouseWindow: {fileID: 2118722211}
   _playerInventoryWindow: {fileID: 499849949}
 --- !u!224 &1139132862
@@ -4586,6 +4611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093c709a029eb4b46a478229615919cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 0
   _storehouseWindow: {fileID: 1225983167}
   _playerInventoryWindow: {fileID: 1312662688}
 --- !u!114 &1142385574
@@ -4998,7 +5024,6 @@ GameObject:
   - component: {fileID: 1246225002}
   - component: {fileID: 1246225001}
   - component: {fileID: 1246225000}
-  - component: {fileID: 1246224999}
   m_Layer: 5
   m_Name: CraftWindow
   m_TagString: Untagged
@@ -5027,20 +5052,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1246224999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246224997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858a620a9d764ae5a808dba6ed34d2d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _window: {fileID: 1547893301}
-  _keyCode: 107
 --- !u!114 &1246225000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5904,6 +5915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 527146659ae343228e33d7e9a9ff8313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 1
   _craftBehavior: {fileID: 1762682268}
   _recipeUIView: {fileID: 2420244642588477229, guid: e5b5e7d4db2391342881fc7aa868ee65,
     type: 3}
@@ -6407,17 +6419,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 295232561}
     - target: {fileID: 1858014651, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: _forgeWindow
+      propertyPath: _windowsRouter
       value: 
-      objectReference: {fileID: 7030309}
+      objectReference: {fileID: 221530793}
     - target: {fileID: 1858014653, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: _storehouseWindow
+      propertyPath: _windowsRouter
       value: 
-      objectReference: {fileID: 1139132861}
+      objectReference: {fileID: 221530793}
     - target: {fileID: 1858014654, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
-      propertyPath: _farmWindow
+      propertyPath: _windowsRouter
       value: 
-      objectReference: {fileID: 768707788}
+      objectReference: {fileID: 221530793}
     - target: {fileID: 3893294197879345259, guid: 64dce48905ffd9b4293e595fa6941544,
         type: 3}
       propertyPath: m_RootOrder
@@ -7132,7 +7144,6 @@ GameObject:
   - component: {fileID: 2041673122}
   - component: {fileID: 2041673121}
   - component: {fileID: 2041673120}
-  - component: {fileID: 2041673119}
   m_Layer: 5
   m_Name: ConstrustionWindow
   m_TagString: Untagged
@@ -7161,20 +7172,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2041673119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041673117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858a620a9d764ae5a808dba6ed34d2d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _window: {fileID: 648046575}
-  _keyCode: 108
 --- !u!114 &2041673120
 MonoBehaviour:
   m_ObjectHideFlags: 0

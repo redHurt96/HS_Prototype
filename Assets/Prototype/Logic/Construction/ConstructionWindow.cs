@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using Prototype.Logic.Craft;
-using Prototype.Logic.Items;
+using Prototype.Logic.Framework.UI;
 using UnityEngine;
 using static Prototype.Logic.Items.ConstructionDesignsStorage;
 
 namespace Prototype.Logic.Construction
 {
-    public class ConstructionWindow : MonoBehaviour
+    public class ConstructionWindow : Window
     {
         [SerializeField] private ConstructionBehavior _constructionBehavior;
         [SerializeField] private RecipeUIView _recipeUIView;

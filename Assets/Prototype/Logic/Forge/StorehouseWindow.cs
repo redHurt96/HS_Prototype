@@ -1,10 +1,11 @@
-﻿using Prototype.Logic.InventoryBehavior;
+﻿using Prototype.Logic.Framework.UI;
+using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
 
 namespace Prototype.Logic.Forge
 {
-    internal class StorehouseWindow : MonoBehaviour
+    internal class StorehouseWindow : Window
     {
         [SerializeField] private TradeInventoryWindow _storehouseWindow;
         [SerializeField] private TradeInventoryWindow _playerInventoryWindow;
@@ -12,19 +13,16 @@ namespace Prototype.Logic.Forge
         private Inventory _storehouse;
         private Inventory _playerInventory;
 
-        internal void Show(Inventory storeHouse, Inventory playerInventory)
+        public override void Open(params object[] args)
         {
-            _storehouse = storeHouse;
-            _playerInventory = playerInventory;
+            _storehouse = (Inventory)args[0];
+            _playerInventory = (Inventory)args[1];
 
-            _storehouseWindow.SetInventory(storeHouse, MoveToPlayer);
-            _playerInventoryWindow.SetInventory(playerInventory, MoveToStorehouse);
-
-            gameObject.SetActive(true);
+            _storehouseWindow.SetInventory(_storehouse, MoveToPlayer);
+            _playerInventoryWindow.SetInventory(_playerInventory, MoveToStorehouse);
+            
+            base.Open(args);
         }
-
-        internal void Hide() =>
-            gameObject.SetActive(false);
 
         private void MoveToPlayer(ItemCell cell)
         {

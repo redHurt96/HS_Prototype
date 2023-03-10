@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using Prototype.Logic.Framework.UI;
 using UnityEngine;
 
 namespace Prototype.Logic.Craft
 {
-    public class CraftWindow : MonoBehaviour
+    public class CraftWindow : Window
     {
         [SerializeField] private CraftBehavior _craftBehavior;
         [SerializeField] private RecipeUIView _recipeUIView;
@@ -38,10 +39,8 @@ namespace Prototype.Logic.Craft
 
         private void UpdateRecipesViews()
         {
-            foreach (RecipeUIView view in _recipesViews)
-            {
+            foreach (RecipeUIView view in _recipesViews) 
                 view.PerformUpdate();
-            }
         }
     }
 }

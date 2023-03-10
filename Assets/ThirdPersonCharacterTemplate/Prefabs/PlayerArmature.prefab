@@ -1491,9 +1491,9 @@ MonoBehaviour:
   _hasAdditionalFunction: 1
   _additionalKey: 103
   ObservedForge: {fileID: 0}
-  _forgeWindow: {fileID: 0}
   _playerInventory: {fileID: 1762682267}
   _botHuntingBehavior: {fileID: 6536150259018828372}
+  _windowsRouter: {fileID: 0}
 --- !u!114 &1858014652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1529,8 +1529,8 @@ MonoBehaviour:
   _hasAdditionalFunction: 0
   _additionalKey: 103
   ObservedStoreHouse: {fileID: 0}
-  _storehouseWindow: {fileID: 0}
   _playerInventory: {fileID: 1762682267}
+  _windowsRouter: {fileID: 0}
 --- !u!114 &1858014654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1548,9 +1548,9 @@ MonoBehaviour:
   _hasAdditionalFunction: 1
   _additionalKey: 103
   ObservedFarm: {fileID: 0}
-  _farmWindow: {fileID: 0}
   _playerInventory: {fileID: 1762682267}
   _botHuntingBehavior: {fileID: 6536150259018828372}
+  _windowsRouter: {fileID: 0}
 --- !u!114 &1258592659153051848
 MonoBehaviour:
   m_ObjectHideFlags: 0
