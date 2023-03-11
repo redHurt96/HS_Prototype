@@ -1053,6 +1053,8 @@ GameObject:
   - component: {fileID: 1858014654}
   - component: {fileID: 1258592659153051848}
   - component: {fileID: 2877587630721669958}
+  - component: {fileID: 1344010803867953462}
+  - component: {fileID: 2595119831358150921}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1581,6 +1583,38 @@ MonoBehaviour:
   _hunger: {fileID: 1858014639}
   _treshold: 70
   _restorePerSec: 2
+--- !u!114 &1344010803867953462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa64601765b479f9ba661f482b87702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionBehavior: {fileID: 1858014641}
+  _interactKey: 323
+  _hasAdditionalFunction: 0
+  _additionalKey: 103
+  MineItemView: {fileID: 0}
+  _inventory: {fileID: 1762682267}
+  _characterEquipment: {fileID: 2595119831358150921}
+--- !u!114 &2595119831358150921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce892988b1384ffab715cb5564ced567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _force: 10
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0

@@ -64,10 +64,9 @@ namespace Prototype.Logic.Items
             Vector3 origin = islandToExpand.transform.position;
             float direction = islandToExpand.GetFreeDirection();
             Vector3 newLandPosition = GetIslandPoint(origin, direction);
-            
             Island newIsland = CreateIsland(Islands.GetRandom(), newLandPosition);
+
             newIsland.UniqueKey = NewGuid().ToString();
-            
             islandToExpand.AddNeighbour(newIsland, direction);
             newIsland.AddNeighbour(islandToExpand, GetOpposite(direction));
             _land.Add(newIsland);

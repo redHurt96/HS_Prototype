@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8696305635621448251}
   - component: {fileID: 4334989552716480388}
   - component: {fileID: 827772255787730783}
+  - component: {fileID: 7585680303369198584}
   m_Layer: 0
   m_Name: IceIsland
   m_TagString: Untagged
@@ -82,6 +83,20 @@ MonoBehaviour:
   _neighbours: []
   _buildings: []
   _biome: 2
+--- !u!114 &7585680303369198584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696305635621448253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe9dffa00d0648d1a2eddb82cbcaac12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _settings: {fileID: 11400000, guid: a27a1253f6797e44fb41df0fd2262b22, type: 2}
+  _origin: {fileID: 8696305636683783439}
 --- !u!1 &8696305636683783424
 GameObject:
   m_ObjectHideFlags: 0

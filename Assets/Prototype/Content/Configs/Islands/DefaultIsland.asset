@@ -17,5 +17,5 @@ MonoBehaviour:
   - stone
   - food
   - iron
-  _startItemsCount: 20
+  _startItemsCount: 10
   _spawnTime: 2
