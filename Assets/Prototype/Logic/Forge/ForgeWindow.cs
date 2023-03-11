@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Prototype.Logic.Framework.UI;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
@@ -7,7 +8,7 @@ using static Prototype.Logic.Items.ItemsStorage;
 
 namespace Prototype.Logic.Forge
 {
-    internal class ForgeWindow : MonoBehaviour
+    internal class ForgeWindow : Window
     {
         [SerializeField] private ForgeRecipeUIView _recipeUIView;
         [SerializeField] private TradeInventoryWindow _craftedItemsInventoryWindow;
@@ -22,19 +23,18 @@ namespace Prototype.Logic.Forge
         
         private readonly List<ForgeRecipeUIView> _recipesViews = new();
 
-        internal void Show(Forge forge, Inventory playerInventory)
+        public override void Open(params object[] args)
         {
-            _playerInventory = playerInventory;
-            _forge = forge;
-            
-            _playerInventoryWindow.SetInventory(playerInventory, PutFuel);
-            _craftedItemsInventoryWindow.SetInventory(forge.OutputInventory, AddToPlayer);
+            _forge = (Forge)args[0];
+            _playerInventory = (Inventory)args[1];
+
+            _playerInventoryWindow.SetInventory(_playerInventory, PutFuel);
+            _craftedItemsInventoryWindow.SetInventory(_forge.OutputInventory, AddToPlayer);
             
             gameObject.SetActive(true);
+            
+            base.Open(args);
         }
-
-        internal void Hide() => 
-            gameObject.SetActive(false);
 
         private void OnEnable()
         {
@@ -61,6 +61,7 @@ namespace Prototype.Logic.Forge
             
             foreach (ForgeRecipeUIView uiView in _recipesViews)
                 Destroy(uiView.gameObject);
+            
             _recipesViews.Clear();
         }
 
@@ -68,10 +69,8 @@ namespace Prototype.Logic.Forge
         {
             Item item = Get(cell.ItemName);
             
-            if (!item.IsFuel)
-                return;
-            
-            _forge.PutFuel(cell, _playerInventory);
+            if (item.IsFuel)
+                _forge.PutFuel(cell, _playerInventory);
         }
 
         private void AddToPlayer(ItemCell cell)

@@ -2,6 +2,7 @@ using System;
 using Prototype.Logic.Attributes;
 using Prototype.Logic.Craft;
 using Prototype.Logic.Extensions;
+using Prototype.Logic.Framework.UI;
 using Prototype.Logic.Interactables;
 using Prototype.Logic.InventoryBehavior;
 using UnityEngine;
@@ -14,8 +15,8 @@ namespace Prototype.Logic.Forge
 
         [ReadOnly] public Inventory ObservedStoreHouse;
 
-        [SerializeField] private StorehouseWindow _storehouseWindow;
         [SerializeField] private Inventory _playerInventory;
+        [SerializeField] private WindowsRouter _windowsRouter;
 
         protected override Func<GameObject, bool> IsObserveTarget { get; } = target =>
             target.HasComponent<Inventory>()
@@ -29,11 +30,10 @@ namespace Prototype.Logic.Forge
         {
             ObservedStoreHouse = null;
             
-            if (_storehouseWindow.gameObject.activeSelf)
-                _storehouseWindow.Hide();
+            _windowsRouter.Close(WindowName.Storehouse);
         }
 
-        protected override void Interact(GameObject target) => 
-            _storehouseWindow.Show(ObservedStoreHouse, _playerInventory);
+        protected override void Interact(GameObject target) =>
+            _windowsRouter.Open(WindowName.Storehouse, ObservedStoreHouse, _playerInventory);
     }
 }

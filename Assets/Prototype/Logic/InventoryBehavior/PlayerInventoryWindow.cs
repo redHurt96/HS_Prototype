@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using Prototype.Logic.Characters;
+using Prototype.Logic.Framework.UI;
 using Prototype.Logic.Items;
 using UnityEngine;
 using static Prototype.Logic.Items.ItemsStorage;
 
 namespace Prototype.Logic.InventoryBehavior
 {
-    public class PlayerInventoryWindow : MonoBehaviour
+    public class PlayerInventoryWindow : Window
     {
         [SerializeField] private ItemUIView _prefab;
         

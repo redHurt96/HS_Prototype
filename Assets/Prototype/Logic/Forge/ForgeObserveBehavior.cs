@@ -1,6 +1,7 @@
 using System;
 using Prototype.Logic.Attributes;
 using Prototype.Logic.Extensions;
+using Prototype.Logic.Framework.UI;
 using Prototype.Logic.Interactables;
 using UnityEngine;
 
@@ -12,9 +13,9 @@ namespace Prototype.Logic.Forge
 
         [ReadOnly] public Forge ObservedForge;
 
-        [SerializeField] private ForgeWindow _forgeWindow;
         [SerializeField] private InventoryBehavior.Inventory _playerInventory;
         [SerializeField] private BotHuntingBehavior _botHuntingBehavior;
+        [SerializeField] private WindowsRouter _windowsRouter;
 
         protected override Func<GameObject, bool> IsObserveTarget { get; } = target =>
             target.HasComponent<Forge>();
@@ -26,12 +27,11 @@ namespace Prototype.Logic.Forge
         {
             ObservedForge = null;
             
-            if (_forgeWindow.gameObject.activeSelf)
-                _forgeWindow.Hide();
+            _windowsRouter.Close(WindowName.Forge);
         }
 
         protected override void Interact(GameObject target) => 
-            _forgeWindow.Show(ObservedForge, _playerInventory);
+            _windowsRouter.Open(WindowName.Forge, ObservedForge, _playerInventory);
 
         protected override void AdditionalInteract(GameObject target)
         {
