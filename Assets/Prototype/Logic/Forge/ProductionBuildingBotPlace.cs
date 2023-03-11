@@ -1,5 +1,7 @@
 using System.Collections;
 using Prototype.Logic.Attributes;
+using Prototype.Logic.Characters;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using static UnityEngine.Application;
 using static UnityEngine.Vector3;
@@ -27,7 +29,7 @@ namespace Prototype.Logic.Forge
             {
                 yield return new WaitForSeconds(_clickDelay);
                 
-                if (_productionBuilding.CanCraft() && _bot != null)
+                if (_productionBuilding.CanCraft() && _bot != null && _bot.GetComponent<Health>().Current > 0f)
                     _productionBuilding.PerformCraft();
             }
         }

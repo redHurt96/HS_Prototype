@@ -40,5 +40,14 @@ namespace Prototype.Logic.Framework.UI
             else
                 Close(windowName);
         }
+
+        public void CloseTopWindow()
+        {
+            foreach (Window window in _windows)
+            {
+                if (window.Enabled)
+                    window.Close();
+            }
+        }
     }
 }

@@ -11,7 +11,10 @@ namespace Prototype.Logic.Forge
 {
     public class Village : MonoBehaviour
     {
+        public Vector3 Center => _center.position;
+        
         [SerializeField] private List<Inventory> _storehouses = new();
+        [SerializeField] private Transform _center;
 
         public void Feed(Hunger bot)
         {

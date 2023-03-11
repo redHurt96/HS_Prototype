@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Prototype.Logic.Characters;
 using UnityEngine;
 
 namespace Prototype.Logic.Forge
@@ -26,6 +27,11 @@ namespace Prototype.Logic.Forge
                 bot
                     .GetComponent<BotFeedBehavior>()
                     .AssignVillage(_village);
+                
+                Destroy(bot.GetComponent<DestroyOnDeadAction>());
+
+                bot.transform.position =
+                    _village.Center + new Vector3(Random.Range(-5f, 5f), 0f, Random.Range(-5f, 5f));
             }
         }
 

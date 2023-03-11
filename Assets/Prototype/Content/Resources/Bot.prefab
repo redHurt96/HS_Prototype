@@ -293,8 +293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 1828418680645659834}
   _hunger: {fileID: 1828418680645659835}
-  _treshold: 0
-  _restorePerSec: 0
+  _treshold: 70
+  _restorePerSec: 2
 --- !u!1 &1963713439239360435
 GameObject:
   m_ObjectHideFlags: 0
