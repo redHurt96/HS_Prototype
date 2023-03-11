@@ -28,5 +28,8 @@ namespace Prototype.Logic.Characters
             if (Mathf.Approximately(_current, 0f)) 
                 OnDead?.Invoke();
         }
+
+        internal void Add(float amount) =>
+            _current = Mathf.Min(Max, _current + amount);
     }
 }
