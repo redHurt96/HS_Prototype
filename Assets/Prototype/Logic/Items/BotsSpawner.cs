@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Prototype.Logic.Attributes;
+using Prototype.Logic.Forge;
 using UnityEngine;
+using static System.Guid;
 using static Prototype.Logic.Items.IslandUtilities;
 using static Prototype.Logic.Items.LandSettings;
 using static UnityEngine.Quaternion;
@@ -14,7 +16,7 @@ namespace Prototype.Logic.Items
         [SerializeField] private BotsSpawningSettings _settings;
         [SerializeField] private Transform _origin;
 
-        [SerializeField, ReadOnly] private List<GameObject> _bots = new();
+        [SerializeField, ReadOnly] private List<Bot> _bots = new();
         
         private void Start()
         {
@@ -32,8 +34,10 @@ namespace Prototype.Logic.Items
                 position = _origin.position + new Vector3(Range(-scale, scale), .9f, Range(-scale, scale));
             while (!HasIslandBelowPoint(position, out island));
             
-            GameObject bot = Instantiate((GameObject)Load("Bot"), position, identity, island.transform);
+            Bot bot = Instantiate(Load<Bot>("Bot"), position, identity, island.transform);
 
+            bot.Name = NewGuid().ToString().Substring(0, 5);
+            
             _bots.Add(bot);
         }
     }

@@ -16,28 +16,26 @@ namespace Prototype.Logic.Forge
             }
         }
 
-        [SerializeField] private List<GameObject> _huntedBots = new();
+        [SerializeField] private List<Bot> _huntedBots = new();
         [SerializeField] private Village _village;
 
-        public void Hunt(GameObject bot)
+        public void Hunt(Bot bot)
         {
-            if (!_huntedBots.Contains(bot))
-            {
-                _huntedBots.Add(bot);
-                bot
-                    .GetComponent<BotFeedBehavior>()
-                    .AssignVillage(_village);
-                
-                Destroy(bot.GetComponent<DestroyOnDeadAction>());
+            if (_huntedBots.Contains(bot)) 
+                return;
+            
+            _huntedBots.Add(bot);
 
-                bot.transform.position =
-                    _village.Center + new Vector3(Random.Range(-5f, 5f), 0f, Random.Range(-5f, 5f));
-            }
+            bot.transform.position = _village.RandomizedCenter;
+            
+            Destroy(bot.GetComponent<DestroyOnDeadAction>());
+            
+            _village.RegisterSettler(bot);
         }
 
-        public GameObject Get()
+        public Bot Get()
         {
-            GameObject bot = _huntedBots[0];
+            Bot bot = _huntedBots[0];
             
             _huntedBots.RemoveAt(0);
 

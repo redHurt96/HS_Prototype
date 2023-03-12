@@ -19,3 +19,5 @@ MonoBehaviour:
     KeyCode: 99
   - Window: 2
     KeyCode: 98
+  - Window: 6
+    KeyCode: 118

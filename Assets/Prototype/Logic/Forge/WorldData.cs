@@ -9,14 +9,15 @@ namespace Prototype.Logic.Forge
     public class WorldData
     {
         public List<IslandData> Islands;
+        public List<BotData> Bots;
         public InventoryData PlayerInventory;
+        public List<BuildingData> Buildings;
 
         [Serializable]
         public class IslandData
         {
             public string StorageKey;
             public string UniqueKey;
-            public List<BuildingData> Buildings;
             public Vector3 Position;
         }
 
@@ -24,8 +25,8 @@ namespace Prototype.Logic.Forge
         public class BuildingData
         {
             public string Name;
+            public string UniqueKey;
             public Vector3 Position;
-            public bool HasBot = false;
             public InventoryData InventoryData;
         }
 
@@ -33,6 +34,13 @@ namespace Prototype.Logic.Forge
         public class InventoryData
         {
             public List<ItemCell> Cells;
+        }
+        
+        [Serializable]
+        public class BotData
+        {
+            public string Name;
+            public string BuildingKey;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Prototype.Logic.Extensions;
 using Prototype.Logic.Interactables;
 using UnityEngine;
 
@@ -8,15 +9,15 @@ namespace Prototype.Logic.Forge
     {
         public override bool IsObserve => ObservedBot != null;
         
-        [HideInInspector] public GameObject ObservedBot;
+        [HideInInspector] public Bot ObservedBot;
 
         [SerializeField] private BotHuntingBehavior _botHuntingBehavior;
 
         protected override Func<GameObject, bool> IsObserveTarget { get; } = 
-            target => target.CompareTag("Bot");
+            target => target.HasComponent<Bot>();
         
         protected override void SetupObservedObject(GameObject target) => 
-            ObservedBot = target;
+            ObservedBot = target.GetComponent<Bot>();
 
         protected override void ClearObservedObject() => 
             ObservedBot = null;

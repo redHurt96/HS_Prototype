@@ -15,7 +15,7 @@ namespace Prototype.Logic.Forge
     {
         [SerializeField] private LandExpander _landExpander;
         [SerializeField] private Village _village;
-        [SerializeField] private Land _land;
+        [SerializeField] private BotHuntingBehavior _huntingBehavior;
         
         private IEnumerator Start()
         {
@@ -23,39 +23,39 @@ namespace Prototype.Logic.Forge
                 yield break;
 
             yield return new WaitUntil(() => _landExpander.Loaded);
-            
-            foreach (IslandData islandData in WorldDataHandler.Instance.Data.Islands)
+
+            foreach (BuildingData buildingData in WorldDataHandler.Instance.Data.Buildings)
             {
-                Island island = _land.Islands
-                    .First(x => x.UniqueKey == islandData.UniqueKey);
+                Building instance = Instantiate(
+                    GetBuildingPrefab(buildingData.Name),
+                    buildingData.Position,
+                    quaternion.identity,
+                    _village.BuildingsParent);
 
-                foreach (BuildingData buildingData in islandData.Buildings)
+                instance.UniqueKey = buildingData.UniqueKey;
+
+                _village.Register(instance);
+
+                if (buildingData.InventoryData != null)
                 {
-                    Building instance = Instantiate(
-                        GetBuildingPrefab(buildingData.Name),
-                        buildingData.Position,
-                        quaternion.identity,
-                        island.transform);
-
-                    _village.TryRegister(instance);
-                    island.AddBuilding(instance);
-
-                    if (buildingData.HasBot)
-                    {
-                        GameObject bot = Instantiate((GameObject)Load("Bot"), island.transform);
-                        
-                        instance
-                            .GetComponent<ProductionBuildingBotPlace>()
-                            .SetBot(bot);
-                    }
-
-                    if (buildingData.InventoryData != null)
-                    {
-                        instance
-                            .GetComponent<Inventory>()
-                            .Set(buildingData.InventoryData);
-                    }
+                    instance
+                        .GetComponent<Inventory>()
+                        .Set(buildingData.InventoryData);
                 }
+            }
+            
+            foreach (BotData botData in WorldDataHandler.Instance.Data.Bots)
+            {
+                Bot bot = Instantiate(Load<Bot>("Bot"), _village.BotsParent);
+                bot.Name = botData.Name;
+
+                _huntingBehavior.Hunt(bot);
+                
+                if (!string.IsNullOrEmpty(botData.BuildingKey))
+                    _village.Buildings
+                        .First(x => x.UniqueKey == botData.BuildingKey)
+                        .GetComponent<ProductionBuildingBotPlace>()
+                        .SetBot(bot);
             }
         }
     }

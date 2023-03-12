@@ -1,7 +1,7 @@
 using System.Collections;
 using Prototype.Logic.Attributes;
 using Prototype.Logic.Characters;
-using TMPro.EditorUtilities;
+using Prototype.Logic.Craft;
 using UnityEngine;
 using static UnityEngine.Application;
 using static UnityEngine.Vector3;
@@ -15,7 +15,7 @@ namespace Prototype.Logic.Forge
         [SerializeField] private Transform _botPlace;
         [SerializeField] private float _clickDelay;
 
-        [SerializeField, ReadOnly] private GameObject _bot;
+        [SerializeField, ReadOnly] private Bot _bot;
 
         private IProductionBuilding _productionBuilding;
 
@@ -34,10 +34,11 @@ namespace Prototype.Logic.Forge
             }
         }
 
-        public void SetBot(GameObject bot)
+        public void SetBot(Bot bot)
         {
             _bot = bot;
             _bot.transform.position = _botPlace.position + up * .9f;
+            _bot.BuildingKey = GetComponent<Building>().UniqueKey;
         }
     }
 }

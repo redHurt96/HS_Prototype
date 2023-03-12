@@ -1,10 +1,12 @@
 using System.Linq;
+using Prototype.Logic.Attributes;
 using Prototype.Logic.Craft;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
 using static System.IO.File;
 using static System.IO.Path;
+using static System.String;
 using static Prototype.Logic.Forge.WorldData;
 using static UnityEngine.Application;
 using static UnityEngine.GameObject;
@@ -19,9 +21,10 @@ namespace Prototype.Logic.Forge
         public static string Path => Combine(persistentDataPath, "Save.json");
         public bool HasData => Data.Islands is { Count: > 0 };
 
-        public WorldData Data;
+        [ReadOnly] public WorldData Data;
 
         [SerializeField] private Land _land;
+        [SerializeField] private Village _village;
 
         private void Awake()
         {
@@ -38,11 +41,64 @@ namespace Prototype.Logic.Forge
         private void SaveData()
         {
             Data = new();
+
+            SaveInventory();
+            SaveIslands();
+            SaveBuildings();
+            SaveBots();
+            
+            WriteAllText(Path, ToJson(Data));
+        }
+
+        private void SaveInventory()
+        {
             Data.PlayerInventory = new();
             Data.PlayerInventory.Cells = FindGameObjectWithTag("Player")
                 .GetComponent<Inventory>()
                 .Cells
                 .ToList();
+        }
+
+        private void SaveBots()
+        {
+            Data.Bots = new();
+
+            foreach (Bot bot in _village.Bots)
+            {
+                BotData botData = new();
+                botData.Name = bot.Name;
+
+                if (!IsNullOrEmpty(bot.BuildingKey))
+                    botData.BuildingKey = bot.BuildingKey;
+
+                Data.Bots.Add(botData);
+            }
+        }
+
+        private void SaveBuildings()
+        {
+            Data.Buildings = new();
+
+            foreach (Building building in _village.Buildings)
+            {
+                BuildingData buildingData = new();
+
+                buildingData.Name = building.Name;
+                buildingData.UniqueKey = building.UniqueKey;
+                buildingData.Position = building.transform.position;
+
+                if (building.TryGetComponent(out Inventory inventory))
+                {
+                    buildingData.InventoryData = new()
+                    {
+                        Cells = inventory.Cells.ToList()
+                    };
+                }
+            }
+        }
+
+        private void SaveIslands()
+        {
             Data.Islands = new();
 
             foreach (Island island in _land.Islands)
@@ -50,37 +106,11 @@ namespace Prototype.Logic.Forge
                 IslandData islandData = new();
                 islandData.StorageKey = island.StorageKey;
                 islandData.UniqueKey = island.UniqueKey;
-                islandData.Buildings = new();
                 islandData.Position = island.transform.position;
 
-                foreach (Building building in island.Buildings)
-                {
-                    BuildingData buildingData = new();
-                    
-                    buildingData.Name = building.Name;
-                    buildingData.Position = building.transform.position;
 
-                    if (building.TryGetComponent(out Inventory inventory))
-                    {
-                        buildingData.InventoryData = new()
-                        {
-                            Cells = inventory.Cells.ToList()
-                        };
-                    }
-
-                    if (building.TryGetComponent(out ProductionBuildingBotPlace botPlace)
-                        && !botPlace.IsEmpty)
-                    {
-                        buildingData.HasBot = true;
-                    }
-                    
-                    islandData.Buildings.Add(buildingData);
-                }
-                
                 Data.Islands.Add(islandData);
             }
-            
-            WriteAllText(Path, ToJson(Data));
         }
     }
 }

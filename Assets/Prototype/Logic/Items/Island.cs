@@ -14,10 +14,8 @@ namespace Prototype.Logic.Items
         public Biome Biome => _biome;
         public bool HasFreeDirection => _freeDirections.Any();
         public IReadOnlyList<float> FreeDirections => _freeDirections;
-        public IEnumerable<Building> Buildings => _buildings;
 
         [SerializeField, ReadOnly] private List<Island> _neighbours = new();
-        [SerializeField, ReadOnly] private List<Building> _buildings = new();
 
         [SerializeField] private Biome _biome;
 
@@ -42,14 +40,5 @@ namespace Prototype.Logic.Items
             _freeDirections.Remove(fromDirection);
             _neighbours.Add(neighbour);
         }
-
-        public void AddBuilding(Building building)
-        {
-            if (!_buildings.Contains(building)) 
-                _buildings.Add(building);
-        }
-
-        public bool ContainsBuilding(Building building) => 
-            _buildings.Contains(building);
     }
 }

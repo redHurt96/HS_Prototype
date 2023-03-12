@@ -1,20 +1,32 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Prototype.Logic.Attributes;
 using Prototype.Logic.Characters;
 using Prototype.Logic.Craft;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
 using static Prototype.Logic.Items.ItemsStorage;
+using static UnityEngine.Debug;
+using static UnityEngine.Random;
 
 namespace Prototype.Logic.Forge
 {
     public class Village : MonoBehaviour
     {
-        public Vector3 Center => _center.position;
-        
-        [SerializeField] private List<Inventory> _storehouses = new();
+        public Vector3 RandomizedCenter => _center.position + new Vector3(Range(-5f, 5f), 0f, Range(-5f, 5f));
+        public Transform BotsParent => _botsParent;
+        public IReadOnlyList<Bot> Bots => _bots;
+        public IReadOnlyList<Building> Buildings => _buildings;
+        public Transform BuildingsParent => _buildingsParent;
+
+        [SerializeField, ReadOnly] private List<Inventory> _storehouses = new();
+        [SerializeField, ReadOnly] private List<Building> _buildings = new();
+        [SerializeField, ReadOnly] private List<Bot> _bots = new();
         [SerializeField] private Transform _center;
+        [SerializeField] private Transform _botsParent;
+        [SerializeField] private Transform _buildingsParent;
 
         public void Feed(Hunger bot)
         {
@@ -34,17 +46,39 @@ namespace Prototype.Logic.Forge
             targetStorehouse.InvokeUpdate();
         }
 
-        public void TryRegister(Building building)
+        public void Register(Building building)
         {
-            if (building.Name is "storehouse" or "farm" or "ice storehouse"
-                && building.TryGetComponent(out Inventory inventory))
-                RegisterStorehouse(inventory);
+            if (!Buildings.Contains(building))
+            {
+                _buildings.Add(building);
+            
+                if (building.Name is "storehouse" or "farm" or "ice storehouse"
+                    && building.TryGetComponent(out Inventory inventory))
+                    RegisterStorehouse(inventory);    
+            }
+            else
+            {
+                LogError("Attempt to register building which already registered in village");
+            }
         }
 
         private void RegisterStorehouse(Inventory inventory)
         {
             if (!_storehouses.Contains(inventory))
                 _storehouses.Add(inventory);
+        }
+
+        public void RegisterSettler(Bot bot)
+        {
+            if (!_bots.Contains(bot))
+            {
+                _bots.Add(bot);
+                bot.AssignVillage(this);
+            }
+            else
+            {
+                LogError($"Attempt to add bot which already present in village");
+            }
         }
     }
 }

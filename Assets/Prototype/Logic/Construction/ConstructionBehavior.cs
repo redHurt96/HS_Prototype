@@ -5,6 +5,7 @@ using Prototype.Logic.Forge;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
+using static System.Guid;
 using static Prototype.Logic.Interactables.ResourcesService;
 using static Prototype.Logic.Items.IslandUtilities;
 using static UnityEngine.Quaternion;
@@ -36,11 +37,12 @@ namespace Prototype.Logic.Construction
                 identity,
                 island.transform);
 
+            instance.UniqueKey = NewGuid().ToString();
+
             foreach (ItemCell ingredient in recipe.Materials)
                 _inventory.Remove(ingredient);
 
-            _village.TryRegister(instance);
-            island.AddBuilding(instance);
+            _village.Register(instance);
 
             Updated?.Invoke();
         }
