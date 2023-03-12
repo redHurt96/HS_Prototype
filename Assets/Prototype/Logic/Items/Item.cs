@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Prototype.Logic.Items
@@ -8,6 +9,7 @@ namespace Prototype.Logic.Items
     {
         public bool IsFuel => ForgeClickCount > 0;
         public bool IsFood => NutritionalValue > 0f;
+        public bool IsTool => MineItemNames.Any();
 
         public string Name;
         
@@ -17,5 +19,14 @@ namespace Prototype.Logic.Items
         [Header("For food")] 
         public float NutritionalValue;
         public int ExpirationTimeSeconds;
+
+        [Header("For tools")] 
+        public string[] MineItemNames;
+        public int MineForce;
+
+        public int GetMineForce(string mineItemName) =>
+            MineItemNames.Any(x => x == mineItemName)
+                ? MineForce
+                : 0;
     }
 }

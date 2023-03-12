@@ -17,23 +17,49 @@ MonoBehaviour:
     ForgeClickCount: 3
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
+    MineItemNames: []
+    MineForce: 0
   - Name: stone
     ForgeClickCount: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
+    MineItemNames: []
+    MineForce: 0
   - Name: iron
     ForgeClickCount: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
+    MineItemNames: []
+    MineForce: 0
   - Name: wooden planks
     ForgeClickCount: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
+    MineItemNames: []
+    MineForce: 0
   - Name: iron ingot
     ForgeClickCount: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
+    MineItemNames: []
+    MineForce: 0
   - Name: food
     ForgeClickCount: 0
     NutritionalValue: 20
     ExpirationTimeSeconds: 3600
+    MineItemNames: []
+    MineForce: 0
+  - Name: axe
+    ForgeClickCount: 0
+    NutritionalValue: 0
+    ExpirationTimeSeconds: 0
+    MineItemNames:
+    - tree
+    MineForce: 10
+  - Name: pick
+    ForgeClickCount: 0
+    NutritionalValue: 0
+    ExpirationTimeSeconds: 0
+    MineItemNames:
+    - boulder
+    MineForce: 10

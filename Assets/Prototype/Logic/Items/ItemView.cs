@@ -9,12 +9,19 @@ namespace Prototype.Logic.Items
 
         private void Start()
         {
-            Item item = Get(ItemCell.ItemName);
+            Item item = GetItem();
 
             if (!item.IsFood)
                 return;
 
             ItemCell.ExpirationTime = item.ExpirationTimeSeconds;
         }
+
+        public int GetForce(MineItemView mineItemView) => 
+            GetItem()
+                .GetMineForce(mineItemView.Name);
+
+        private Item GetItem() => 
+            Get(ItemCell.ItemName);
     }
 }
