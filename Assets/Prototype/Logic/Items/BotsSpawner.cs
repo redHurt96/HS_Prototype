@@ -8,6 +8,7 @@ using static Prototype.Logic.Items.LandSettings;
 using static UnityEngine.Quaternion;
 using static UnityEngine.Random;
 using static UnityEngine.Resources;
+using static UnityEngine.Vector3;
 
 namespace Prototype.Logic.Items
 {
@@ -29,12 +30,13 @@ namespace Prototype.Logic.Items
             Vector3 position;
             float scale = IslandWidth / 2f;
             Island island;
+            Vector3 topPoint;
 
             do 
                 position = _origin.position + new Vector3(Range(-scale, scale), .9f, Range(-scale, scale));
-            while (!HasIslandBelowPoint(position, out island));
+            while (!HasIslandBelowPoint(position, out island, out topPoint));
             
-            Bot bot = Instantiate(Load<Bot>("Bot"), position, identity, island.transform);
+            Bot bot = Instantiate(Load<Bot>("Bot"), topPoint + up, identity, island.transform);
 
             bot.Name = NewGuid().ToString().Substring(0, 5);
             

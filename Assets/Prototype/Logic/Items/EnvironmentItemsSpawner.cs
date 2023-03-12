@@ -38,16 +38,18 @@ namespace Prototype.Logic.Items
         private void Spawn()
         {
             Vector3 position;
+            Vector3 topPoint;
             float scale = IslandWidth / 2f;
             Island island;
             
             do 
                 position = _origin.position + new Vector3Int((int)Range(-scale, scale), 0, (int)Range(-scale, scale));
-            while (!HasIslandBelowPoint(position, out island));
+            while (!HasIslandBelowPoint(position, out island, out topPoint));
             
             GameObject itemView = Instantiate(
                 GetEnvironmentItemPrefab(_settings.RandomItemName), 
-                position, identity, 
+                topPoint, 
+                identity, 
                 island.transform);
 
             _items.Add(itemView);

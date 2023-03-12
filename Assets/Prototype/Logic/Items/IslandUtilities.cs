@@ -44,11 +44,12 @@ namespace Prototype.Logic.Items
             return island != null;
         }
 
-        public static bool HasIslandBelowPoint(Vector3 point, out Island island)
+        public static bool HasIslandBelowPoint(Vector3 point, out Island island, out Vector3 topPoint)
         {
             island = null;
+            topPoint = zero;
 
-            RaycastHit[] colliders = RaycastAll(point + up, down, 20f);
+            RaycastHit[] colliders = RaycastAll(point + up * 20f, down, 40f);
 
             if (colliders.Length == 0)
                 return false;
@@ -57,6 +58,11 @@ namespace Prototype.Logic.Items
                 .FirstOrDefault(x => x.transform.CompareTag("IslandMesh"))
                 .transform
                 .GetComponentInParent<Island>();
+
+            topPoint = colliders
+                .OrderByDescending(x => x.point.y)
+                .First()
+                .point;
 
             return island != null;
         }

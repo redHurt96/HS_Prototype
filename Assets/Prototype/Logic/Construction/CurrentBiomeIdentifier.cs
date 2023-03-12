@@ -13,7 +13,7 @@ namespace Prototype.Logic.Construction
 
         private void Update()
         {
-            if (HasIslandBelowPoint(transform.position, out Island island)) 
+            if (HasIslandBelowPoint(transform.position, out Island island, out Vector3 topPoint)) 
                 _value = island.Biome;
         }
     }

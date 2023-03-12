@@ -81,7 +81,6 @@ MonoBehaviour:
   UniqueKey: 
   StorageKey: IceIsland
   _neighbours: []
-  _buildings: []
   _biome: 2
 --- !u!114 &7585680303369198584
 MonoBehaviour:
@@ -145,6 +144,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 5163426331231359797, guid: 3969635065a0acd49b52598a214be466,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbf898c9f9c4a2d46aa6336e23caeb61, type: 2}
     - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
         type: 3}
       propertyPath: m_RootOrder
@@ -200,6 +204,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6823869681865662907, guid: 3969635065a0acd49b52598a214be466,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbf898c9f9c4a2d46aa6336e23caeb61, type: 2}
+    - target: {fileID: 7897696892591933931, guid: 3969635065a0acd49b52598a214be466,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dbf898c9f9c4a2d46aa6336e23caeb61, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3969635065a0acd49b52598a214be466, type: 3}
 --- !u!4 &4556953786215940306 stripped
