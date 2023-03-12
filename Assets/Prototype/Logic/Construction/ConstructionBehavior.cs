@@ -28,7 +28,7 @@ namespace Prototype.Logic.Construction
 
         public void Build(ConstructionDesign recipe)
         {
-            if (!HasIslandBelowPoint(transform.position + transform.forward, out Island island, out Vector3 topPoint))
+            if (!HasIslandBelowPoint(transform.position + transform.forward * 3f, out Island island, out Vector3 topPoint))
                 throw new($"Try to create building without ground below!");
 
             Building instance = Instantiate(
