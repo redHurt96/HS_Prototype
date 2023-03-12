@@ -5921,6 +5921,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f2642f73dc3e67d449a4f852cf4651c8, type: 2}
   - {fileID: 11400000, guid: db851ca1fa351e84a997e2a9fcdb6a82, type: 2}
   - {fileID: 11400000, guid: d3ef319beaa8717409ad8a1dab11a30a, type: 2}
+  - {fileID: 11400000, guid: c1698f19cdabc9342a7d48c9b46cd3f0, type: 2}
 --- !u!1 &1312662686
 GameObject:
   m_ObjectHideFlags: 0
@@ -7849,7 +7850,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _landExpander: {fileID: 775930385}
   _village: {fileID: 295232561}
-  _land: {fileID: 95747041}
   _huntingBehavior: {fileID: 1762682261}
 --- !u!1 &1971174550
 GameObject:

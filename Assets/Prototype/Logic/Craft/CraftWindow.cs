@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Prototype.Logic.Framework.UI;
 using UnityEngine;
+using static Prototype.Logic.Items.CraftRecipes;
 
 namespace Prototype.Logic.Craft
 {
@@ -20,8 +21,9 @@ namespace Prototype.Logic.Craft
 
         private void OnEnable()
         {
-            foreach (Recipe recipe in _craftBehavior.Recipes)
+            foreach (string itemName in _craftBehavior.RecipesNames)
             {
+                Recipe recipe = GetByTargetItem(itemName);
                 RecipeUIView recipeUIView = Instantiate(_recipeUIView, _recipesAnchor);
                 recipeUIView.Setup(recipe, _craftBehavior);
                 

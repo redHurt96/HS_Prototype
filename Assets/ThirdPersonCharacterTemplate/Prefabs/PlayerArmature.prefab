@@ -1374,15 +1374,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38396439e1c44ee83b68aa195600510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Recipes:
-  - Item:
-      ItemName: wooden planks
-      Count: 1
-      ExpirationTime: 0
-    Ingredients:
-    - ItemName: wood
-      Count: 2
-      ExpirationTime: 0
+  RecipesNames:
+  - wooden planks
+  - axe
+  - pick
   _inventory: {fileID: 1762682267}
 --- !u!114 &1762682276
 MonoBehaviour:

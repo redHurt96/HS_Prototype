@@ -11,7 +11,7 @@ namespace Prototype.Logic.Craft
     {
         public event Action Updated;
         
-        public List<Recipe> Recipes = new();
+        public List<string> RecipesNames = new();
         
         [SerializeField] private Inventory _inventory;
 

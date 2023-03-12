@@ -94,6 +94,8 @@ namespace Prototype.Logic.Forge
                         Cells = inventory.Cells.ToList()
                     };
                 }
+                
+                Data.Buildings.Add(buildingData);
             }
         }
 
