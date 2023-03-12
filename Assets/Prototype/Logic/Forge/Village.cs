@@ -7,15 +7,28 @@ using Prototype.Logic.Craft;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
+using static Prototype.Logic.Items.IslandUtilities;
 using static Prototype.Logic.Items.ItemsStorage;
 using static UnityEngine.Debug;
 using static UnityEngine.Random;
+using static UnityEngine.Vector3;
 
 namespace Prototype.Logic.Forge
 {
     public class Village : MonoBehaviour
     {
-        public Vector3 RandomizedCenter => _center.position + new Vector3(Range(-5f, 5f), 0f, Range(-5f, 5f));
+        public Vector3 RandomizedCenter
+        {
+            get
+            {
+                Vector3 randomizedCenter = _center.position + new Vector3(Range(-5f, 5f), 0f, Range(-5f, 5f));
+
+                HasIslandBelowPoint(randomizedCenter, out Island _, out Vector3 topPoint);
+                
+                return topPoint + up;
+            }
+        }
+
         public Transform BotsParent => _botsParent;
         public IReadOnlyList<Bot> Bots => _bots;
         public IReadOnlyList<Building> Buildings => _buildings;
