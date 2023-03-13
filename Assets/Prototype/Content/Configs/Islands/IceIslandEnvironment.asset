@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemsNames:
   - boulder
-  _startItemsCount: 10
+  _startItemsCount: 30
   _spawnTime: 2

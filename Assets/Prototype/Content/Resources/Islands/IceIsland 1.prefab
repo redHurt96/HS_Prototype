@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8696305635621448251}
   - component: {fileID: 4334989552716480388}
   - component: {fileID: 827772255787730783}
-  - component: {fileID: 1205662684684263818}
+  - component: {fileID: 7585680303369198584}
   m_Layer: 0
-  m_Name: DefaultIsland
+  m_Name: IceIsland 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3707865080087992303}
+  - {fileID: 5943615992786874713}
   - {fileID: 8696305636683783439}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5c7934dadb46adb2c8d14307d0c751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settings: {fileID: 11400000, guid: 0e965734786c4d943b33cd0afe29df0b, type: 2}
+  _settings: {fileID: 11400000, guid: 16d14fdb41b37044b8720f56b43dc5c3, type: 2}
   _origin: {fileID: 8696305636683783439}
 --- !u!114 &4334989552716480388
 MonoBehaviour:
@@ -79,10 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UniqueKey: 
-  StorageKey: Default
+  StorageKey: IceIsland
   _neighbours: []
-  _biome: 0
---- !u!114 &1205662684684263818
+  _biome: 2
+--- !u!114 &7585680303369198584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe9dffa00d0648d1a2eddb82cbcaac12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _settings: {fileID: 11400000, guid: 3ed21f4f6a6d9ad499f7e594c22881e4, type: 2}
+  _settings: {fileID: 11400000, guid: a27a1253f6797e44fb41df0fd2262b22, type: 2}
   _origin: {fileID: 8696305636683783439}
 --- !u!1 &8696305636683783424
 GameObject:
@@ -127,123 +127,83 @@ Transform:
   m_Father: {fileID: 8696305635621448252}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7879000611326593805
+--- !u!1001 &889700257987374523
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 8696305635621448252}
     m_Modifications:
-    - target: {fileID: 1508333388294580797, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 1730873901341156533, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 19.79755
-      objectReference: {fileID: 0}
-    - target: {fileID: 1508333388294580797, guid: 3969635065a0acd49b52598a214be466,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 13.401805
-      objectReference: {fileID: 0}
-    - target: {fileID: 1508333388294580797, guid: 3969635065a0acd49b52598a214be466,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7.188653
-      objectReference: {fileID: 0}
-    - target: {fileID: 1508333388294580797, guid: 3969635065a0acd49b52598a214be466,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1508333388294580797, guid: 3969635065a0acd49b52598a214be466,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1508333388294580797, guid: 3969635065a0acd49b52598a214be466,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 3597748999012717810, guid: 3969635065a0acd49b52598a214be466,
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: cac4643dc7bee2340a69c46ee1817028, type: 2}
+    - target: {fileID: 3597748999012717810, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_Name
-      value: Ground
+      value: Ground2
       objectReference: {fileID: 0}
-    - target: {fileID: 5039438886478290672, guid: 3969635065a0acd49b52598a214be466,
-        type: 3}
-      propertyPath: m_TagString
-      value: IslandMesh
-      objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+    - target: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6964029694013728074, guid: 3969635065a0acd49b52598a214be466,
-        type: 3}
-      propertyPath: m_TagString
-      value: IslandMesh
-      objectReference: {fileID: 0}
-    - target: {fileID: 7305568679820920532, guid: 3969635065a0acd49b52598a214be466,
-        type: 3}
-      propertyPath: m_TagString
-      value: IslandMesh
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3969635065a0acd49b52598a214be466, type: 3}
---- !u!4 &3707865080087992303 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 8419e19c83eb1204e980815c52a71e37, type: 3}
+--- !u!4 &5943615992786874713 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6783317048497626338, guid: 3969635065a0acd49b52598a214be466,
+  m_CorrespondingSourceObject: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
     type: 3}
-  m_PrefabInstance: {fileID: 7879000611326593805}
+  m_PrefabInstance: {fileID: 889700257987374523}
   m_PrefabAsset: {fileID: 0}

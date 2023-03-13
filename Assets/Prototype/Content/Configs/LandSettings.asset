@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LandSettings
   m_EditorClassIdentifier: 
   _islandWidth: 50
-  _islandSpawnDelay: 120
+  _islandSpawnDelay: 5
   _originIsland: {fileID: 827772255787730783, guid: a8f1e5af1e333e44abe2f49593b4b59f,
     type: 3}
   _prefabs:
@@ -22,4 +22,10 @@ MonoBehaviour:
   - Prefab: {fileID: 827772255787730783, guid: 6c4ab4c2ad9e5174da2fe3a2091a439b, type: 3}
     Enabled: 1
   - Prefab: {fileID: 827772255787730783, guid: 85fdb6c210d2a2d49b998a14f3404773, type: 3}
+    Enabled: 1
+  - Prefab: {fileID: 827772255787730783, guid: b57f32f4eb6610e4ba1a6cedb20fbf6b, type: 3}
+    Enabled: 1
+  - Prefab: {fileID: 827772255787730783, guid: 99818078aa2bfa74288215dcdaa491a5, type: 3}
+    Enabled: 1
+  - Prefab: {fileID: 827772255787730783, guid: bcae51018bf53264197ba44565f3ef7a, type: 3}
     Enabled: 1
