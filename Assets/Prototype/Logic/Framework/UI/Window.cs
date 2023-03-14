@@ -7,6 +7,8 @@ namespace Prototype.Logic.Framework.UI
         public WindowName Name => _name;
         public bool Enabled => gameObject.activeSelf;
 
+        public virtual bool CanShow { get; } = true;
+
         [SerializeField] private WindowName _name;
 
         public virtual void Open(params object[] args) => 

@@ -9,7 +9,6 @@ namespace Prototype.Logic.Items
     {
         public bool IsFuel => ForgeClickCount > 0;
         public bool IsFood => NutritionalValue > 0f;
-        public bool IsTool => MineItemNames.Any();
 
         public string Name;
         
@@ -21,6 +20,7 @@ namespace Prototype.Logic.Items
         public int ExpirationTimeSeconds;
 
         [Header("For tools")] 
+        public bool IsTool;
         public string[] MineItemNames;
         public int MineForce;
 

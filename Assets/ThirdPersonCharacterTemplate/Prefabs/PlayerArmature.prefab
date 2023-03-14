@@ -1378,6 +1378,7 @@ MonoBehaviour:
   - wooden planks
   - axe
   - pick
+  - hammer
   _inventory: {fileID: 1762682267}
 --- !u!114 &1762682276
 MonoBehaviour:

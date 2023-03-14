@@ -43,3 +43,11 @@ MonoBehaviour:
     - ItemName: stone
       Count: 3
       ExpirationTime: 0
+  - Item:
+      ItemName: hammer
+      Count: 1
+      ExpirationTime: 0
+    Ingredients:
+    - ItemName: wood
+      Count: 4
+      ExpirationTime: 0

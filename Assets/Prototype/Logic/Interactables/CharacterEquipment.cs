@@ -10,7 +10,8 @@ namespace Prototype.Logic.Interactables
     {
         public event Action Equipped; 
         public string ToolName => _currentTool?.ItemCell.ItemName;
-        
+        public bool IsHammerEquipped => _currentTool != null && _currentTool.ItemCell.ItemName == "hammer";
+
         [SerializeField] private Transform _anchor;
         [SerializeField, ReadOnly] private ItemView _currentTool;
         

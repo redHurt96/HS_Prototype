@@ -19,7 +19,7 @@ namespace Prototype.Logic.Framework.UI
             {
                 if (window.Name != windowName && window.Enabled)
                     window.Close();
-                else if (window.Name == windowName && !window.Enabled)
+                else if (window.Name == windowName && !window.Enabled && window.CanShow)
                     window.Open(args);
             }
         }
