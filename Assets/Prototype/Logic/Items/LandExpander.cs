@@ -8,8 +8,8 @@ using static System.Guid;
 using static Prototype.Logic.Forge.WorldData;
 using static Prototype.Logic.Items.IslandUtilities;
 using static Prototype.Logic.Items.LandSettings;
-using static Unity.Mathematics.quaternion;
 using static UnityEngine.Application;
+using static UnityEngine.Quaternion;
 using static UnityEngine.Vector3;
 
 namespace Prototype.Logic.Items
@@ -20,6 +20,13 @@ namespace Prototype.Logic.Items
         
         [SerializeField] private Transform _islandsParent;
         [SerializeField] private Land _land;
+
+        private static float[] _rotations = new[]
+        {
+            0f, 60f, 120f, 180f, 240f, 300f,
+        };
+
+        private Vector3 _randomRotation => new(0f, _rotations.GetRandom(), 0f);
 
         private IEnumerator Start()
         {
@@ -43,7 +50,10 @@ namespace Prototype.Logic.Items
         {
             foreach (IslandData islandData in WorldDataHandler.Instance.Data.Islands)
             {
-                Island island = CreateIsland(Islands.First(x => x.StorageKey == islandData.StorageKey), islandData.Position);
+                Island island = CreateIsland(
+                    Islands.First(x => x.StorageKey == islandData.StorageKey), 
+                    islandData.Position,
+                    islandData.Rotation);
                 island.UniqueKey = islandData.UniqueKey;
                 _land.Add(island);
 
@@ -58,7 +68,7 @@ namespace Prototype.Logic.Items
 
         private void CreateOriginLand()
         {
-            Island newIsland = CreateIsland(OriginIsland, zero);
+            Island newIsland = CreateIsland(OriginIsland, zero, _randomRotation);
             newIsland.UniqueKey = NewGuid().ToString();
             _land.Add(newIsland);
         }
@@ -69,7 +79,7 @@ namespace Prototype.Logic.Items
             Vector3 origin = islandToExpand.transform.position;
             float direction = islandToExpand.GetFreeDirection();
             Vector3 newLandPosition = GetIslandPoint(origin, direction);
-            Island newIsland = CreateIsland(Islands.GetRandom(), newLandPosition);
+            Island newIsland = CreateIsland(Islands.GetRandom(), newLandPosition, _randomRotation);
 
             newIsland.UniqueKey = NewGuid().ToString();
             islandToExpand.AddNeighbour(newIsland, direction);
@@ -99,9 +109,9 @@ namespace Prototype.Logic.Items
             }
         }
 
-        private Island CreateIsland(Island island, Vector3 position)
+        private Island CreateIsland(Island island, Vector3 position, Vector3 rotationEuler)
         {
-            Island newIsland = Instantiate(island, position, identity, _islandsParent);
+            Island newIsland = Instantiate(island, position, Euler(rotationEuler), _islandsParent);
 
             newIsland.transform.GetChild(0).localScale *= IslandMeshScaleCoefficient;
             return newIsland;

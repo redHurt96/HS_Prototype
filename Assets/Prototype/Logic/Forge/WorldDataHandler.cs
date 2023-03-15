@@ -107,9 +107,11 @@ namespace Prototype.Logic.Forge
             foreach (Island island in _land.Islands)
             {
                 IslandData islandData = new();
+                
                 islandData.StorageKey = island.StorageKey;
                 islandData.UniqueKey = island.UniqueKey;
                 islandData.Position = island.transform.position;
+                islandData.Rotation = island.transform.localRotation.eulerAngles;
                 
                 islandData.MineFields = new();
                 

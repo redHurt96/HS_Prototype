@@ -19,6 +19,7 @@ namespace Prototype.Logic.Forge
             public string StorageKey;
             public string UniqueKey;
             public Vector3 Position;
+            public Vector3 Rotation;
             public List<MineFieldData> MineFields;
         }
 
