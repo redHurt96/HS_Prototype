@@ -19,8 +19,16 @@ namespace Prototype.Logic.Forge
             public string StorageKey;
             public string UniqueKey;
             public Vector3 Position;
+            public List<MineFieldData> MineFields;
         }
 
+        [Serializable]
+        public class MineFieldData
+        {
+            public int PointIndex;
+            public string ItemName;
+        }
+        
         [Serializable]
         public class BuildingData
         {

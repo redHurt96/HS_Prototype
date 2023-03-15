@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 395f9b581d4f4c7f8c72d077065e59b6, type: 3}
-  m_Name: FireIslandEnvironment
+  m_Name: Items
   m_EditorClassIdentifier: 
   _itemsNames:
-  - boulder
+  - wood
+  - stone
+  - food
+  - iron
   _startItemsCount: 30
   _spawnTime: 2

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Prototype.Logic.Attributes;
-using Prototype.Logic.Craft;
 using Prototype.Logic.Extensions;
 using UnityEngine;
 
@@ -14,10 +13,13 @@ namespace Prototype.Logic.Items
         public Biome Biome => _biome;
         public bool HasFreeDirection => _freeDirections.Any();
         public IReadOnlyList<float> FreeDirections => _freeDirections;
+        public IReadOnlyDictionary<int, string> MineFields => _mineFields;
 
         [SerializeField, ReadOnly] private List<Island> _neighbours = new();
 
         [SerializeField] private Biome _biome;
+
+        private readonly Dictionary<int, string> _mineFields = new();
 
         private readonly List<float> _freeDirections = new()
         {
@@ -40,5 +42,8 @@ namespace Prototype.Logic.Items
             _freeDirections.Remove(fromDirection);
             _neighbours.Add(neighbour);
         }
+
+        public void Register(int pointIndex, string itemName) => 
+            _mineFields.Add(pointIndex, itemName);
     }
 }

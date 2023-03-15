@@ -1,6 +1,8 @@
+using System;
 using System.Linq;
 using UnityEngine;
 using static Prototype.Logic.Items.LandSettings;
+using static UnityEngine.Color;
 using static UnityEngine.Mathf;
 using static UnityEngine.Physics;
 using static UnityEngine.Vector3;
@@ -49,13 +51,13 @@ namespace Prototype.Logic.Items
             island = null;
             topPoint = zero;
 
-            RaycastHit[] colliders = RaycastAll(point + up * 20f, down, 40f);
+            RaycastHit[] colliders = RaycastAll(point + up * 50f, down, 200f);
 
             if (colliders.Length == 0)
                 return false;
 
             island = colliders
-                .FirstOrDefault(x => x.transform.CompareTag("IslandMesh"))
+                .First()
                 .transform
                 .GetComponentInParent<Island>();
 

@@ -21,5 +21,8 @@ namespace Prototype.Logic.Interactables
         
         internal static Building GetBuildingPrefab(string itemName) =>
             Load<Building>($"Buildings/Prefabs/{itemName}");
+        
+        internal static GameObject GetMineFieldPrefab(string itemName) =>
+            Load<GameObject>($"MineFields/{itemName}");
     }
 }

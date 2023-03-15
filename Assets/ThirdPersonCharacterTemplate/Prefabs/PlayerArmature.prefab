@@ -1086,6 +1086,7 @@ GameObject:
   - component: {fileID: 2877587630721669958}
   - component: {fileID: 1344010803867953462}
   - component: {fileID: 2595119831358150921}
+  - component: {fileID: 8292645063098410059}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1643,6 +1644,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anchor: {fileID: 1231578097}
   _currentTool: {fileID: 0}
+--- !u!114 &8292645063098410059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31164abe066462c9c8894fb41d5a027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionBehavior: {fileID: 1858014641}
+  _interactKey: 323
+  _hasAdditionalFunction: 0
+  _additionalKey: 103
+  MineFieldItemView: {fileID: 0}
+  _inventory: {fileID: 1762682267}
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0

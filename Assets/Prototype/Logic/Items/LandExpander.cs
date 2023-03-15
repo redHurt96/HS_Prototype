@@ -41,11 +41,16 @@ namespace Prototype.Logic.Items
 
         private void RestoreSavedIslands()
         {
-            foreach (IslandData island in WorldDataHandler.Instance.Data.Islands)
+            foreach (IslandData islandData in WorldDataHandler.Instance.Data.Islands)
             {
-                Island newIsland = CreateIsland(Islands.First(x => x.StorageKey == island.StorageKey), island.Position);
-                newIsland.UniqueKey = island.UniqueKey;
-                _land.Add(newIsland);
+                Island island = CreateIsland(Islands.First(x => x.StorageKey == islandData.StorageKey), islandData.Position);
+                island.UniqueKey = islandData.UniqueKey;
+                _land.Add(island);
+
+                MineFieldsSpawner spawner = island.GetComponent<MineFieldsSpawner>();
+                
+                foreach (MineFieldData mineFieldData in islandData.MineFields) 
+                    spawner.Spawn(mineFieldData.PointIndex, mineFieldData.ItemName);
             }
 
             UpdateNeighbours();

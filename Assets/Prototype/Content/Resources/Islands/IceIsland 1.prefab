@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4334989552716480388}
   - component: {fileID: 827772255787730783}
   - component: {fileID: 7585680303369198584}
+  - component: {fileID: -6060370742396519722}
   m_Layer: 0
   m_Name: IceIsland 1
   m_TagString: Untagged
@@ -79,7 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UniqueKey: 
-  StorageKey: IceIsland
+  StorageKey: IceIsland 1
   _neighbours: []
   _biome: 2
 --- !u!114 &7585680303369198584
@@ -96,6 +97,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _settings: {fileID: 11400000, guid: a27a1253f6797e44fb41df0fd2262b22, type: 2}
   _origin: {fileID: 8696305636683783439}
+--- !u!114 &-6060370742396519722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8696305635621448253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1792e73525a04818bd2cd9de0554d34c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _island: {fileID: 827772255787730783}
+  _settings: {fileID: 11400000, guid: 3461473b011e66e469f0100650635f17, type: 2}
+  _spawnPoints:
+  - {fileID: 3886428812144135514}
+  - {fileID: 6085990845280784497}
+  - {fileID: 7447000308142121220}
+  - {fileID: 2426560813795401937}
+  - {fileID: 5923703941181829619}
 --- !u!1 &8696305636683783424
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,9 +222,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8419e19c83eb1204e980815c52a71e37, type: 3}
+--- !u!4 &2426560813795401937 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3311334983733431658, guid: 8419e19c83eb1204e980815c52a71e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 889700257987374523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3886428812144135514 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4158942049826562273, guid: 8419e19c83eb1204e980815c52a71e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 889700257987374523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5923703941181829619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6804341945390881864, guid: 8419e19c83eb1204e980815c52a71e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 889700257987374523}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5943615992786874713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6783317048497626338, guid: 8419e19c83eb1204e980815c52a71e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 889700257987374523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6085990845280784497 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6353754193518706122, guid: 8419e19c83eb1204e980815c52a71e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 889700257987374523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7447000308142121220 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7710680400642706623, guid: 8419e19c83eb1204e980815c52a71e37,
     type: 3}
   m_PrefabInstance: {fileID: 889700257987374523}
   m_PrefabAsset: {fileID: 0}

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Prototype.Logic.Attributes;
 using Prototype.Logic.Craft;
@@ -109,7 +110,17 @@ namespace Prototype.Logic.Forge
                 islandData.StorageKey = island.StorageKey;
                 islandData.UniqueKey = island.UniqueKey;
                 islandData.Position = island.transform.position;
-
+                
+                islandData.MineFields = new();
+                
+                foreach (KeyValuePair<int,string> mineField in island.MineFields)
+                {
+                    islandData.MineFields.Add(new()
+                    {
+                        PointIndex = mineField.Key,
+                        ItemName = mineField.Value,
+                    });
+                }
 
                 Data.Islands.Add(islandData);
             }
