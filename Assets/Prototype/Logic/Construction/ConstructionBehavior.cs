@@ -23,7 +23,7 @@ namespace Prototype.Logic.Construction
         public bool CanBuild(ConstructionDesign design) =>
             design
                 .Materials
-                .All(x => _inventory.Contains(x))
+                .All(x => _inventory.Contains(x.ItemName, x.Count))
             && design.CanBuildInBiome(_playerCurrentBiome.Value);
 
         public void Build(ConstructionDesign recipe)

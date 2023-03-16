@@ -31,19 +31,14 @@ namespace Prototype.Logic.InventoryBehavior
                 ItemCell targetCell = _cells.Find(x => x.ItemName == cell.ItemName);
                 int targetIndex = _cells.IndexOf(targetCell);
 
-                _cells[targetIndex] = new()
-                {
-                    ItemName = targetCell.ItemName,
-                    Count = targetCell.Count + cell.Count,
-                };
+                _cells[targetIndex] = CreateWithCount(_cells[targetIndex], targetCell.Count + cell.Count);
             }
             else
             {
-                _cells.Add(cell);
+                ItemCell cellToAdd = cell.GenerateId();
+                _cells.Add(cellToAdd);
             }
         }
-
-        public bool Contains(ItemCell itemCell) => Contains(itemCell.ItemName, itemCell.Count);
 
         public bool Contains(string itemName, int count) => 
             _cells
@@ -62,11 +57,10 @@ namespace Prototype.Logic.InventoryBehavior
             if (target.Count < count)
                 throw new($"Try to remove item which count is bigger than in inventory!");
 
-            _cells[index] = new()
-            {
-                ItemName = itemName,
-                Count = target.Count - count,
-            };
+            ItemCell itemCell = _cells[index];
+            itemCell.Count -= count;
+
+            _cells[index] = itemCell;
 
             if (_cells[index].Count == 0)
                 _cells.RemoveAt(index);
@@ -79,7 +73,7 @@ namespace Prototype.Logic.InventoryBehavior
         }
 
         public bool Contains(List<ItemCell> recipeIngredients) => 
-            recipeIngredients.All(Contains);
+            recipeIngredients.All(x => Contains(x.ItemName, x.Count));
 
         public void InvokeUpdate() =>
             Updated?.Invoke();
@@ -90,13 +84,17 @@ namespace Prototype.Logic.InventoryBehavior
                 PutFood(food);
         }
 
-        private void PutFood(Item food) =>
-            _cells.Add(new()
+        private void PutFood(Item food)
+        {
+            ItemCell itemCell = new()
             {
                 ItemName = food.Name,
                 Count = 1,
                 ExpirationTime = food.ExpirationTimeSeconds,
-            });
+            };
+            
+            _cells.Add(itemCell.GenerateId());
+        }
 
         public void RemoveAt(int position) => 
             _cells.RemoveAt(position);
@@ -106,5 +104,20 @@ namespace Prototype.Logic.InventoryBehavior
 
         public void Set(InventoryData inventoryData) => 
             _cells = inventoryData.Cells;
+
+        public ItemCell GetCellById(string id) => 
+            _cells.Find(x => x.Id == id);
+
+        public bool ContainsCellWithId(string id) => 
+            _cells.Exists(x => x.Id == id);
+        
+#if UNITY_EDITOR
+        [ContextMenu(nameof(GenerateIds))]
+        private void GenerateIds()
+        {
+            for (int i = 0; i < _cells.Count; i++) 
+                _cells[i] = _cells[i].GenerateId();
+        }
+#endif
     }
 }

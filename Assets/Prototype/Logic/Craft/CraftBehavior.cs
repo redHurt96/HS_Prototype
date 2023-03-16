@@ -18,7 +18,7 @@ namespace Prototype.Logic.Craft
         public bool CanCraft(Recipe recipe) => 
             recipe
                 .Ingredients
-                .All(x => _inventory.Contains(x));
+                .All(x => _inventory.Contains(x.ItemName, x.Count));
 
         public void Craft(Recipe recipe)
         {

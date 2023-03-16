@@ -11,6 +11,7 @@ namespace Prototype.Logic.Forge
         public List<IslandData> Islands;
         public List<BotData> Bots;
         public InventoryData PlayerInventory;
+        public List<string> PlayerFastAccess;
         public List<BuildingData> Buildings;
 
         [Serializable]

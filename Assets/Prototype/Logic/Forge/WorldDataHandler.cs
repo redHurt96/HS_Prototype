@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Prototype.Logic.Attributes;
 using Prototype.Logic.Craft;
+using Prototype.Logic.Interactables;
 using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using UnityEngine;
@@ -53,10 +55,17 @@ namespace Prototype.Logic.Forge
 
         private void SaveInventory()
         {
+            GameObject player = FindGameObjectWithTag("Player");
+            
             Data.PlayerInventory = new();
-            Data.PlayerInventory.Cells = FindGameObjectWithTag("Player")
+            Data.PlayerInventory.Cells = player
                 .GetComponent<Inventory>()
                 .Cells
+                .ToList();
+            
+            Data.PlayerFastAccess = player
+                .GetComponent<FastAccessBehavior>()
+                .ItemsKeys
                 .ToList();
         }
 

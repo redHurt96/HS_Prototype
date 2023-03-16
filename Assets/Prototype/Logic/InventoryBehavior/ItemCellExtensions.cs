@@ -6,6 +6,6 @@ namespace Prototype.Logic.InventoryBehavior
     public static class ItemCellExtensions
     {
         public static void SetToFastAccess(this ItemCell item, FastAccessBehavior fastAccess) => 
-            fastAccess.Put(item);
+            fastAccess.Put(item.Id);
     }
 }
