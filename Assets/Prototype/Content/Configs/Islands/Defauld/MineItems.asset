@@ -16,5 +16,6 @@ MonoBehaviour:
   - tree
   - boulder
   - berries bush
+  - wood bush
   _startItemsCount: 40
   _spawnTime: 2
