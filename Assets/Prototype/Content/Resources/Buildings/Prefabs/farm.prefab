@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: farm
+  UniqueKey: 
 --- !u!114 &6182316884660647722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,6 +90,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c00c3c2eca442a2ba99912f9848909a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemCell:
+    ItemName: food
+    Id: 
+    Count: 1
+    ExpirationTime: 3600
   _inventory: {fileID: 6182316884660647722}
   _clicksToCraft: 3
   _clicksLeft: 0

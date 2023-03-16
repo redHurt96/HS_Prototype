@@ -8,7 +8,8 @@ namespace Prototype.Logic.Forge
     public class Farm : MonoBehaviour, IProductionBuilding
     {
         public Inventory Inventory => _inventory;
-        
+
+        [SerializeField] private ItemCell _itemCell;
         [SerializeField] private Inventory _inventory;
         [SerializeField] private int _clicksToCraft;
         [SerializeField, ReadOnly] private int _clicksLeft;
@@ -26,11 +27,8 @@ namespace Prototype.Logic.Forge
             if (_clicksLeft is 0)
             {
                 _clicksLeft = _clicksToCraft;
-                _inventory.Add(new ItemCell()
-                {
-                    ItemName = "food",
-                    Count = 1,
-                });
+                
+                _inventory.Add(_itemCell);
                 _inventory.InvokeUpdate();
             }
         }
