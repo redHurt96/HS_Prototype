@@ -16,51 +16,74 @@ MonoBehaviour:
   - Name: forge
     Materials:
     - ItemName: wooden planks
+      Id: 
       Count: 2
       ExpirationTime: 0
     - ItemName: stone
+      Id: 
       Count: 5
       ExpirationTime: 0
     _allowedBiome: 00000000
   - Name: farm
     Materials:
     - ItemName: wooden planks
+      Id: 
       Count: 10
       ExpirationTime: 0
     - ItemName: stone
+      Id: 
       Count: 2
       ExpirationTime: 0
     _allowedBiome: 00000000
   - Name: storehouse
     Materials:
     - ItemName: wooden planks
+      Id: 
       Count: 10
       ExpirationTime: 0
     - ItemName: stone
+      Id: 
       Count: 5
       ExpirationTime: 0
     _allowedBiome: 00000000
   - Name: fire forge
     Materials:
     - ItemName: wooden planks
+      Id: 
       Count: 10
       ExpirationTime: 0
     - ItemName: stone
+      Id: 
       Count: 5
       ExpirationTime: 0
     - ItemName: iron ingot
+      Id: 
       Count: 15
       ExpirationTime: 0
     _allowedBiome: 01000000
   - Name: ice storehouse
     Materials:
     - ItemName: wooden planks
+      Id: 
       Count: 10
       ExpirationTime: 0
     - ItemName: stone
+      Id: 
       Count: 5
       ExpirationTime: 0
     - ItemName: iron ingot
+      Id: 
       Count: 15
       ExpirationTime: 0
     _allowedBiome: 02000000
+  - Name: campfire
+    Materials:
+    - ItemName: wood
+      Id: 
+      Count: 5
+      ExpirationTime: 0
+    - ItemName: stone
+      Id: 
+      Count: 5
+      ExpirationTime: 0
+    _allowedBiome: 000000000100000002000000

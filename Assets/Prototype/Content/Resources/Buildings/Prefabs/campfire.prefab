@@ -1,0 +1,242 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7907746791469903871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7907746791469903868}
+  m_Layer: 6
+  m_Name: Bot Place
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7907746791469903868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907746791469903871}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.097, z: 1.148}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7907746791922038011}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &7907746791922037764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7907746791922038011}
+  - component: {fileID: 7907746791922038010}
+  - component: {fileID: 7907746791922037765}
+  - component: {fileID: 7907746791922038014}
+  - component: {fileID: 7907746791922038009}
+  - component: {fileID: 7907746791922038008}
+  m_Layer: 6
+  m_Name: campfire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7907746791922038011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907746791922037764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.67, z: 1.053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7653670421152459288}
+  - {fileID: 7907746791469903868}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7907746791922038010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907746791922037764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53d28d7b7b86841e7a457ec0f3c023d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: campfire
+  UniqueKey: 
+--- !u!135 &7907746791922037765
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907746791922037764}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.69
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7907746791922038014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907746791922037764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce839014e2974bf29b666435541a41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _outputInventory: {fileID: 7907746791922038009}
+  _recipes:
+  - Recipe:
+      Item:
+        ItemName: fried food
+        Id: 
+        Count: 1
+        ExpirationTime: 7200
+      Ingredients:
+      - ItemName: food
+        Id: 
+        Count: 1
+        ExpirationTime: 0
+    ClickCount: 5
+--- !u!114 &7907746791922038009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907746791922037764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c78f5b25503418a879d9c7d9d4b90be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cells: []
+--- !u!114 &7907746791922038008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907746791922037764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10acbd16eff42e4a67435148f634672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _botPlace: {fileID: 7907746791469903868}
+  _clickDelay: 2
+  _bot: {fileID: 0}
+--- !u!1001 &7907746790240783859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7907746791922038011}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.078734
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.0787342
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.0787342
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc1c40e4ac07718419a4536976e1b3be,
+        type: 3}
+      propertyPath: m_Name
+      value: campfire
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc1c40e4ac07718419a4536976e1b3be, type: 3}
+--- !u!4 &7653670421152459288 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fc1c40e4ac07718419a4536976e1b3be,
+    type: 3}
+  m_PrefabInstance: {fileID: 7907746790240783859}
+  m_PrefabAsset: {fileID: 0}
