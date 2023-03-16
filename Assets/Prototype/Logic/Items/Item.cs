@@ -7,6 +7,7 @@ namespace Prototype.Logic.Items
     [Serializable]
     public struct Item
     {
+        public bool IsEmpty => string.IsNullOrEmpty(Name);
         public bool IsFuel => ForgeClickCount > 0;
         public bool IsFood => NutritionalValue > 0f;
 

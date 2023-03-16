@@ -16,6 +16,7 @@ namespace Prototype.Logic.InventoryBehavior
         [SerializeField] private Inventory _inventory;
         [SerializeField] private Hunger _hunger;
         [SerializeField] private CharacterEquipment _equipment;
+        [SerializeField] private FastAccessBehavior _fastAccess;
 
         [Space]
         [SerializeField] private Transform _anchor;
@@ -53,9 +54,11 @@ namespace Prototype.Logic.InventoryBehavior
                 Item item = Get(cell.ItemName);
 
                 if (item.IsFood)
-                    view.OnClick(() => Feed(item));
+                    view.OnClick(() => item.Feed(_hunger, _inventory));
                 else if (item.IsTool)
-                    view.OnClick(() => Equip(item));
+                    view.OnClick(() => item.Equip(_equipment));
+                
+                view.OnRightClick(() => cell.SetToFastAccess(_fastAccess));
             }
         }
 
@@ -65,19 +68,6 @@ namespace Prototype.Logic.InventoryBehavior
                 Destroy(view.gameObject);
 
             _views.Clear();
-        }
-
-        private void Feed(Item item)
-        {
-            _hunger.Feed(item.NutritionalValue);
-            
-            _inventory.Remove(item.Name, 1);
-            _inventory.InvokeUpdate();
-        }
-
-        private void Equip(Item item)
-        {
-            _equipment.Equip(item);
         }
     }
 }

@@ -6,7 +6,7 @@ using static Prototype.Logic.Interactables.ResourcesService;
 
 namespace Prototype.Logic.Interactables
 {
-    internal class CharacterEquipment : MonoBehaviour
+    public class CharacterEquipment : MonoBehaviour
     {
         public event Action Equipped; 
         public string ToolName => _currentTool?.ItemCell.ItemName;

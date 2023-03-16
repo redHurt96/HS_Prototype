@@ -3,20 +3,22 @@ using Prototype.Logic.Craft;
 using Prototype.Logic.Items;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static Prototype.Logic.Interactables.ResourcesService;
 
 namespace Prototype.Logic.InventoryBehavior
 {
-    internal class ItemUIView : MonoBehaviour
+    internal class ItemUIView : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private Image _image;
         [SerializeField] private TextMeshProUGUI _count;
         [SerializeField] private Button _button;
         
         private Action _onClick;
+        private Action _onRightClick;
 
-        private void Awake() => 
+        private void Awake() =>
             _button.onClick
                 .AddListener(() => _onClick?.Invoke());
 
@@ -35,5 +37,14 @@ namespace Prototype.Logic.InventoryBehavior
 
         public void OnClick(Action action) => 
             _onClick = action;
+
+        public void OnRightClick(Action action) =>
+            _onRightClick = action;
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Right)
+                _onRightClick?.Invoke();
+        }
     }
 }
