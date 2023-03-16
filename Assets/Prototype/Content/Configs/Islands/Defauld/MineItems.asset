@@ -15,5 +15,6 @@ MonoBehaviour:
   _itemsNames:
   - tree
   - boulder
-  _startItemsCount: 30
+  - berries bush
+  _startItemsCount: 40
   _spawnTime: 2

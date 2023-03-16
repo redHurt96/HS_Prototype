@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Items
   m_EditorClassIdentifier: 
   _itemsNames:
-  - wood
   - stone
   - food
   - iron

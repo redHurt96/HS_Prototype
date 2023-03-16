@@ -6,6 +6,7 @@ namespace Prototype.Logic.Items
     public class RestoreMineItem : MonoBehaviour
     {
         [SerializeField] private MineItemView _view;
+        [SerializeField] private GameObject _objectToRestore;
         [SerializeField] private float _time;
 
         private void Start() => 
@@ -21,7 +22,12 @@ namespace Prototype.Logic.Items
         {
             yield return new WaitForSeconds(_time);
             
+            if (_objectToRestore != null)
+                _objectToRestore.SetActive(true);
+            
             _view.Restore();
         }
     }
+
+
 }

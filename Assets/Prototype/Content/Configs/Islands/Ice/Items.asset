@@ -15,7 +15,6 @@ MonoBehaviour:
   _itemsNames:
   - wood
   - stone
-  - food
   - iron
   _startItemsCount: 30
   _spawnTime: 2
