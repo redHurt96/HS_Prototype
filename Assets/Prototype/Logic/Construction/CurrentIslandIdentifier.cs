@@ -5,16 +5,18 @@ using static Prototype.Logic.Items.IslandUtilities;
 
 namespace Prototype.Logic.Construction
 {
-    internal class CurrentBiomeIdentifier : MonoBehaviour
+    internal class CurrentIslandIdentifier : MonoBehaviour
     {
         public Biome Value => _value;
+        public Island Island => _island;
         
         [SerializeField, ReadOnly] private Biome _value;
+        [SerializeField, ReadOnly] private Island _island;
 
         private void Update()
         {
-            if (HasIslandBelowPoint(transform.position, out Island island, out Vector3 topPoint)) 
-                _value = island.Biome;
+            if (HasIslandBelowPoint(transform.position, out _island, out Vector3 topPoint)) 
+                _value = _island.Biome;
         }
     }
 }

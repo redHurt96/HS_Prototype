@@ -1,8 +1,6 @@
-using System;
 using System.Linq;
 using UnityEngine;
 using static Prototype.Logic.Items.LandSettings;
-using static UnityEngine.Color;
 using static UnityEngine.Mathf;
 using static UnityEngine.Physics;
 using static UnityEngine.Vector3;
