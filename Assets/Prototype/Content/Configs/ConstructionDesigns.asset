@@ -102,3 +102,18 @@ MonoBehaviour:
       Count: 3
       ExpirationTime: 0
     _allowedBiome: 000000000100000002000000
+  - Name: stone mine
+    Materials:
+    - ItemName: wooden planks
+      Id: 
+      Count: 10
+      ExpirationTime: 0
+    - ItemName: stone
+      Id: 
+      Count: 5
+      ExpirationTime: 0
+    - ItemName: iron ingot
+      Id: 
+      Count: 3
+      ExpirationTime: 0
+    _allowedBiome: 000000000100000002000000
