@@ -23,6 +23,7 @@ MonoBehaviour:
       Id: 
       Count: 5
       ExpirationTime: 0
+    MineFieldName: 
     _allowedBiome: 00000000
   - Name: farm
     Materials:
@@ -34,6 +35,7 @@ MonoBehaviour:
       Id: 
       Count: 2
       ExpirationTime: 0
+    MineFieldName: 
     _allowedBiome: 00000000
   - Name: storehouse
     Materials:
@@ -45,6 +47,7 @@ MonoBehaviour:
       Id: 
       Count: 5
       ExpirationTime: 0
+    MineFieldName: 
     _allowedBiome: 00000000
   - Name: fire forge
     Materials:
@@ -60,6 +63,7 @@ MonoBehaviour:
       Id: 
       Count: 15
       ExpirationTime: 0
+    MineFieldName: 
     _allowedBiome: 01000000
   - Name: ice storehouse
     Materials:
@@ -75,6 +79,7 @@ MonoBehaviour:
       Id: 
       Count: 15
       ExpirationTime: 0
+    MineFieldName: 
     _allowedBiome: 02000000
   - Name: campfire
     Materials:
@@ -86,6 +91,7 @@ MonoBehaviour:
       Id: 
       Count: 5
       ExpirationTime: 0
+    MineFieldName: 
     _allowedBiome: 000000000100000002000000
   - Name: sawmill
     Materials:
@@ -101,6 +107,7 @@ MonoBehaviour:
       Id: 
       Count: 3
       ExpirationTime: 0
+    MineFieldName: 
     _allowedBiome: 000000000100000002000000
   - Name: stone mine
     Materials:
@@ -116,4 +123,5 @@ MonoBehaviour:
       Id: 
       Count: 3
       ExpirationTime: 0
+    MineFieldName: stone
     _allowedBiome: 000000000100000002000000

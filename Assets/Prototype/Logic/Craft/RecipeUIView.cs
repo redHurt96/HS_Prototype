@@ -16,7 +16,7 @@ namespace Prototype.Logic.Craft
         private CraftBehavior _craftBehavior;
         private Recipe _recipe;
         private ConstructionDesign _design;
-        private ConstructionBehavior _constructionBehavior;
+        private BuildBehavior _buildBehavior;
 
         public void Setup(Recipe recipe, CraftBehavior craftBehavior)
         {
@@ -38,19 +38,19 @@ namespace Prototype.Logic.Craft
         {
             if (_craftBehavior != null)
                 _craft.interactable = _craftBehavior.CanCraft(_recipe);
-            else if (_constructionBehavior != null)
-                _craft.interactable = _constructionBehavior.CanBuild(_design);
+            else if (_buildBehavior != null)
+                _craft.interactable = _buildBehavior.CanBuild(_design);
         }
 
-        internal void Setup(ConstructionDesign design, ConstructionBehavior constructionBehavior)
+        internal void Setup(ConstructionDesign design, BuildBehavior buildBehavior)
         {
             _design = design;
-            _constructionBehavior = constructionBehavior;
+            _buildBehavior = buildBehavior;
             Building building = GetBuildingPrefab(design.Name);
 
             _targetItemView.Setup(building);
-            _craft.onClick.AddListener(() => constructionBehavior.Build(design));
-            _craft.interactable = constructionBehavior.CanBuild(design);
+            _craft.onClick.AddListener(() => buildBehavior.Build(design));
+            _craft.interactable = buildBehavior.CanBuild(design);
 
             foreach (ItemCell material in design.Materials)
             {

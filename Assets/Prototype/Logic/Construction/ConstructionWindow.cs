@@ -12,17 +12,17 @@ namespace Prototype.Logic.Construction
         public override bool CanShow => _equipment.IsHammerEquipped;
 
         [SerializeField] private CharacterEquipment _equipment;
-        [SerializeField] private ConstructionBehavior _constructionBehavior;
+        [SerializeField] private BuildBehavior _buildBehavior;
         [SerializeField] private RecipeUIView _recipeUIView;
         [SerializeField] private Transform _recipesAnchor;
 
         private readonly List<RecipeUIView> _recipesViews = new();
 
         private void Awake() =>
-            _constructionBehavior.Updated += UpdateRecipesViews;
+            _buildBehavior.Updated += UpdateRecipesViews;
 
         private void OnDestroy() =>
-            _constructionBehavior.Updated -= UpdateRecipesViews;
+            _buildBehavior.Updated -= UpdateRecipesViews;
 
         private void OnEnable()
         {
@@ -31,7 +31,7 @@ namespace Prototype.Logic.Construction
                 ConstructionDesign design = Get(designName);
                 RecipeUIView recipeUIView = Instantiate(_recipeUIView, _recipesAnchor);
 
-                recipeUIView.Setup(design, _constructionBehavior);
+                recipeUIView.Setup(design, _buildBehavior);
                 _recipesViews.Add(recipeUIView);
             }
         }

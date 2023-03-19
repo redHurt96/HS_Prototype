@@ -1090,6 +1090,8 @@ GameObject:
   - component: {fileID: 1858014655}
   - component: {fileID: 1858014656}
   - component: {fileID: 1858014680}
+  - component: {fileID: 1858014669}
+  - component: {fileID: 6780667084082279980}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1405,7 +1407,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _village: {fileID: 0}
   _inventory: {fileID: 1762682267}
-  _playerCurrentBiome: {fileID: 1258592659153051848}
+  _playerCurrentIsland: {fileID: 1258592659153051848}
+  _mineFieldDetector: {fileID: 6780667084082279980}
 --- !u!114 &1762682290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,6 +1609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _value: 0
+  _island: {fileID: 0}
 --- !u!114 &2877587630721669958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1726,6 +1730,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventory: {fileID: 1762682267}
   _fastAccessBehavior: {fileID: 1858014655}
+--- !u!114 &1858014669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dc6574edbe4e2ebc37509cbfab1939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionBehavior: {fileID: 1858014641}
+  _interactKey: 101
+  _hasAdditionalFunction: 0
+  _additionalKey: 103
+  Bush: {fileID: 0}
+  _inventory: {fileID: 1762682267}
+--- !u!114 &6780667084082279980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b055a3004be49f99f76d97b451e17a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _detectRange: 20
+  _islandIdentifier: {fileID: 1258592659153051848}
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0
