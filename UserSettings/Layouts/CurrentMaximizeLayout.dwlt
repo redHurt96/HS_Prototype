@@ -89,7 +89,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -457,9 +457,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.7278748, y: -0.84983444, z: -1.6973581}
+    m_Target: {x: 39.18846, y: -3.3723273, z: -9.157164}
     speed: 2
-    m_Value: {x: 2.7278748, y: -0.84983444, z: -1.6973581}
+    m_Value: {x: 39.18846, y: -3.3723273, z: -9.157164}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -506,9 +506,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.07485036, y: 0.9239554, z: -0.23967762, w: -0.28854772}
+    m_Target: {x: 0.21977653, y: 0.60827464, z: -0.18039744, w: 0.74105406}
     speed: 2
-    m_Value: {x: -0.07485031, y: 0.92395484, z: -0.23967747, w: -0.28854755}
+    m_Value: {x: 0.22088741, y: 0.6080021, z: -0.18130928, w: 0.74072206}
   m_Size:
     m_Target: 10
     speed: 2
@@ -611,8 +611,8 @@ MonoBehaviour:
     y: 0
     width: 427
     height: 1291
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -720,7 +720,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: fa41ffff6abcffffcaedffff9ceeffff10f1ffff
+      m_ExpandedIDs: 702aebff442bebff763bf0ffe47bf5ff0a9afaff8ca2faff86bdfaff64bffaffe20dffff48e8ffff14efffff2efbffffc2970200a214040006220400fe260400fe960400e20d200000c4200036ca210026932200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -811,22 +811,22 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/IL3DN/Scenes/TheIllustratedNature_Demo
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
   m_StartGridSize: 64
-  m_LastFolders:
-  - Assets
+  m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Projects\Unity\BuildSystemTest
+  m_LastProjectPath: C:\Projects\Unity\HS_Prototype
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: eab70000
     m_LastClickedID: 47082
-    m_ExpandedIDs: 00000000846f0000866f0000886f00008a6f0000
+    m_ExpandedIDs: ffffffff00000000ee6f0000f06f0000f26f0000f46f00008a7200009a8b0000a48b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -854,7 +854,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000846f0000866f0000886f00008a6f0000
+    m_ExpandedIDs: ffffffff00000000ee6f0000f06f0000f26f0000f46f00008a7200009a8b0000a48b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -870,7 +870,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 13}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}

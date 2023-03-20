@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using static System.Diagnostics.Process;
 using static System.IO.File;
@@ -25,3 +26,4 @@ namespace Prototype.Logic.Forge
             });
     }
 }
+#endif
