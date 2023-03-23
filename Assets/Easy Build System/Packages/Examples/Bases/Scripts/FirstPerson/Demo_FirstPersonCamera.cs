@@ -5,6 +5,7 @@
 /// Copyright : © 2015 - 2022 by PolarInteractive
 /// </summary>
 
+using Prototype.Logic.Attributes;
 using UnityEngine;
 
 namespace EasyBuildSystem.Examples.Bases.Scripts.FirstPerson
@@ -12,7 +13,7 @@ namespace EasyBuildSystem.Examples.Bases.Scripts.FirstPerson
     public class Demo_FirstPersonCamera : MonoBehaviour
     {
         [Header("Look Settings")]
-        [SerializeField] bool m_LockCursor = true;
+        [SerializeField, ReadOnly] public bool LockCursor = true;
         [SerializeField] float m_XSensitivity = 2f;
         [SerializeField] float m_YSensitivity = 2f;
         [SerializeField] bool m_ClampVerticalRotation = true;
@@ -31,7 +32,7 @@ namespace EasyBuildSystem.Examples.Bases.Scripts.FirstPerson
             m_CharacterTargetRot = transform.localRotation;
             m_CameraTargetRot = m_Camera.transform.localRotation;
 
-            if (m_LockCursor)
+            if (LockCursor)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;

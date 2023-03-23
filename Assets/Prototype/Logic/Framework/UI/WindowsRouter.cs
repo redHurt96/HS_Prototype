@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Prototype.Logic.Extensions;
 using UnityEngine;
 
 namespace Prototype.Logic.Framework.UI
@@ -10,6 +11,7 @@ namespace Prototype.Logic.Framework.UI
         
         private IEnumerable<Window> _windows => _references
             .Windows
+            .Where(x => x.HasComponent<Window>())
             .Select(x => x.GetComponent<Window>());
         
         
