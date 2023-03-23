@@ -72,6 +72,7 @@ namespace Prototype.Logic.InventoryBehavior
                 Remove(item);
         }
 
+        public bool Contains(ItemCell[] recipeIngredients) => Contains(recipeIngredients.ToList()); 
         public bool Contains(List<ItemCell> recipeIngredients) => 
             recipeIngredients.All(x => Contains(x.ItemName, x.Count));
 

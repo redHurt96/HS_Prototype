@@ -19,6 +19,11 @@ using EasyBuildSystem.Features.Runtime.Extensions;
 using EasyBuildSystem.Features.Runtime.Buildings.Placer;
 using EasyBuildSystem.Features.Runtime.Buildings.Manager;
 using EasyBuildSystem.Features.Runtime.Buildings.Part;
+using Prototype.Logic.Construction;
+using Prototype.Logic.Interactables;
+using Prototype.Logic.InventoryBehavior;
+using Prototype.Logic.Items;
+using static CursorHandler;
 
 namespace EasyBuildSystem.Packages.Addons.CircularBuildingMenu
 {
@@ -34,6 +39,7 @@ namespace EasyBuildSystem.Packages.Addons.CircularBuildingMenu
             XR
         }
 
+        
         [Serializable]
         public class CircularButtonSettings
         {
@@ -114,6 +120,10 @@ namespace EasyBuildSystem.Packages.Addons.CircularBuildingMenu
         [SerializeField] float m_UICircularButtonSpacing = 160f;
 
         [SerializeField] List<CircularCategory> m_Categories = new List<CircularCategory>();
+        
+        [SerializeField] private Inventory _inventory;
+        [SerializeField] private CharacterEquipment _characterEquipment;
+        
         public List<CircularCategory> Categories { get { return m_Categories; } set { m_Categories = value; } }
 
 #if EBS_INPUT_SYSTEM_SUPPORT
@@ -212,7 +222,7 @@ namespace EasyBuildSystem.Packages.Addons.CircularBuildingMenu
                     {
                         CloseMenu();
                     }
-                    else
+                    else if (_characterEquipment.IsHammerEquipped)
                     {
                         OpenMenu();
                     }
@@ -555,6 +565,11 @@ namespace EasyBuildSystem.Packages.Addons.CircularBuildingMenu
 
         public void SelectBuildingPart(string buildingName)
         {
+            ConstructionDesign design = ConstructionDesignsStorage.Get(buildingName);
+            
+            if (!_inventory.Contains(design.Materials))
+                return;
+            
             BuildingPlacer.Instance.SelectBuildingPart(BuildingManager.Instance.GetBuildingPartByName(buildingName));
             BuildingPlacer.Instance.ChangeBuildMode(BuildingPlacer.BuildMode.PLACE);
             CloseMenu();
@@ -628,8 +643,7 @@ namespace EasyBuildSystem.Packages.Addons.CircularBuildingMenu
                 return;
             }
 
-            Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
-            Cursor.visible = !newState;
+            SetState(newState);
         }
 
         #endregion

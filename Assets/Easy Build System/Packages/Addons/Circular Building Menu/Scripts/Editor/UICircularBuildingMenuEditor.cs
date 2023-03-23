@@ -92,6 +92,7 @@ namespace EasyBuildSystem.Packages.Addons.CircularBuildingMenu.Editor
 #endif
 
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("m_PlatformTarget"), new GUIContent("Platform Target"));
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("_characterEquipment"), new GUIContent("Character Equipment"));
 
                 if ((UICircularBuildingMenu.PlatformTarget)serializedObject.FindProperty("m_PlatformTarget").enumValueIndex == UICircularBuildingMenu.PlatformTarget.STANDALONE)
                 {
@@ -267,6 +268,7 @@ namespace EasyBuildSystem.Packages.Addons.CircularBuildingMenu.Editor
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("m_UICircularButtonHoverScale"), new GUIContent("Circular Button Hover Scale"));
 
                 EditorGUILayout.PropertyField(serializedObject.FindProperty("m_UICircularButtonSpacing"), new GUIContent("Circular Button Spacing"));
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("_inventory"), new GUIContent("Inventory"));
             }
 
             EditorGUIUtilityExtension.EndFoldout();

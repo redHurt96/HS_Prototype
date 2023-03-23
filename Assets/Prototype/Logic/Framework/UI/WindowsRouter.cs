@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Prototype.Logic.Extensions;
 using UnityEngine;
+using static CursorHandler;
 
 namespace Prototype.Logic.Framework.UI
 {
@@ -37,10 +38,16 @@ namespace Prototype.Logic.Framework.UI
                 .First(x => x.Name == windowName)
                 .Enabled;
 
-            if (!isWindowEnabled) 
+            if (!isWindowEnabled)
+            {
                 Open(windowName);
+                SetState(false);
+            }
             else
+            {
                 Close(windowName);
+                SetState(true);
+            }
         }
 
         public void CloseTopWindow()
@@ -50,6 +57,8 @@ namespace Prototype.Logic.Framework.UI
                 if (window.Enabled)
                     window.Close();
             }
+            
+            SetState(true);
         }
     }
 }
