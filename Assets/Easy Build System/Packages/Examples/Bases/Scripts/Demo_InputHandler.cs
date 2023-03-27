@@ -2,12 +2,18 @@
 /// Project : Easy Build System
 /// Class : Demo_InputHandler.cs
 /// Namespace : EasyBuildSystem.Demos.Bases.Scripts
-/// Copyright : © 2015 - 2022 by PolarInteractive
+/// Copyright : ï¿½ 2015 - 2022 by PolarInteractive
 /// </summary>
 
 using UnityEngine;
 
 using EasyBuildSystem.Features.Runtime.Bases;
+using Prototype.Logic.Attributes;
+using static UnityEngine.Cursor;
+using static UnityEngine.CursorLockMode;
+using static UnityEngine.Input;
+using static UnityEngine.KeyCode;
+using static UnityEngine.Vector2;
 #if EBS_INPUT_SYSTEM_SUPPORT
 using UnityEngine.InputSystem;
 #endif
@@ -104,31 +110,32 @@ namespace EasyBuildSystem.Examples.Bases.Scripts
 		}
 
 #else
-		public Vector2 Move { get; set; }
+	
+	[ReadOnly] public Vector2 Move;
 
 	public Vector2 Look { get; set; }
 
 	public bool Jump { get; set; }
 
-	public bool Sprint { get; set; }
+	[ReadOnly] public bool Sprint;
 
 
 	void Update()
 	{
 #if !UNITY_ANDROID
-		MoveInput(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
-		LookInput(new Vector2(Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y")));
-		JumpInput(Input.GetButton("Jump"));
+		MoveInput(new Vector2(GetAxisRaw("Horizontal"), GetAxisRaw("Vertical")));
+		LookInput(new Vector2(GetAxis("Mouse X"), -GetAxis("Mouse Y")));
+		JumpInput(GetButton("Jump"));
 #endif
-		Sprint = true;
+		Sprint = GetKey(LeftShift);
 	}
 
 	public void MoveInput(Vector2 newMoveDirection)
 	{
 #if !UNITY_ANDROID
-		if (Cursor.lockState == CursorLockMode.None)
+		if (lockState == CursorLockMode.None)
 		{
-			Move = Vector2.zero;
+			Move = zero;
 			return;
 		}
 #endif
@@ -139,9 +146,9 @@ namespace EasyBuildSystem.Examples.Bases.Scripts
 	public void LookInput(Vector2 newLookDirection)
 	{
 #if !UNITY_ANDROID
-		if (Cursor.lockState == CursorLockMode.None)
+		if (lockState == CursorLockMode.None)
 		{
-			Look = Vector2.zero;
+			Look = zero;
 			return;
 		}
 #endif
@@ -156,7 +163,7 @@ namespace EasyBuildSystem.Examples.Bases.Scripts
 	public void JumpInput(bool newJumpState)
 	{
 #if !UNITY_ANDROID
-		if (Cursor.lockState == CursorLockMode.None)
+		if (lockState == CursorLockMode.None)
 		{
 			Jump = false;
 			return;

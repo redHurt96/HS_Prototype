@@ -5,6 +5,7 @@
 /// Copyright : © 2015 - 2022 by PolarInteractive
 /// </summary>
 
+using Prototype.Logic.Attributes;
 using UnityEngine;
 
 #if EBS_INPUT_SYSTEM_SUPPORT
@@ -33,7 +34,7 @@ namespace EasyBuildSystem.Examples.Bases.Scripts.FirstPerson
 		[SerializeField] float m_GroundedRadius = 0.5f;
 		[SerializeField] LayerMask m_GroundLayers;
 
-		float m_Speed;
+		[SerializeField, ReadOnly] float m_Speed;
 		float m_VerticalVelocity;
 		readonly float m_TerminalVelocity = 53.0f;
 
