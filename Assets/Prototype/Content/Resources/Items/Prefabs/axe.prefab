@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3599079110926198134}
   - component: {fileID: 4678667677912991422}
   - component: {fileID: 8577849793564781694}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: axe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemCell:
     ItemName: axe
+    Id: 
     Count: 1
     ExpirationTime: 0
 --- !u!136 &8577849793564781694

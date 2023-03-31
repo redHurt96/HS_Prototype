@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8801948865385718951}
   - component: {fileID: 8801948865385718948}
   - component: {fileID: 8801948865385718952}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: food
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemCell:
     ItemName: food
+    Id: 
     Count: 1
+    ExpirationTime: 0
 --- !u!1001 &840489431404989152
 PrefabInstance:
   m_ObjectHideFlags: 0

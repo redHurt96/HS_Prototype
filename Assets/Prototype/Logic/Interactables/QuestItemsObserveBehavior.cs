@@ -1,6 +1,7 @@
 using System;
 using Prototype.Logic.Attributes;
 using Prototype.Logic.Extensions;
+using Prototype.Logic.InventoryBehavior;
 using Prototype.Logic.Items;
 using Prototype.Logic.Quests;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace Prototype.Logic.Interactables
         [ReadOnly] public QuestItem Item;
 
         [SerializeField] private QuestsBehavior _questsBehavior;
+        [SerializeField] private Inventory _inventory;
 
         private void Start() => 
             QuestsBehavior ??= _questsBehavior;
@@ -34,7 +36,15 @@ namespace Prototype.Logic.Interactables
         protected override void Interact(GameObject target)
         {
             if (_questsBehavior.HasAny && _questsBehavior.CurrentKey == Item.QuestKey)
+            {
                 _questsBehavior.Receive(Item.QuestKey);
+
+                if (Item is QuestPickableItem pickableItem)
+                {
+                    _inventory.Add(pickableItem.ItemCell);
+                    Destroy(target);
+                }
+            }
         }
     }
 }

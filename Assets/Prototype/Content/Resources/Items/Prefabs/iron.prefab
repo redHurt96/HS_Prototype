@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2783781637909798898}
   - component: {fileID: 2783781637909798896}
   - component: {fileID: 2783781637909798899}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: iron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemCell:
     ItemName: iron
+    Id: 
     Count: 1
+    ExpirationTime: 0
 --- !u!1001 &2783781638783404119
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5913320375744270777}
   - component: {fileID: 5913320375744270776}
   - component: {fileID: 5913320375744270779}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: wooden planks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemCell:
     ItemName: wooden planks
+    Id: 
     Count: 1
+    ExpirationTime: 0
 --- !u!1001 &5913320376690008442
 PrefabInstance:
   m_ObjectHideFlags: 0

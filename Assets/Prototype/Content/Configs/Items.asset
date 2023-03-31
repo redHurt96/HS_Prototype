@@ -99,3 +99,17 @@ MonoBehaviour:
     IsTool: 0
     MineItemNames: []
     MineForce: 0
+  - Name: knife
+    ForgeClickCount: 0
+    NutritionalValue: 0
+    ExpirationTimeSeconds: 0
+    IsTool: 0
+    MineItemNames: []
+    MineForce: 0
+  - Name: first aid kit
+    ForgeClickCount: 0
+    NutritionalValue: 0
+    ExpirationTimeSeconds: 0
+    IsTool: 0
+    MineItemNames: []
+    MineForce: 0

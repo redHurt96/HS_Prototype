@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8097598521656173308}
   - component: {fileID: 8097598521656173311}
   - component: {fileID: 8097598521656173299}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemCell:
     ItemName: wood
+    Id: 
     Count: 1
+    ExpirationTime: 0
 --- !u!1001 &8097598522242911633
 PrefabInstance:
   m_ObjectHideFlags: 0
