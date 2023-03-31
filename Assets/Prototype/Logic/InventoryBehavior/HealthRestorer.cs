@@ -12,7 +12,7 @@ namespace Prototype.Logic.InventoryBehavior
 
         private void Update()
         {
-            if (_hunger.Current > _treshold)
+            if (_hunger.Current > _treshold && _health.Current < _health.Max)
                 _health.Add(_restorePerSec * Time.deltaTime);
         }
     }

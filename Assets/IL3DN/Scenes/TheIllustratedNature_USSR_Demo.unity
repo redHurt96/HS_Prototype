@@ -14078,6 +14078,7 @@ MonoBehaviour:
   _prefab: {fileID: 8858311623587529440, guid: d635818e92fbd364eb7aa767715a83c6, type: 3}
   _inventory: {fileID: 6993099812758762372}
   _hunger: {fileID: 6993099812758762369}
+  _health: {fileID: 6993099812758762370}
   _equipment: {fileID: 6993099812758762365}
   _fastAccess: {fileID: 6993099812758762364}
   _anchor: {fileID: 211322971916559933}
@@ -20796,6 +20797,7 @@ MonoBehaviour:
   - 
   _inventory: {fileID: 6993099812758762372}
   _hunger: {fileID: 6993099812758762369}
+  _health: {fileID: 6993099812758762370}
   _equipment: {fileID: 6993099812758762365}
 --- !u!114 &6993099812758762365
 MonoBehaviour:

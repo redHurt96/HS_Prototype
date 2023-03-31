@@ -15,6 +15,7 @@ MonoBehaviour:
   _items:
   - Name: wood
     ForgeClickCount: 3
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 0
@@ -22,6 +23,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: stone
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 0
@@ -29,6 +31,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: iron
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 0
@@ -36,6 +39,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: wooden planks
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 0
@@ -43,6 +47,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: iron ingot
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 0
@@ -50,6 +55,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: food
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 20
     ExpirationTimeSeconds: 3600
     IsTool: 0
@@ -57,6 +63,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: axe
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 1
@@ -65,6 +72,7 @@ MonoBehaviour:
     MineForce: 10
   - Name: pick
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 1
@@ -73,6 +81,7 @@ MonoBehaviour:
     MineForce: 10
   - Name: hammer
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 1
@@ -80,6 +89,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: stone field
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 0
@@ -87,6 +97,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: berries
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 50
     ExpirationTimeSeconds: 1800
     IsTool: 0
@@ -94,6 +105,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: fried food
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 80
     ExpirationTimeSeconds: 7200
     IsTool: 0
@@ -101,6 +113,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: knife
     ForgeClickCount: 0
+    HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 0
@@ -108,6 +121,7 @@ MonoBehaviour:
     MineForce: 0
   - Name: first aid kit
     ForgeClickCount: 0
+    HealthRestoreValue: 50
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     IsTool: 0

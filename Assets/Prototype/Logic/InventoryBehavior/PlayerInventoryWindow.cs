@@ -3,6 +3,7 @@ using Prototype.Logic.Characters;
 using Prototype.Logic.Framework.UI;
 using Prototype.Logic.Interactables;
 using Prototype.Logic.Items;
+using UnityEditor.MPE;
 using UnityEngine;
 using static Prototype.Logic.Items.ItemsStorage;
 
@@ -15,6 +16,7 @@ namespace Prototype.Logic.InventoryBehavior
         [Space]
         [SerializeField] private Inventory _inventory;
         [SerializeField] private Hunger _hunger;
+        [SerializeField] private Health _health;
         [SerializeField] private CharacterEquipment _equipment;
         [SerializeField] private FastAccessBehavior _fastAccess;
 
@@ -54,7 +56,9 @@ namespace Prototype.Logic.InventoryBehavior
                 Item item = Get(cell.ItemName);
 
                 if (item.IsFood)
-                    view.OnClick(() => item.Feed(_hunger, _inventory));
+                    view.OnClick(() => item.Feed(_hunger, _health, _inventory));
+                else if (item.HealthRestoreValue > 0f)
+                    view.OnClick(() => item.Heal(_health, _inventory));
                 else if (item.IsTool)
                     view.OnClick(() => item.Equip(_equipment));
                 

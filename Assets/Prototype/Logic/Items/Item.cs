@@ -16,7 +16,8 @@ namespace Prototype.Logic.Items
         [Header("For fuel")]
         public int ForgeClickCount;
 
-        [Header("For food")] 
+        [Header("For food or aid kits")] 
+        public float HealthRestoreValue;
         public float NutritionalValue;
         public int ExpirationTimeSeconds;
 

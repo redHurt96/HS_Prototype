@@ -23,6 +23,7 @@ namespace Prototype.Logic.Interactables
         
         [SerializeField] private Inventory _inventory;
         [SerializeField] private Hunger _hunger;
+        [SerializeField] private Health _health;
         [SerializeField] private CharacterEquipment _equipment;
 
         private void Start() => 
@@ -59,8 +60,12 @@ namespace Prototype.Logic.Interactables
 
             if (item.IsFood)
             {
-                item.Feed(_hunger, _inventory);
+                item.Feed(_hunger, _health, _inventory);
                 Clear(index);
+            }
+            else if (item.HealthRestoreValue > 0f)
+            {
+                item.Heal(_health, _inventory);
             }
             else if (item.IsTool)
             {

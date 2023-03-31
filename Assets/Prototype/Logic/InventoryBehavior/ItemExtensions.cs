@@ -6,9 +6,21 @@ namespace Prototype.Logic.InventoryBehavior
 {
     public static class ItemExtensions
     {
-        public static void Feed(this Item item, Hunger hunger, Inventory inventory)
+        public static void Heal(this Item item, Health health, Inventory inventory)
+        {
+            health.Add(item.HealthRestoreValue);
+            
+            inventory.Remove(item.Name, 1);
+            inventory.InvokeUpdate();
+        }
+        
+        public static void Feed(this Item item, Hunger hunger, Health health, Inventory inventory)
         {
             hunger.Feed(item.NutritionalValue);
+            
+            if (item.HealthRestoreValue > 0f)
+                health.Add(item.HealthRestoreValue);
+            
             inventory.Remove(item.Name, 1);
             inventory.InvokeUpdate();
         }
