@@ -59,7 +59,7 @@ namespace Prototype.Logic.InventoryBehavior
                     view.OnClick(() => item.Feed(_hunger, _health, _inventory));
                 else if (item.HealthRestoreValue > 0f)
                     view.OnClick(() => item.Heal(_health, _inventory));
-                else if (item.IsTool)
+                else if (item.CanHoldInHands)
                     view.OnClick(() => item.Equip(_equipment));
                 
                 view.OnRightClick(() => cell.SetToFastAccess(_fastAccess));

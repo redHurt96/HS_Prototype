@@ -13,6 +13,8 @@ namespace Prototype.Logic.Items
 
         public string Name;
         
+        public bool CanHoldInHands;
+        
         [Header("For fuel")]
         public int ForgeClickCount;
 
@@ -22,7 +24,7 @@ namespace Prototype.Logic.Items
         public int ExpirationTimeSeconds;
 
         [Header("For tools")] 
-        public bool IsTool;
+        //public bool IsTool;
         public string[] MineItemNames;
         public int MineForce;
 

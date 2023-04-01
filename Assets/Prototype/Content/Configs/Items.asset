@@ -14,116 +14,116 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items:
   - Name: wood
+    CanHoldInHands: 0
     ForgeClickCount: 3
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: stone
+    CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: iron
+    CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: wooden planks
+    CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: iron ingot
+    CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: food
+    CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 20
     ExpirationTimeSeconds: 3600
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: axe
+    CanHoldInHands: 1
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 1
     MineItemNames:
     - tree
     MineForce: 10
   - Name: pick
+    CanHoldInHands: 1
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 1
     MineItemNames:
     - boulder
     MineForce: 10
   - Name: hammer
+    CanHoldInHands: 1
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 1
     MineItemNames: []
     MineForce: 0
   - Name: stone field
+    CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: berries
+    CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 50
     ExpirationTimeSeconds: 1800
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: fried food
+    CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 80
     ExpirationTimeSeconds: 7200
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: knife
+    CanHoldInHands: 1
     ForgeClickCount: 0
     HealthRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 0
     MineItemNames: []
     MineForce: 0
   - Name: first aid kit
+    CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 50
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
-    IsTool: 0
     MineItemNames: []
     MineForce: 0

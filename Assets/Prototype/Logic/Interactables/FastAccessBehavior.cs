@@ -67,7 +67,7 @@ namespace Prototype.Logic.Interactables
             {
                 item.Heal(_health, _inventory);
             }
-            else if (item.IsTool)
+            else if (item.CanHoldInHands)
             {
                 item.Equip(_equipment);
             }
