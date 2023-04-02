@@ -9,8 +9,10 @@ namespace Prototype.Logic.Interactables
     public class CharacterEquipment : MonoBehaviour
     {
         public event Action Equipped; 
+        
         public string ToolName => _currentTool?.ItemCell.ItemName;
-        public bool IsHammerEquipped => _currentTool != null && _currentTool.ItemCell.ItemName == "hammer";
+        public bool IsHammerEquipped => HasSomeInHands && _currentTool.ItemCell.ItemName == "hammer";
+        public bool HasSomeInHands => _currentTool != null;
 
         [SerializeField] private Transform _anchor;
         [SerializeField, ReadOnly] private ItemView _currentTool;
