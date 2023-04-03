@@ -1,6 +1,7 @@
 using System;
 using Prototype.Logic.Attributes;
 using UnityEngine;
+using static UnityEngine.Mathf;
 
 namespace Prototype.Logic.Characters
 {
@@ -23,13 +24,16 @@ namespace Prototype.Logic.Characters
 
         public void TakeDamage(float amount)
         {
-            _current = Mathf.Max(0f, _current - amount);
+            _current = Max(0f, _current - amount);
 
-            if (Mathf.Approximately(_current, 0f)) 
+            if (Approximately(_current, 0f)) 
                 OnDead?.Invoke();
         }
 
         internal void Add(float amount) =>
-            _current = Mathf.Min(Max, _current + amount);
+            _current = Min(Max, _current + amount);
+
+        public void Remove(float damage) => 
+            _current = Max(0f, _current - damage);
     }
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.Application;
 using static UnityEngine.Color;
 using static UnityEngine.Gizmos;
 
