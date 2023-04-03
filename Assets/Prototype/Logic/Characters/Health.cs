@@ -32,8 +32,5 @@ namespace Prototype.Logic.Characters
 
         internal void Add(float amount) =>
             _current = Min(Max, _current + amount);
-
-        public void Remove(float damage) => 
-            _current = Max(0f, _current - damage);
     }
 }

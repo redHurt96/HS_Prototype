@@ -35,7 +35,7 @@ namespace Prototype.Logic.Quests
 
         private void Attack()
         {
-            _health.Remove(_damage);
+            _health.TakeDamage(_damage);
             _currentCooldown = _cooldown;
         }
         
