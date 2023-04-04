@@ -15,6 +15,7 @@ namespace Prototype.Logic.Quests
                 && questsBehavior.CurrentKey == _questKey)
             {
                 questsBehavior.Receive(_questKey);
+                Destroy(gameObject);
             }
         }
 

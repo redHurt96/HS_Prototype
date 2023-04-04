@@ -28,7 +28,10 @@ namespace Prototype.Logic.Forge
             _distanceToCenter = Distance(viewportPos, new(0.5f, 0.5f, viewportPos.z));
 
             if (_distanceToCenter < _threshold)
+            {
                 _questsBehavior.Receive(_key);
+                Destroy(gameObject);
+            }
         }
     }
 }
