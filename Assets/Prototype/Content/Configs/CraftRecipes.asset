@@ -15,39 +15,63 @@ MonoBehaviour:
   _recipes:
   - Item:
       ItemName: wooden planks
+      Id: 
       Count: 1
       ExpirationTime: 0
     Ingredients:
     - ItemName: wood
+      Id: 
       Count: 2
       ExpirationTime: 0
   - Item:
       ItemName: axe
+      Id: 
       Count: 1
       ExpirationTime: 0
     Ingredients:
     - ItemName: wood
+      Id: 
       Count: 3
       ExpirationTime: 0
     - ItemName: stone
+      Id: 
       Count: 2
       ExpirationTime: 0
   - Item:
       ItemName: pick
+      Id: 
       Count: 1
       ExpirationTime: 0
     Ingredients:
     - ItemName: wood
+      Id: 
       Count: 2
       ExpirationTime: 0
     - ItemName: stone
+      Id: 
       Count: 3
       ExpirationTime: 0
   - Item:
       ItemName: hammer
+      Id: 
       Count: 1
       ExpirationTime: 0
     Ingredients:
     - ItemName: wood
+      Id: 
       Count: 4
+      ExpirationTime: 0
+  - Item:
+      ItemName: vodka
+      Id: 
+      Count: 1
+      ExpirationTime: 0
+    Ingredients:
+    - ItemName: water
+      Id: 
+      Count: 1
+      ExpirationTime: 0
+    - ItemName: alcohol
+      Id: 
+      Count: 1
       ExpirationTime: 0

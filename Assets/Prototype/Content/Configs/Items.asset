@@ -127,3 +127,27 @@ MonoBehaviour:
     ExpirationTimeSeconds: 0
     MineItemNames: []
     MineForce: 0
+  - Name: water
+    CanHoldInHands: 0
+    ForgeClickCount: 0
+    HealthRestoreValue: 0
+    NutritionalValue: 15
+    ExpirationTimeSeconds: 0
+    MineItemNames: []
+    MineForce: 0
+  - Name: alcohol
+    CanHoldInHands: 0
+    ForgeClickCount: 0
+    HealthRestoreValue: 0
+    NutritionalValue: 0
+    ExpirationTimeSeconds: 0
+    MineItemNames: []
+    MineForce: 0
+  - Name: vodka
+    CanHoldInHands: 0
+    ForgeClickCount: 0
+    HealthRestoreValue: 20
+    NutritionalValue: 0
+    ExpirationTimeSeconds: 0
+    MineItemNames: []
+    MineForce: 0

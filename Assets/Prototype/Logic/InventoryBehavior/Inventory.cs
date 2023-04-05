@@ -12,6 +12,7 @@ namespace Prototype.Logic.InventoryBehavior
     public class Inventory : MonoBehaviour
     {
         public event Action Updated;
+        public event Action<ItemCell> Added;
         public IReadOnlyList<ItemCell> Cells => _cells;
 
         [SerializeField] private List<ItemCell> _cells = new();
@@ -32,11 +33,15 @@ namespace Prototype.Logic.InventoryBehavior
                 int targetIndex = _cells.IndexOf(targetCell);
 
                 _cells[targetIndex] = CreateWithCount(_cells[targetIndex], targetCell.Count + cell.Count);
+
+                Added?.Invoke(_cells[targetIndex]);
             }
             else
             {
                 ItemCell cellToAdd = cell.GenerateId();
                 _cells.Add(cellToAdd);
+                
+                Added?.Invoke(_cells[^1]);
             }
         }
 

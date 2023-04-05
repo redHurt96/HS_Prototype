@@ -20,7 +20,7 @@ namespace Prototype.Logic.Forge
 
         private void Update()
         {
-            if (!_questsBehavior.HasAny || _questsBehavior.CurrentKey != _key)
+            if (!_questsBehavior.HasAny || !_questsBehavior.CompareKey(_key))
                 return;
             
             Vector3 viewportPos = _camera.WorldToViewportPoint(transform.position);

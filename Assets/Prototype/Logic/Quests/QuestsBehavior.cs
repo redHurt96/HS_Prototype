@@ -10,7 +10,6 @@ namespace Prototype.Logic.Quests
 
         public bool HasAny => _quests.Count > 0;
         public string CurrentDescription => _current.Description;
-        public string CurrentKey => _current.Key;
 
         [SerializeField] private List<Quest> _quests;
 
@@ -27,5 +26,8 @@ namespace Prototype.Logic.Quests
                 Updated?.Invoke();
             }
         }
+
+        public bool CompareKey(string to) =>
+            _current.Key == to;
     }
 }

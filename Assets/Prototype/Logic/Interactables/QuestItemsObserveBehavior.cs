@@ -25,7 +25,7 @@ namespace Prototype.Logic.Interactables
         protected override Func<GameObject, bool> IsObserveTarget { get; } = target =>
             target.TryGetComponent(out QuestItem item)
             && QuestsBehavior.HasAny
-            && QuestsBehavior.CurrentKey == item.QuestKey;
+            && QuestsBehavior.CompareKey(item.QuestKey);
 
         protected override void SetupObservedObject(GameObject target) =>
             Item = target.GetComponent<QuestItem>();
@@ -35,7 +35,7 @@ namespace Prototype.Logic.Interactables
 
         protected override void Interact(GameObject target)
         {
-            if (_questsBehavior.HasAny && _questsBehavior.CurrentKey == Item.QuestKey)
+            if (_questsBehavior.HasAny && _questsBehavior.CompareKey(Item.QuestKey))
             {
                 _questsBehavior.Receive(Item.QuestKey);
 

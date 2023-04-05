@@ -12,7 +12,7 @@ namespace Prototype.Logic.Quests
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent(out QuestsBehavior questsBehavior)
-                && questsBehavior.CurrentKey == _questKey)
+                && questsBehavior.CompareKey(_questKey))
             {
                 questsBehavior.Receive(_questKey);
                 Destroy(gameObject);

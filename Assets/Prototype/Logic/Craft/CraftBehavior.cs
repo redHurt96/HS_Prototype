@@ -10,6 +10,7 @@ namespace Prototype.Logic.Craft
     public class CraftBehavior : MonoBehaviour
     {
         public event Action Updated;
+        public event Action<string> Crafted;
         
         public List<string> RecipesNames = new();
         
@@ -27,6 +28,7 @@ namespace Prototype.Logic.Craft
             foreach (ItemCell ingredient in recipe.Ingredients) 
                 _inventory.Remove(ingredient);
             
+            Crafted?.Invoke(recipe.Item.ItemName);
             Updated?.Invoke();
         }
     }
