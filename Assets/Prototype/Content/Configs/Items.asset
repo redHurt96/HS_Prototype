@@ -17,6 +17,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 3
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -25,6 +26,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -33,6 +35,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -41,6 +44,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -49,6 +53,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -57,6 +62,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 20
     ExpirationTimeSeconds: 3600
     MineItemNames: []
@@ -65,6 +71,7 @@ MonoBehaviour:
     CanHoldInHands: 1
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames:
@@ -74,6 +81,7 @@ MonoBehaviour:
     CanHoldInHands: 1
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames:
@@ -83,6 +91,7 @@ MonoBehaviour:
     CanHoldInHands: 1
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -91,6 +100,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -99,6 +109,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 50
     ExpirationTimeSeconds: 1800
     MineItemNames: []
@@ -107,6 +118,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 80
     ExpirationTimeSeconds: 7200
     MineItemNames: []
@@ -115,6 +127,7 @@ MonoBehaviour:
     CanHoldInHands: 1
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -123,6 +136,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 50
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -131,6 +145,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 15
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -139,6 +154,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 0
+    MindRestoreValue: 0
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []
@@ -147,6 +163,7 @@ MonoBehaviour:
     CanHoldInHands: 0
     ForgeClickCount: 0
     HealthRestoreValue: 20
+    MindRestoreValue: 70
     NutritionalValue: 0
     ExpirationTimeSeconds: 0
     MineItemNames: []

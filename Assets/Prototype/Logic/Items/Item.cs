@@ -20,6 +20,7 @@ namespace Prototype.Logic.Items
 
         [Header("For food or aid kits")] 
         public float HealthRestoreValue;
+        public float MindRestoreValue;
         public float NutritionalValue;
         public int ExpirationTimeSeconds;
 

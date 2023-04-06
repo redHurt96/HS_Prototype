@@ -1,5 +1,7 @@
-﻿using Prototype.Logic.Characters;
+﻿using System;
+using Prototype.Logic.Characters;
 using UnityEngine;
+using static UnityEngine.Time;
 
 namespace Prototype.Logic.InventoryBehavior
 {
@@ -13,7 +15,7 @@ namespace Prototype.Logic.InventoryBehavior
         private void Update()
         {
             if (_hunger.Current > _treshold && _health.Current < _health.Max)
-                _health.Add(_restorePerSec * Time.deltaTime);
+                _health.Add(_restorePerSec * deltaTime);
         }
     }
 }

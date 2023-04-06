@@ -9,22 +9,15 @@ namespace Prototype.Logic.InventoryBehavior
     {
         public static event Action<string> Used;
         
-        public static void Heal(this Item item, Health health, Inventory inventory)
-        {
-            health.Add(item.HealthRestoreValue);
-            
-            inventory.Remove(item.Name, 1);
-            inventory.InvokeUpdate();
-            
-            Used?.Invoke(item.Name);
-        }
-        
-        public static void Feed(this Item item, Hunger hunger, Health health, Inventory inventory)
+        public static void Feed(this Item item, Hunger hunger, Health health, Mind mind, Inventory inventory)
         {
             hunger.Feed(item.NutritionalValue);
             
             if (item.HealthRestoreValue > 0f)
                 health.Add(item.HealthRestoreValue);
+            
+            if (item.MindRestoreValue > 0f)
+                mind.Add(item.MindRestoreValue);
             
             inventory.Remove(item.Name, 1);
             inventory.InvokeUpdate();
