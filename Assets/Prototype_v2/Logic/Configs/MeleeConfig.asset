@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ead2d0103748be988433919ff71031, type: 3}
+  m_Name: MeleeConfig
+  m_EditorClassIdentifier: 
+  _attacks:
+  - Order: 0
+    HasNext: 1
+    Damage: 10
+    DamageDelay: 0.5
+    NextComboAttackDelay: 1
+    BreakComboDelay: 2
+  - Order: 1
+    HasNext: 1
+    Damage: 20
+    DamageDelay: 0.5
+    NextComboAttackDelay: 1
+    BreakComboDelay: 2
+  - Order: 2
+    HasNext: 0
+    Damage: 30
+    DamageDelay: 0.5
+    NextComboAttackDelay: 2
+    BreakComboDelay: 2

@@ -14,6 +14,7 @@ namespace Prototype.Logic.Items
         public string Name;
         
         public bool CanHoldInHands;
+        public bool IsMelee;
         
         [Header("For fuel")]
         public int ForgeClickCount;

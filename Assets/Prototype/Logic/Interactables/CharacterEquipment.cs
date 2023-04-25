@@ -3,6 +3,7 @@ using Prototype.Logic.Attributes;
 using Prototype.Logic.Items;
 using UnityEngine;
 using static Prototype.Logic.Interactables.ResourcesService;
+using static Prototype.Logic.Items.ItemsStorage;
 
 namespace Prototype.Logic.Interactables
 {
@@ -13,6 +14,7 @@ namespace Prototype.Logic.Interactables
         public string ToolName => _currentTool?.ItemCell.ItemName;
         public bool IsHammerEquipped => HasSomeInHands && _currentTool.ItemCell.ItemName == "hammer";
         public bool HasSomeInHands => _currentTool != null;
+        public bool HasSomeMeleeInHands => _currentTool != null && Get(_currentTool.ItemCell.ItemName).IsMelee;
 
         [SerializeField] private Transform _anchor;
         [SerializeField, ReadOnly] private ItemView _currentTool;
